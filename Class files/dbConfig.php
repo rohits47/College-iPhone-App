@@ -14,10 +14,14 @@ function __autoload($class)
  * Before running this script, make sure to up the version number by 1 (or to the latest version (located at the bottom));
  */
 $version = 1;
+$databaseName = "";
+$dbhost = "";
+$dbuser = "";
+$dbpass = "";
 
 
 if($version == 1) {
-	$dbConfig = new databaseProperties('lala', 'localhost:8889', 'root', 'root');
+	$dbConfig = new databaseProperties($databaseName, $dbhost, $dbuser, $dbpass);
 	$array1 = array();
 
 	$array1[0] = array("CollegeID", "int", "NOT NULL", "AUTO_INCREMENT");
