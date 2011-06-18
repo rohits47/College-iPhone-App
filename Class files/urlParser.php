@@ -30,18 +30,21 @@ class urlParser extends parser
 	 * Public wikiParser
 	 * Postcondition: Should store the first two paragraphs of all University Wiki pages. Stores this as wikiSnippet.
 	 * @Author: Rohit S.
+	 * 2011-06-16 Should be modified to take in title of wikipedia page as parameter.
 	 */
 	public static function wikiParser()
 	{
-		
+		$source =  urlParser::cURL('http://en.wikipedia.org/w/api.php?format=txt&action=query&titles=Stanford_University&rvprop=content&prop=revisions&rvsection&section=0&redirects=1');
+		return $source;
 	}
 	
 	/**
 	 * Public grabHighlights
-	 * PostCondition: Grabs all the links on the page.
+	 * PostCondition: Grabs all the links on the page. // all links (parse imp links later)
 	 */
 	public static function grabHighlights()
 	{
+		$source =  urlParser::cURL('http://en.wikipedia.org/w/api.php?format=txt&action=query&titles=Stanford_University&rvprop=content&prop=revisions&rvsection&section=0&redirects=1');
 		
 	}
 	
