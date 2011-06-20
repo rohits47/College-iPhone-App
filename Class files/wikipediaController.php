@@ -14,6 +14,7 @@ class wikipediaController
 	protected $_action;
 	protected $_prop;
 	protected $_titles;
+	protected $_additionalProperties;
 	protected $_baseURL;
 	
 	//methods here
@@ -23,8 +24,9 @@ class wikipediaController
 		$this->_format = "json";
 		$this->_action = "query";
 		$this->_titles = $college;
+		$this->_additionalProperties = "";
 		$this->_baseURL = "http://en.wikipedia.org/w/api.php?";
-		$this->_apiURL = "http://en.wikipedia.org/w/api.php?format=" . $this->_format . "&action=" . $this->_action . "&prop=" . $this->_prop . "&titles=" . $this->_titles;
+		$this->_apiURL = "http://en.wikipedia.org/w/api.php?format=" . $this->_format . "&action=" . $this->_action . "&prop=" . $this->_prop . "&titles=" . $this->_titles . $this->_additionalProperties;
 	}
 	
 	/**
@@ -62,7 +64,18 @@ class wikipediaController
 		}
 	//	print_r($imageTitleArray);
 		
+		$tempArray = array();
+		$this->setProp("imageinfo");
+		$this->setAdditionalProperties("&iiprop=url");
 		
+		for($i = 0; $i < count($imageTitleArray); $i++)
+		{
+			$this->setTitle($imageTitleArray[$i]);
+			$this->setAPIUrl();
+			$source = urlParser::cURL($this->getAPIUrl());
+			$decode = unserialize($source);
+			print_r($decode);
+		}
 	
 	}
 	
@@ -97,9 +110,19 @@ class wikipediaController
 		$this->_titles = $title;
 	}
 	
+	public function setAdditionalProperties($properties)
+	{
+		$this->_additionalProperties = $properties;
+	}
+	
+	public function getAdditionalProperties()
+	{
+		return $this->_additionalProperties;
+	}
+	
 	public function setAPIUrl()
 	{
-		$this->_apiURL = $this->_baseURL . "format=" . $this->_format . "&action=" . $this->_action . "&prop=" . $this->_prop . "&titles=" . $this->_titles;
+		$this->_apiURL = $this->_baseURL . "format=" . $this->_format . "&action=" . $this->_action . "&prop=" . $this->_prop . "&titles=" . $this->_titles . $this->_additionalProperties;
 	}
 	
 	public function getAPIUrl()
