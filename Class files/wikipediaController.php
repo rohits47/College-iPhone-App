@@ -48,34 +48,32 @@ class wikipediaController
 		$this->setProp("images");
 		$this->setFormat("php");
 		$this->setAPIUrl();
-	//	print_r($this->_apiURL . "\n");
 		$source = urlParser::cURL($this->_apiURL);
-	//	print_r($source);
 		$decoded = unserialize($source);
-	//	print_r($decoded);
-		
 		//the page ID: currently 26977, has to be changed to a dynamic link not hardcoded.
 		$imagesArray = $decoded["query"]["pages"]["26977"]["images"];
-	//	print_r($imagesArray);
 		$imageTitleArray = array();
 		for($i = 0; $i < count($imagesArray); $i++)
 		{
 			$imageTitleArray[$i] = $imagesArray[$i]["title"];
 		}
-	//	print_r($imageTitleArray);
-		
+
 		$tempArray = array();
 		$this->setProp("imageinfo");
 		$this->setAdditionalProperties("&iiprop=url");
 		
 		for($i = 0; $i < count($imageTitleArray); $i++)
 		{
+			//Need to replace the whiteSpace in the $imageTitleArray with "_" values.
 			$this->setTitle($imageTitleArray[$i]);
 			$this->setAPIUrl();
+			print_r($this->getAPIUrl() . "<p>");
 			$source = urlParser::cURL($this->getAPIUrl());
+			print_r($source . "<p>");
 			$decode = unserialize($source);
-			print_r($decode);
+		//	$tempArray[] = $decode["query"]["pages"][-1]["imageinfo"][0]["url"];
 		}
+	//	print_r($tempArray);
 	
 	}
 	
@@ -88,6 +86,11 @@ class wikipediaController
 	{
 		
 		
+	}
+	
+	public function getPageID()
+	{
+		throw new Exception("Implement Me!");
 	}
 	
 	public function setAction($action)
@@ -122,7 +125,7 @@ class wikipediaController
 	
 	public function setAPIUrl()
 	{
-		$this->_apiURL = $this->_baseURL . "format=" . $this->_format . "&action=" . $this->_action . "&prop=" . $this->_prop . "&titles=" . $this->_titles . $this->_additionalProperties;
+		$this->_apiURL = $this->_baseURL . "prop=" . $this->_prop . "&action=" . $this->_action . "&format=" . $this->_format . "&titles=" . $this->_titles . $this->_additionalProperties;
 	}
 	
 	public function getAPIUrl()
