@@ -11,17 +11,30 @@ function __autoload($class)
  * Currently versioning will be done by a variable that will be manually set. Eventually it will just update a database.properties table
  * on each person's local.
  * 
+ * The Variables $dbhost, $databaseName, $dbuser, $dbpass need to be filled with your local settings.
+ * 
+ * If you are more than one version number behind, set it to the version right after the one you got before. If you already have 2, set it 
+ * to 3 (for example!). This will trigger the for() loop which should add all the updates for you till the most recent version number.
+ * 
  * Before running this script, make sure to up the version number by 1 (or to the latest version (located at the bottom));
  */
-$version = 1;
-$databaseName = "";
-$dbhost = "";
-$dbuser = "";
-$dbpass = "";
+$version = 4;
+$databaseName = "lala";
+$dbhost = "localhost:8889";
+$dbuser = "root";
+$dbpass = "root";
 
 
+//Do NOT EDIT THIS PORTION OF THE CODE.
+$dbConfig = new databaseProperties($databaseName, $dbhost, $dbuser, $dbpass);
+$totalVersions = 4;
+
+for($i = $version; $i <= $totalVersions; $i++)
+{
+/**
+ * CollegeID Table + ProfessorID Table
+ */
 if($version == 1) {
-	$dbConfig = new databaseProperties($databaseName, $dbhost, $dbuser, $dbpass);
 	$array1 = array();
 
 	$array1[0] = array("CollegeID", "int", "NOT NULL", "AUTO_INCREMENT");
@@ -51,5 +64,75 @@ if($version == 1) {
 
 
 	if($dbConfig->setRelation("CollegeProfessors", "CollegeSummary", "CollegeID")) echo "Success! Your CollegeProfessors and CollegeSummary tables have been linked via CollegeID.<br />";
+}
+
+/**
+ * PictureID Table
+ */
+if($version == 2)
+{
+	$array = array();
+	$array[0] = array("PictureID", "int", "NOT NULL", "AUTO_INCREMENT");
+	$array[1] = array("PRIMARY KEY(PictureID)");
+	$array[2] = array("CollegePicture", "TEXT");
+	$array[3] = array("CollegeID", "INT");
+	
+	if($dbConfig->createINNODBTable("CollegePictures", $array)) echo "Success! Your CollegePictures Table is now set up! <br />";
+	
+	if($dbConfig->setRelation("CollegePictures", "CollegeSummary", "CollegeID")) echo "Success! Your CollegePictures and CollegeSummary Table are now linked via CollegeID! <br />";
+
+}
+
+/**
+ * LinkIDTable + ResearchID Table
+ */
+if($version == 3)
+{	
+	$array1 = array();
+	$array1[0] = array("LinkID", "int", "NOT NULL", "AUTO_INCREMENT");
+	$array1[1] = array("PRIMARY KEY(LinkID)");
+	$array1[2] = array("CollegeLink", "TEXT");
+	$array1[3] = array("CollegeID", "INT");
+	
+	if($dbConfig->createINNODBTable("CollegeLinks", $array1)) echo "Success! Your CollegeLinks Table is now set up! <br />";
+	
+	if($dbConfig->setRelation("CollegeLinks", "CollegeSummary", "CollegeID")) echo "Success! Your CollegeLinks and CollegeSummary Table are now linked via CollegeID! <br />";
+	
+	$array2 = array();
+	$array2[0] = array("ResearchID", "int", "NOT NULL", "AUTO_INCREMENT");
+	$array2[1] = array("PRIMARY KEY(ResearchID)");
+	$array2[2] = array("CollegeResearch", "TEXT");
+	$array2[3] = array("CollegeID", "INT");
+	
+	if($dbConfig->createINNODBTable("CollegeResearch", $array2)) echo "Success! Your CollegeResearch Table is now set up! <br />";
+	
+	if($dbConfig->setRelation("CollegeResearch", "CollegeSummary", "CollegeID")) echo "Success! Your CollegeResearch and CollegeSummary Table are now linked via CollegeID! <br />";
+	
+}
+/**
+ * DivSports Table + Majors Table
+ */
+if($version == 4)
+{
+	$array = array();
+	$array[0] = array("DivSportID", "int", "NOT NULL", "AUTO_INCREMENT");
+	$array[1] = array("PRIMARY KEY(DivSportID)");
+	$array[2] = array("CollegeDivSports", "TEXT");
+	$array[3] = array("CollegeID", "INT");
+	
+	if($dbConfig->createINNODBTable("CollegeDivSports", $array)) echo "Success! Your CollegeDivSports Table is now set up! <br />";
+	
+	if($dbConfig->setRelation("CollegeDivSports", "CollegeSummary", "CollegeID")) echo "Success! Your CollegeDivSports and CollegeSummary Table are now linked via CollegeID! <br />";
+	
+	$array1 = array();
+	$array1[0] = array("MajorID", "int", "NOT NULL", "AUTO_INCREMENT");
+	$array1[1] = array("PRIMARY KEY(MajorID)");
+	$array1[2] = array("CollegeMajor", "Text");
+	$array1[3] = array("CollegeID", "INT");
+	
+	if($dbConfig->createINNODBTable("CollegeMajors", $array1)) echo "Success! Your CollegeMajors Table is now set up! <br />";
+	
+	if($dbConfig->setRelation("CollegeMajors", "CollegeSummary", "CollegeID")) echo "Success! Your CollegeMajors and CollegeSummary Table are now linked via CollegeID! <br />";
+}
 }
 ?>
