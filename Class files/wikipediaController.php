@@ -53,8 +53,9 @@ class wikipediaController
 		$this->setAPIUrl();
 		$source = urlParser::cURL($this->_apiURL);
 		$decoded = unserialize($source);
-		//the page ID: currently 26977, has to be changed to a dynamic link not hardcoded.
-		$imagesArray = $decoded["query"]["pages"]["26977"]["images"];
+		$key = key($decoded["query"]["pages"]);
+		$imagesArray = $decoded["query"]["pages"][$key]["images"];
+	
 		$imageTitleArray = array();
 		for($i = 0; $i < count($imagesArray); $i++)
 		{
@@ -67,17 +68,21 @@ class wikipediaController
 		
 		for($i = 0; $i < count($imageTitleArray); $i++)
 		{
-			//Need to replace the whiteSpace in the $imageTitleArray with "_" values.
-			$this->setTitle($imageTitleArray[$i]);
+			$withoutWhiteSpace = str_replace(" ", "_", $imageTitleArray[$i]);
+			$this->setTitle($withoutWhiteSpace);
 			$this->setAPIUrl();
-			print_r($this->getAPIUrl() . "<p>");
 			$source = urlParser::cURL($this->getAPIUrl());
-			print_r($source . "<p>");
 			$decode = unserialize($source);
-		//	$tempArray[] = $decode["query"]["pages"][-1]["imageinfo"][0]["url"];
+			$tempArray[] = $decode["query"]["pages"][-1]["imageinfo"][0]["url"];
 		}
 	//	print_r($tempArray);
 	
+	/**
+	 * This part stores the values into the database;
+	 */
+	$conn = $this->_dbConnection->open_db_connection();
+	$this->_dbConnection->insertIntoTable()
+
 	}
 	
 	public function wikiSnippet()
