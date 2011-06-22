@@ -30,14 +30,17 @@ class wikipediaController
 	}
 	
 	/**
-	 * public function wikiLinks
+	 * public function wikiLinks()
 	 * Postcondition: the links from wikipedia are stored into Database.
 	 */
 	public function wikiLinks()
 	{
-		
+		$this->setProp("extlinks"); // iwlinks as well?
+		$this->setFormat("php");
+		$this->setAPIUrl();
+		$source = urlParser::cURL($this->_apiURL);
+		$decoded = unserialize($source);
 	}
-	
 	
 	/**
 	 * Public function wikiPictures()
@@ -79,13 +82,20 @@ class wikipediaController
 	
 	public function wikiSnippet()
 	{
-		
+		$this->setProp("revisions"); // section 0
+		$this->setFormat("php");
+		$this->setAPIUrl();
+		$source = urlParser::cURL($this->_apiURL);
+		$decoded = unserialize($source);
 	}
 	
 	public function wikiDivSports()
 	{
-		
-		
+		$this->setProp("");
+		$this->setFormat("php");
+		$this->setAPIUrl();
+		$source = urlParser::cURL($this->_apiURL);
+		$decoded = unserialize($source);
 	}
 	
 	public function getPageID()
