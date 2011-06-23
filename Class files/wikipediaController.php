@@ -21,7 +21,7 @@ class wikipediaController
 	public function __construct($dbConnection, $college)
 	{
 		$this->_dbConnection = $dbConnection;
-		$this->_format = "json";
+		$this->_format = "json"; // should this be php?
 		$this->_action = "query";
 		$this->_titles = $college;
 		$this->_additionalProperties = "";
@@ -35,11 +35,13 @@ class wikipediaController
 	 */
 	public function wikiLinks()
 	{
-		$this->setProp("extlinks"); // iwlinks as well?
+		$this->setProp("links");
 		$this->setFormat("php");
+		$this->setAdditionalProperties("&iwurl=true&iwlimit=500"); // full url and max limit
 		$this->setAPIUrl();
 		$source = urlParser::cURL($this->_apiURL);
 		$decoded = unserialize($source);
+		// print_r($decoded);
 	}
 	
 	/**
@@ -89,9 +91,11 @@ class wikipediaController
 	{
 		$this->setProp("revisions"); // section 0
 		$this->setFormat("php");
+		$this->setAdditionalProperties("&rvprop=content&rvsection&section=0"); // text content of page, only the text which appears before TOC
 		$this->setAPIUrl();
 		$source = urlParser::cURL($this->_apiURL);
 		$decoded = unserialize($source);
+		// print_r($decoded);
 	}
 	
 	public function wikiDivSports()
