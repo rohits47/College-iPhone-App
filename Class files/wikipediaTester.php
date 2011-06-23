@@ -7,6 +7,6 @@ function __autoload($class)
 $dbConnection = new dbConnections('lala', "localhost:8889", "root", "root");
 $wikipediaController = new wikipediaController($dbConnection, "Stanford_University");
 
-$wikipediaController->wikiPictures();
-
+//$wikipediaController->wikiPictures();
+$wikipediaController->wikiLinks();
 ?>

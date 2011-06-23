@@ -38,12 +38,15 @@ class wikipediaController
 	public function wikiLinks()
 	{
 		$this->setProp("links");
-		$this->setFormat("php");
-		$this->setAdditionalProperties("&iwurl=true&iwlimit=500"); // full url and max limit
+		$this->setFormat("txtfm");
+		$this->setAdditionalProperties("&pllimit=500"); // full url and max limit
 		$this->setAPIUrl();
+		//print_r($this->getAPIUrl());
 		$source = urlParser::cURL($this->_apiURL);
-		$decoded = unserialize($source);
-		// print_r($decoded);
+		//$decoded = unserialize($source);
+		print_r($source);
+		// array of titles from links
+		// pass to abhi's urlparser method, will sort and check with other arrays
 	}
 	
 	/**
@@ -87,17 +90,21 @@ class wikipediaController
 		$this->insertIntoRelationalDatabase("CollegePictures");
 	}
 	
+	// get info from list of properties, and use array elements to extract relevant info and keep in vars
 	public function wikiSnippet()
 	{
 		$this->setProp("revisions"); // section 0
-		$this->setFormat("php");
+		$this->setFormat("txtfm");
 		$this->setAdditionalProperties("&rvprop=content&rvsection&section=0"); // text content of page, only the text which appears before TOC
 		$this->setAPIUrl();
 		$source = urlParser::cURL($this->_apiURL);
-		$decoded = unserialize($source);
-		// print_r($decoded);
+	//	$decoded = unserialize($source);
+	//	$valueArray = $decoded["query"]
+		 print_r($source);
 	}
 	
+	// to be split among snippets and links (section 7)
+	// later, compare links to db of sports
 	public function wikiDivSports()
 	{
 		$this->setProp("");
