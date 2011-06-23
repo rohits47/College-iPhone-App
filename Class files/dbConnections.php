@@ -136,6 +136,11 @@ class dbConnections
 		}
 	}
 	
+	/**
+	 * Used to format the queryResults into a readable Array rather than a resource ID.
+	 * @param: $value is the resource
+	 * @param: $field (optional) is the field (or column) from the data set you would like to extract.
+	 */
 	public function formatQueryResults($value, $field = null)
 	{
 		$array = array();
@@ -162,4 +167,5 @@ class dbConnections
 		$result = mysql_query("SELECT * FROM $tableName WHERE $key1='$value1' AND $key2='$value2'");
 		return $result;
 	}
+	
 }

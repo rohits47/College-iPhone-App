@@ -68,5 +68,15 @@ class databaseProperties extends dbConnections
 		else return false;
 	}
 	
+	/**
+	 * Drops a Mysql Table, useful if you are going to add headers to the table, should never be used with a filled table.
+	 */
+	public function dropTable($tableName)
+	{
+		$query = "DROP TABLE `$tableName`";
+		if(mysql_query($query)) return true;
+		else return false;
+	}
+	
 	
 } // END class 

@@ -34,7 +34,7 @@ for($i = $version; $i <= $totalVersions; $i++)
 /**
  * CollegeID Table + ProfessorID Table
  */
-if($version == 1) {
+if($i == 1) {
 	$array1 = array();
 
 	$array1[0] = array("CollegeID", "int", "NOT NULL", "AUTO_INCREMENT");
@@ -47,6 +47,15 @@ if($version == 1) {
 	$array1[6] = array("College75SAT", "INT");
 	$array1[7] = array("College25SAT", "INT");
 	$array1[8] = array("CollegeAPCredit", "TINYTEXT");
+	$array1[9] = array("CollegeLocation", "TEXT");
+	$array1[10] = array("CollegeAthletics", "Text");
+	$array1[11] = array("CollegePostGrads", "INT");
+	$array1[12] = array("CollegeAcademicStaff", "INT");
+	$array1[13] = array("CollegeEndowmentFund", "INT");
+	$array1[14] = array("CollegeType", "TINYTEXT");
+	$array1[15] = array("CollegeEstablished", "INT");
+	$array1[16] = array("CollegePresident", "TINYTEXT");
+	$array1[17] = array("CollegeCampus", "TEXT");
 
 	if($dbConfig->createINNODBTable("CollegeSummary", $array1)) echo "Success! Your CollegeSummary Table is now set up! <br />";
 //print_r($dbConfig->createINNODBTable("CollegeSummary", $array1));
@@ -69,7 +78,7 @@ if($version == 1) {
 /**
  * PictureID Table
  */
-if($version == 2)
+if($i == 2)
 {
 	$array = array();
 	$array[0] = array("PictureID", "int", "NOT NULL", "AUTO_INCREMENT");
@@ -86,7 +95,7 @@ if($version == 2)
 /**
  * LinkIDTable + ResearchID Table
  */
-if($version == 3)
+if($i == 3)
 {	
 	$array1 = array();
 	$array1[0] = array("LinkID", "int", "NOT NULL", "AUTO_INCREMENT");
@@ -112,7 +121,7 @@ if($version == 3)
 /**
  * DivSports Table + Majors Table
  */
-if($version == 4)
+if($i == 4)
 {
 	$array = array();
 	$array[0] = array("DivSportID", "int", "NOT NULL", "AUTO_INCREMENT");

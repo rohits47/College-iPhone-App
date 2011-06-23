@@ -84,7 +84,6 @@ class wikipediaController
 	/**
 	 * This part stores the values into the database;
 	 */
-		$this->insertIntoRelationalDatabase("CollegePictures");
 	}
 	
 	public function wikiSnippet()
@@ -107,13 +106,7 @@ class wikipediaController
 		$decoded = unserialize($source);
 	}
 	
-	public function insertIntoRelationalDatabase($tableName)
-	{
-		$conn = $this->_dbConnection->open_db_connection();
-		$check = $this->_dbConnection->selectFromTable("CollegeSummary", "CollegeName", $this->_college);
-		$results = $this->_dbConnection->formatQueryResults($check);
-		print_r($results);
-	}
+	
 	
 	public function setAction($action)
 	{
