@@ -13,6 +13,7 @@ class wikipediaController
 	protected $_format;
 	protected $_action;
 	protected $_prop;
+	protected $_college;
 	protected $_titles;
 	protected $_additionalProperties;
 	protected $_baseURL;
@@ -24,6 +25,7 @@ class wikipediaController
 		$this->_format = "json";
 		$this->_action = "query";
 		$this->_titles = $college;
+		$this->_college = $college;
 		$this->_additionalProperties = "";
 		$this->_baseURL = "http://en.wikipedia.org/w/api.php?";
 		$this->_apiURL = "http://en.wikipedia.org/w/api.php?format=" . $this->_format . "&action=" . $this->_action . "&prop=" . $this->_prop . "&titles=" . $this->_titles . $this->_additionalProperties;
@@ -77,9 +79,7 @@ class wikipediaController
 	/**
 	 * This part stores the values into the database;
 	 */
-	$conn = $this->_dbConnection->open_db_connection();
-	$this->_dbConnection->insertIntoTable()
-
+		$this->insertIntoRelationalDatabase("CollegePictures");
 	}
 	
 	public function wikiSnippet()
@@ -93,9 +93,12 @@ class wikipediaController
 		
 	}
 	
-	public function getPageID()
+	public function insertIntoRelationalDatabase($tableName)
 	{
-		throw new Exception("Implement Me!");
+		$conn = $this->_dbConnection->open_db_connection();
+		$check = $this->_dbConnection->selectFromTable("CollegeSummary", "CollegeName", $this->_college);
+		$results = $this->_dbConnection->formatQueryResults($check);
+		print_r($results);
 	}
 	
 	public function setAction($action)
