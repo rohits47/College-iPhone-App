@@ -43,8 +43,12 @@ class wikipediaController
 		$this->setAPIUrl();
 		//print_r($this->getAPIUrl());
 		$source = urlParser::cURL($this->_apiURL);
-		//$decoded = unserialize($source);
-		print_r($source);
+		$decoded = unserialize($source);
+		// print_r($source);
+		for ($i=0; $i < sizeof($decoded); $i++)
+		{ 
+			# code...
+		}
 		// array of titles from links
 		// pass to abhi's urlparser method, will sort and check with other arrays
 	}
@@ -99,7 +103,7 @@ class wikipediaController
 		$source = urlParser::cURL($this->_apiURL);
 	//	$decoded = unserialize($source);
 	//	$valueArray = $decoded["query"]
-		 print_r($source);
+	//	print_r($source);
 	}
 	
 	// to be split among snippets and links (section 7)
