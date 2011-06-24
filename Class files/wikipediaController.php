@@ -38,19 +38,24 @@ class wikipediaController
 	public function wikiLinks()
 	{
 		$this->setProp("links");
-		$this->setFormat("txtfm");
-		$this->setAdditionalProperties("&pllimit=500"); // full url and max limit
+		$this->setFormat("php");
+		$this->setAdditionalProperties("&pllimit=5000"); // 500 = max limit allowed
 		$this->setAPIUrl();
 		//print_r($this->getAPIUrl());
 		$source = urlParser::cURL($this->_apiURL);
 		$decoded = unserialize($source);
-		// print_r($source);
-		for ($i=0; $i < sizeof($decoded); $i++)
+		//print_r($decoded);
+		$parentTitlesArray = $decoded["query"]["pages"]["26977"]["links"]; // replace 26977 with pageid
+		//print_r($temp);
+		$titlesArray = array();
+		for ($i=0; $i < sizeof($parentTitlesArray); $i++) // should this use count?
 		{ 
-			# code...
+			$titlesArray[$i] = $parentTitlesArray[$i]["title"];
 		}
-		// array of titles from links
-		// pass to abhi's urlparser method, will sort and check with other arrays
+		
+		// print_r($titlesArray);
+		
+		// pass titlesArray to abhi's urlparser method, will sort and check titles
 	}
 	
 	/**
