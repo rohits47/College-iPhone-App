@@ -53,7 +53,9 @@ class wikipediaController
 			$titlesArray[$i] = $parentTitlesArray[$i]["title"];
 		}
 		
-		// print_r($titlesArray);
+		//print_r($titlesArray);
+		
+		// titlesArray is populated with all the titles. If it needs to be pruned or processed in any way before passing to urlParser, do so here.
 		
 		// pass titlesArray to abhi's urlparser method, will sort and check titles
 	}
