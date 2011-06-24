@@ -25,7 +25,19 @@ class urlParser extends parser
 		return $contents;
 	}
 	
-	
+	/**
+	 * parseContent function
+	 * figures out what content in the $array passed to it is by matching it against sets.
+	 * Currently instead of sets we are comparing against arrays, it needs to be converted to sets rather soon.
+	 */
+	public static function parseContent($array)
+	{
+		$sportsArray = array();
+		$buildingArray = array("Library", "library", "Building", "building");
+		$proffessionTags = array("Professor", "professor", "Dr.", "Mr.", "Mrs.", "Ms.", "");
+		$majorsTags = array("law", "engineering", "Medicine", "Medical", "medicine", "medical", "architecture", "business", "economics", "");
+		
+	}
 	
 	
 } // END class 

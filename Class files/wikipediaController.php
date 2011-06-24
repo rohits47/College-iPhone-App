@@ -19,9 +19,9 @@ class wikipediaController
 	protected $_baseURL;
 	
 	//methods here
-	public function __construct($dbConnection, $college)
+	public function __construct($relationalDBConnection, $college)
 	{
-		$this->_dbConnection = $dbConnection;
+		$this->_dbConnection = $relationalDBConnection;
 		$this->_format = "json"; // should this be php?
 		$this->_action = "query";
 		$this->_titles = $college;
@@ -83,10 +83,17 @@ class wikipediaController
 			$tempArray[] = $decode["query"]["pages"][-1]["imageinfo"][0]["url"];
 		}
 	//	print_r($tempArray);
-	
-	/**
-	 * This part stores the values into the database;
-	 */
+		
+		
+		
+		for($i = 0; $i < count($tempArray); $i++)
+		{
+			$array = array("CollegePicture" => "$tempArray[$i]", "CollegeID" => "");
+		$this->_dbConnection->insertIntoTable("CollegePictures","CollegeSummary", "CollegeName", $this->_college, "CollegeID", $array);
+		
+		}
+		return true;
+
 	}
 	
 	// get info from list of properties, and use array elements to extract relevant info and keep in vars
