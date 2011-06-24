@@ -42,4 +42,9 @@ class relationalDbConnections extends dbConnections
 		
 	}
 	
+	public function updateTable()
+	{
+		
+	}
+	
 } // END class 

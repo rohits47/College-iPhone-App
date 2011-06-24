@@ -58,6 +58,14 @@ class wikipediaController
 		// titlesArray is populated with all the titles. If it needs to be pruned or processed in any way before passing to urlParser, do so here.
 		
 		// pass titlesArray to abhi's urlparser method, will sort and check titles
+		
+		// write code to input into db; template code follows
+		for($i = 0; $i < count($titlesArray); $i++)
+		{
+			$array = array("CollegePicture" => "$tempArray[$i]", "CollegeID" => "");
+		$this->_dbConnection->insertIntoTable("CollegePictures","CollegeSummary", "CollegeName", $this->_college, "CollegeID", $array);
+		
+		}
 	}
 	
 	/**
@@ -101,7 +109,6 @@ class wikipediaController
 		{
 			$array = array("CollegePicture" => "$tempArray[$i]", "CollegeID" => "");
 		$this->_dbConnection->insertIntoTable("CollegePictures","CollegeSummary", "CollegeName", $this->_college, "CollegeID", $array);
-		
 		}
 		return true;
 
@@ -115,8 +122,10 @@ class wikipediaController
 		$this->setAdditionalProperties("&rvprop=content&rvsection&section=0"); // text content of page, only the text which appears before TOC
 		$this->setAPIUrl();
 		$source = urlParser::cURL($this->_apiURL);
-	//	$decoded = unserialize($source);
-	//	$valueArray = $decoded["query"]
+		$decoded = unserialize($source);
+		$valueArray = $decoded["query"][]
+		// write parser method in parser to look for keywords in the huge string
+		
 	//	print_r($source);
 	}
 	

@@ -18,11 +18,11 @@ function __autoload($class)
  * 
  * Before running this script, make sure to up the version number by 1 (or to the latest version (located at the bottom));
  */
-$version = 4;
-$databaseName = "lala";
-$dbhost = "localhost:8889";
+$version = 1;
+$databaseName = "collegesummary";
+$dbhost = "localhost";
 $dbuser = "root";
-$dbpass = "root";
+$dbpass = "";
 
 
 //Do NOT EDIT THIS PORTION OF THE CODE.
