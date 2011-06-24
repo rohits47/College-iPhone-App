@@ -38,15 +38,26 @@ class wikipediaController
 	public function wikiLinks()
 	{
 		$this->setProp("links");
-		$this->setFormat("txtfm");
-		$this->setAdditionalProperties("&pllimit=500"); // full url and max limit
+		$this->setFormat("php");
+		$this->setAdditionalProperties("&pllimit=5000"); // 500 = max limit allowed
 		$this->setAPIUrl();
 		//print_r($this->getAPIUrl());
 		$source = urlParser::cURL($this->_apiURL);
-		//$decoded = unserialize($source);
-		print_r($source);
-		// array of titles from links
-		// pass to abhi's urlparser method, will sort and check with other arrays
+		$decoded = unserialize($source);
+		//print_r($decoded);
+		$parentTitlesArray = $decoded["query"]["pages"]["26977"]["links"]; // replace 26977 with pageid
+		//print_r($temp);
+		$titlesArray = array();
+		for ($i=0; $i < sizeof($parentTitlesArray); $i++) // should this use count?
+		{ 
+			$titlesArray[$i] = $parentTitlesArray[$i]["title"];
+		}
+		
+		//print_r($titlesArray);
+		
+		// titlesArray is populated with all the titles. If it needs to be pruned or processed in any way before passing to urlParser, do so here.
+		
+		// pass titlesArray to abhi's urlparser method, will sort and check titles
 	}
 	
 	/**
@@ -106,7 +117,7 @@ class wikipediaController
 		$source = urlParser::cURL($this->_apiURL);
 	//	$decoded = unserialize($source);
 	//	$valueArray = $decoded["query"]
-		 print_r($source);
+	//	print_r($source);
 	}
 	
 	// to be split among snippets and links (section 7)
