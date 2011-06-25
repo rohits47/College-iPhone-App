@@ -41,30 +41,21 @@ class wikipediaController
 		$this->setFormat("php");
 		$this->setAdditionalProperties("&pllimit=5000"); // 500 = max limit allowed
 		$this->setAPIUrl();
-		//print_r($this->getAPIUrl());
 		$source = urlParser::cURL($this->_apiURL);
 		$decoded = unserialize($source);
-		//print_r($decoded);
 		$parentTitlesArray = $decoded["query"]["pages"]["26977"]["links"]; // replace 26977 with pageid
-		//print_r($temp);
 		$titlesArray = array();
-		for ($i=0; $i < sizeof($parentTitlesArray); $i++) // should this use count?
+		for ($i=0; $i < count($parentTitlesArray); $i++) // should this use count?
 		{ 
 			$titlesArray[$i] = $parentTitlesArray[$i]["title"];
 		}
-		
-		//print_r($titlesArray);
-		
-		// titlesArray is populated with all the titles. If it needs to be pruned or processed in any way before passing to urlParser, do so here.
-		
 		// pass titlesArray to abhi's urlparser method, will sort and check titles
-		
-		// write code to input into db; template code follows
+		urlParser::parseContent($titlesArray); // nothing returned
+		// code to input into db
 		for($i = 0; $i < count($titlesArray); $i++)
 		{
-			$array = array("CollegePicture" => "$tempArray[$i]", "CollegeID" => "");
-		$this->_dbConnection->insertIntoTable("CollegePictures","CollegeSummary", "CollegeName", $this->_college, "CollegeID", $array);
-		
+			$array = array("CollegeLink" => "$titlesArray[$i]", "CollegeID" => "");
+			$this->_dbConnection->insertIntoTable("CollegeLinks","CollegeSummary", "CollegeName", $this->_college, "CollegeID", $array);
 		}
 	}
 	
@@ -104,11 +95,10 @@ class wikipediaController
 	//	print_r($tempArray);
 		
 		
-		
 		for($i = 0; $i < count($tempArray); $i++)
 		{
 			$array = array("CollegePicture" => "$tempArray[$i]", "CollegeID" => "");
-		$this->_dbConnection->insertIntoTable("CollegePictures","CollegeSummary", "CollegeName", $this->_college, "CollegeID", $array);
+			$this->_dbConnection->insertIntoTable("CollegePictures","CollegeSummary", "CollegeName", $this->_college, "CollegeID", $array);
 		}
 		return true;
 
@@ -118,20 +108,43 @@ class wikipediaController
 	public function wikiSnippet()
 	{
 		$this->setProp("revisions"); // section 0
-		$this->setFormat("txtfm");
+		$this->setFormat("php");
 		$this->setAdditionalProperties("&rvprop=content&rvsection&section=0"); // text content of page, only the text which appears before TOC
 		$this->setAPIUrl();
 		$source = urlParser::cURL($this->_apiURL);
 		$decoded = unserialize($source);
-		$valueArray = $decoded["query"][]
-		// write parser method in parser to look for keywords in the huge string
+		$valueArray = $decoded["query"]["pages"]["26977"]["revisions"]["0"]["*"];
+		//print_r($valueArray);
 		
-	//	print_r($source);
+		$name = parser::parseSnippet("|name", $valueArray);
+		//print_r($name);
+		$established = parser::parseSnippet("|established", $valueArray);
+		//print_r($established);
+		$type = parser::parseSnippet("|type", $valueArray);
+		//print_r($type);
+		$president = parser::parseSnippet("|president", $valueArray);
+		$city = parser::parseSnippet("|city", $valueArray);
+		$state = parser::parseSnippet("|state", $valueArray);
+		$country = parser::parseSnippet("|country", $valueArray);
+		$endowment = parser::parseSnippet("|endowment", $valueArray);
+		//print_r($endowment);
+		$faculty = parser::parseSnippet("|faculty", $valueArray);
+		$undergrad = parser::parseSnippet("|undergrad", $valueArray);
+		$postgrad = parser::parseSnippet("|postgrad", $valueArray);
+		$campus = parser::parseSnippet("|campus", $valueArray);
+		$athletics = parser::parseSnippet("|athletics", $valueArray);
+		$website = parser::parseSnippet("|website", $valueArray);
+		//print_r($website);
+		
+		// code to add to database "CollegeSummary"
+		
+		//$array = array("CollegeLink" => "$titlesArray[$i]", "CollegeID" => "");
+		//$this->_dbConnection->insertIntoTable("CollegeLinks","CollegeSummary", "CollegeName", $this->_college, "CollegeID", $array);		
 	}
 	
 	// to be split among snippets and links (section 7)
 	// later, compare links to db of sports
-	public function wikiDivSports()
+/*	public function wikiDivSports()
 	{
 		$this->setProp("");
 		$this->setFormat("php");
@@ -139,8 +152,7 @@ class wikipediaController
 		$source = urlParser::cURL($this->_apiURL);
 		$decoded = unserialize($source);
 	}
-	
-	
+*/		
 	
 	public function setAction($action)
 	{

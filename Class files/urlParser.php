@@ -8,11 +8,9 @@
  **/
 class urlParser extends parser
 {
-	
 	/**
 	 * Public static function cURL
 	 * @return: a variable containing the contents of the curl.
-	 * Needs further testing, doesn't seem to do anything at the moment.
 	 */
 	public static function cURL($url)
 	{

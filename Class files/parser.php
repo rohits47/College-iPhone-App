@@ -16,4 +16,22 @@ class parser
 	{
 		
 	}
+	
+	/**
+	 * To be used as part of wikiSnippet in wikipediaController.php
+	 * @return: the string of text associated with the keyword that was extracted from the array.
+	 */
+	public static function parseSnippet($keyword, $arrayStr)
+	{
+		if (strpos($arrayStr,$keyword))
+		{
+			$pos1 = strpos($arrayStr, $keyword);
+			$bigStr = substr($arrayStr, $pos1); // whole string starting from keyword
+			$pos2 = strpos($bigStr,"|") + $pos1;
+			$str = substr($arrayStr, 1, $pos2);
+			//print_r($bigStr);
+		}
+		return $str;
+	}
+	
 } // END class 
