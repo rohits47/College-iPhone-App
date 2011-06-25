@@ -36,6 +36,16 @@ class urlParser extends parser
 		$buildingArray = array("Library", "library", "Building", "building");
 		$proffessionTags = array("Professor", "professor", "Dr.", "Mr.", "Mrs.", "Ms.", "");
 		$majorsTags = array("law", "engineering", "Medicine", "Medical", "medicine", "medical", "architecture", "business", "economics", "");
+		$completeArray = array("Library", "library", "Building", "building","Professor", "professor", "Dr.", "Mr.", "Mrs.", "Ms.", "","law", "engineering", "Medicine", "Medical", "medicine", "medical", "architecture", "business", "economics");
+		
+		$filteredArray = array();
+		
+		for($i = 0; $i < count($array); $i++)
+		{
+			if(in_array($array[$i], $completeArray)) $filteredArray[] = $array[$i];
+		}
+		
+		//checkpoint: the $filteredArray should have an array of all the valid values; Next step is to parse them into categories...
 		
 	}
 	

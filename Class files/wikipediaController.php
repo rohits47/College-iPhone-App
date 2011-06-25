@@ -45,7 +45,8 @@ class wikipediaController
 		$source = urlParser::cURL($this->_apiURL);
 		$decoded = unserialize($source);
 		//print_r($decoded);
-		$parentTitlesArray = $decoded["query"]["pages"]["26977"]["links"]; // replace 26977 with pageid
+		$key = key($decoded["query"]["pages"]);
+		$parentTitlesArray = $decoded["query"]["pages"][$key]["links"]; // replace 26977 with pageid
 		//print_r($temp);
 		$titlesArray = array();
 		for ($i=0; $i < sizeof($parentTitlesArray); $i++) // should this use count?
@@ -123,7 +124,7 @@ class wikipediaController
 		$this->setAPIUrl();
 		$source = urlParser::cURL($this->_apiURL);
 		$decoded = unserialize($source);
-		$valueArray = $decoded["query"][]
+	//	$valueArray = $decoded["query"][]
 		// write parser method in parser to look for keywords in the huge string
 		
 	//	print_r($source);
@@ -142,37 +143,37 @@ class wikipediaController
 	
 	
 	
-	public function setAction($action)
+	protected function setAction($action)
 	{
 		$this->_action = $action;
 	}
 	
-	public function setFormat($format)
+	protected function setFormat($format)
 	{
 		$this->_format = $format;
 	}
 	
-	public function setProp($prop)
+	protected function setProp($prop)
 	{
 		$this->_prop = $prop;
 	}
 	
-	public function setTitle($title)
+	protected function setTitle($title)
 	{
 		$this->_titles = $title;
 	}
 	
-	public function setAdditionalProperties($properties)
+	protected function setAdditionalProperties($properties)
 	{
 		$this->_additionalProperties = $properties;
 	}
 	
-	public function getAdditionalProperties()
+	protected function getAdditionalProperties()
 	{
 		return $this->_additionalProperties;
 	}
 	
-	public function setAPIUrl()
+	protected function setAPIUrl()
 	{
 		$this->_apiURL = $this->_baseURL . "prop=" . $this->_prop . "&action=" . $this->_action . "&format=" . $this->_format . "&titles=" . $this->_titles . $this->_additionalProperties;
 	}
@@ -180,5 +181,15 @@ class wikipediaController
 	public function getAPIUrl()
 	{
 		return $this->_apiURL;
+	}
+	
+	public function setCollege($college)
+	{
+		$this->_college = $college;
+	}
+	
+	public function __destruct()
+	{
+		$this->_dbConnection->close_db_connection();
 	}
 } // END class 
