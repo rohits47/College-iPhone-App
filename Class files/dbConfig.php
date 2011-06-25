@@ -18,7 +18,7 @@ function __autoload($class)
  * 
  * Before running this script, make sure to up the version number by 1 (or to the latest version (located at the bottom));
  */
-$version = 5;
+$version = 1;
 $databaseName = "lala";
 $dbhost = "localhost:8889";
 $dbuser = "root";
@@ -27,7 +27,7 @@ $dbpass = "root";
 
 //Do NOT EDIT THIS PORTION OF THE CODE.
 $dbConfig = new databaseProperties($databaseName, $dbhost, $dbuser, $dbpass);
-$totalVersions = 5;
+$totalVersions = 6;
 
 for($i = $version; $i <= $totalVersions; $i++)
 {
@@ -160,5 +160,19 @@ if($i == 5)
 	if($dbConfig->setRelation("CollegeLinks", "CollegeSummary", "CollegeID")) echo "Success! Your CollegeLinks and CollegeSummary Table are now linked via CollegeID! <br />";
 	
 }
+
+if($i == 6)
+{
+	$array1 = array();
+	$array1[0] = array("ClubID", "int", "NOT NULL", "AUTO_INCREMENT");
+	$array1[1] = array("PRIMARY KEY(ClubID)");
+	$array1[2] = array("CollegeClub", "TEXT");
+	$array1[3] = array("CollegeID", "INT");
+	
+	if($dbConfig->createINNODBTable("CollegeClubs", $array1)) echo "Success! Your CollegeClubs Table is now set up! <br />";
+	
+	if($dbConfig->setRelation("CollegeClubs", "CollegeSummary", "CollegeID")) echo "Success! Your CollegeClubs and CollegeSummary Table are now linked via CollegeID! <br />";
+}
+
 }
 ?>
