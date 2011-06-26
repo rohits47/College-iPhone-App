@@ -30,20 +30,60 @@ class urlParser extends parser
 	 */
 	public static function parseContent($array)
 	{
-		$sportsArray = array();
-		$buildingArray = array("Library", "library", "Building", "building");
-		$proffessionTags = array("Professor", "professor", "Dr.", "Mr.", "Mrs.", "Ms.", "");
-		$majorsTags = array("law", "engineering", "Medicine", "Medical", "medicine", "medical", "architecture", "business", "economics", "");
-		$completeArray = array("Library", "library", "Building", "building","Professor", "professor", "Dr.", "Mr.", "Mrs.", "Ms.", "","law", "engineering", "Medicine", "Medical", "medicine", "medical", "architecture", "business", "economics");
+		$sportsArray = array("badminton","baseball", "basketball", "bowling", "boxing", "cross country", "fencing", "field hockey", "football", "golf", "gymnastics", "ice hockey", "track", "lacrosse", "rifle", "rowing", "skiing", "soccer", "softball", "swimming", "diving", "tennis", "volleyball", "water polo", "wrestling");
+		
+		$greekClubsArray = array("alpha", "beta", "delta", "zeta", "theta", "kaapa", "sigma", "tau", "omega");
+		$proffessionTags = array("professor", "doctor");
+		$researchArray = array("research", "laboratory", "institute", "institution");
+		$artsArray = array("orchestra", "music", "harmonics", "visual arts", "a cappella");
+		$completeArray = array_merge($sportsArray, $greekClubsArray, $proffessionTags, $artsArray);
+		
+	//	print_r($completeArray);
 		
 		$filteredArray = array();
+	//	print_r(count($array));
+	//	print_r(count($completeArray));
 		
 		for($i = 0; $i < count($array); $i++)
 		{
-			if(in_array($array[$i], $completeArray)) $filteredArray[] = $array[$i];
+			for($j = 0; $j < count($completeArray); $j++)
+			{
+				$subString = stristr($array[$i], $completeArray[$j]);
+				if($subString !== false) 
+				{
+					$filteredArray[] = $array[$i];
+					break;
+				}
+			}
 		}
 		
 		//checkpoint: the $filteredArray should have an array of all the valid values; Next step is to parse them into categories...
+	//	print_r($filteredArray);
+		$finalArray = array();
+		for($i = 0; $i < count($filteredArray); $i++)
+		{
+			if(parser::findStringInArray($filteredArray[$i], $sportsArray)) 
+			{
+				$finalArray[] = array($filteredArray[$i], "sports");
+			}
+			if(parser::findStringInArray($filteredArray[$i], $proffessionTags))
+			{
+				$finalArray[] = array($filteredArray[$i], "professor");
+			} 
+			if(parser::findStringInArray($filteredArray[$i], $greekClubsArray)) 
+			{
+				$finalArray[] = array($filteredArray[$i], "clubs");
+			}
+			if(parser::findStringInArray($filteredArray[$i], $researchArray))
+			{ 
+				$finalArray[] = array($filteredArray[$i], "research");
+			}
+			if(parser::findStringInArray($filteredArray[$i], $artsArray))
+			{ 
+				$finalArray[] = array($filteredArray[$i], "arts");
+			}
+		}
+		return $finalArray;
 		
 	}
 	

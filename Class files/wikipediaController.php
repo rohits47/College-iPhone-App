@@ -43,14 +43,17 @@ class wikipediaController
 		$this->setAPIUrl();
 		$source = urlParser::cURL($this->_apiURL);
 		$decoded = unserialize($source);
-		$parentTitlesArray = $decoded["query"]["pages"]["26977"]["links"]; // replace 26977 with pageid
+		$key = key($decoded["query"]["pages"]);
+		$parentTitlesArray = $decoded["query"]["pages"][$key]["links"]; // replace 26977 with pageid
 		$titlesArray = array();
 		for ($i=0; $i < count($parentTitlesArray); $i++) // should this use count?
 		{ 
 			$titlesArray[$i] = $parentTitlesArray[$i]["title"];
 		}
 		// pass titlesArray to abhi's urlparser method, will sort and check titles
-		urlParser::parseContent($titlesArray); // nothing returned
+	//	print_r($titlesArray);
+		urlParser::parseContent($titlesArray); // an array returned with [key = value of TitlesArray] [ value = tag ] returned
+		return;
 		// code to input into db
 		for($i = 0; $i < count($titlesArray); $i++)
 		{
