@@ -56,6 +56,8 @@ if($i == 1) {
 	$array1[15] = array("CollegeEstablished", "INT");
 	$array1[16] = array("CollegePresident", "TINYTEXT");
 	$array1[17] = array("CollegeCampus", "TEXT");
+	$array1[18] = array("CollegeRating", "INT");
+	$array1[19] = array("CollegeRaters", "INT");
 
 	if($dbConfig->createINNODBTable("CollegeSummary", $array1)) echo "Success! Your CollegeSummary Table is now set up! <br />";
 //print_r($dbConfig->createINNODBTable("CollegeSummary", $array1));
@@ -173,6 +175,7 @@ if($i == 6)
 	
 	if($dbConfig->setRelation("CollegeClubs", "CollegeSummary", "CollegeID")) echo "Success! Your CollegeClubs and CollegeSummary Table are now linked via CollegeID! <br />";
 }
+
 
 }
 ?>
