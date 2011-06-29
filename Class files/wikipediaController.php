@@ -52,12 +52,12 @@ class wikipediaController
 		}
 		// pass titlesArray to abhi's urlparser method, will sort and check titles
 	//	print_r($titlesArray);
-		urlParser::parseContent($titlesArray); // an array returned with [key = value of TitlesArray] [ value = tag ] returned
+		$processedArray = urlParser::parseContent($titlesArray); // an array returned with [key = value of Title sArray] [ value = tag ] returned
 		return;
 		// code to input into db
 		for($i = 0; $i < count($titlesArray); $i++)
 		{
-			$array = array("CollegeLink" => "$titlesArray[$i]", "CollegeID" => "");
+			$array = array("CollegeLink" => "$processedArray[$i][0]", "CollegeID" => "", "LinkTag" => "$processedArray[$i][1]");
 			$this->_dbConnection->insertIntoTable("CollegeLinks","CollegeSummary", "CollegeName", $this->_college, "CollegeID", $array);
 		}
 	}
@@ -140,10 +140,28 @@ class wikipediaController
 		$website = parser::parseSnippet("|website", $valueArray);
 		//print_r($website);
 		
+		for ($i=0; $i < ; $i++)
+		{ 
+			$nameArray = 
+			$establishedArray = 
+			$typeArray = 
+			$presidentArray = 
+			$cityArray = 
+			$stateArray = 
+			$countryArray = 
+			$endowmentArray = 
+			$facultyArray = 
+			$undergradArray = 
+			$postgradArray = 
+			$campusArray = 
+			$athleticsArray = 
+			$websiteArray = 
+		}
+		
 		// code to add to database "CollegeSummary"
 		
 		//$array = array("CollegeLink" => "$titlesArray[$i]", "CollegeID" => "");
-		//$this->_dbConnection->insertIntoTable("CollegeLinks","CollegeSummary", "CollegeName", $this->_college, "CollegeID", $array);		
+		$this->_dbConnection->updateTable("CollegeSummary","CollegeSummary", "CollegeName", $this->_college, "CollegeID", $array);		
 	}
 	
 		

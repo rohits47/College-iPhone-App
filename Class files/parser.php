@@ -26,9 +26,9 @@ class parser
 		if (strpos($arrayStr,$keyword))
 		{
 			$pos1 = strpos($arrayStr, $keyword);
-			$bigStr = substr($arrayStr, $pos1); // whole string starting from keyword
+			$bigStr = substr($arrayStr, $pos1+1); // whole string starting from keyword
 			$pos2 = strpos($bigStr,"|") + $pos1;
-			$str = substr($arrayStr, 1, $pos2);
+			$str = substr($arrayStr, $pos1, $pos2);
 			//print_r($bigStr);
 		}
 		return $str;
