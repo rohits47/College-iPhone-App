@@ -11,4 +11,27 @@
 class collegeSummaryController
 {
 	
+	public function __construct()
+	{
+		$relation = new relationalDbConnections('lala', 'localhost:8889', 'root', 'root');
+		//insert operations to load database here.....
+	}
+	
+	/**
+	 * main()
+	 * the function that will execute the sequence that will fill the entire databank.
+	 */
+	public function main()
+	{
+		
+	}
+	
+	public function getCollegeList()
+	{
+		
+
+	//	return $extracted;
+	}
+	
+	
 } // END class 

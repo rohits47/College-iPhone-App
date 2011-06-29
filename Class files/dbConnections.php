@@ -40,6 +40,9 @@ class dbConnections
 		}
 	}
 	
+	/**
+	 * Not working as of 24th June, 2011
+	 */
 	public function close_db_connection()
 	{
 		mysql_close($this->_conn);

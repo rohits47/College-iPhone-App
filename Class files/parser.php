@@ -6,7 +6,7 @@
  * 						2) General Utils
  * 						All methods will be final and static
  * @package default
- * @author Abhinav  Khanna
+ * @author Abhinav  Khanna and Rohit S.
  **/
 class parser
 {
@@ -32,6 +32,27 @@ class parser
 			//print_r($bigStr);
 		}
 		return $str;
+	}
+	
+	/**
+	 * findStringInArray
+	 * @param: $string is the string you are looking for;
+	 * @param: $array is the array being searched for the string;
+	 * @return true if the $string is found in $array;
+	 * @return false if the $string is not found in the $array;
+	 */
+	public static function findStringInArray($string, $array)
+	{
+		for($i = 0; $i < count($array); $i++)
+		{
+		//	print_r($string . " " . $array[$i] . " ");
+			$string = strtolower($string);
+			if(strpos($string, $array[$i]) !== false)
+			{
+				return true;
+			}
+		}
+		return false;
 	}
 	
 } // END class 
