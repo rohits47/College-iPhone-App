@@ -87,6 +87,47 @@ class urlParser extends parser
 		
 	}
 	
+	public static function compareSearchArray($array, $completeArray, $case)
+	{
+		$filteredArray = array();
+	//	print_r(count($array));
+	//	print_r(count($completeArray));
+		if($case == true)
+		{
+			for($i = 0; $i < count($array); $i++)
+			{
+				for($j = 0; $j < count($completeArray); $j++)
+				{
+					$subString = strstr($array[$i], $completeArray[$j]);
+					if($subString !== false) 
+					{
+						$filteredArray[] = $array[$i];
+						break;
+					}
+				}
+			}
+		
+			return $filteredArray;
+		}
+		else
+		{
+			for($i = 0; $i < count($array); $i++)
+			{
+				for($j = 0; $j < count($completeArray); $j++)
+				{
+					$subString = stristr($array[$i], $completeArray[$j]);
+					if($subString !== false) 
+					{
+						$filteredArray[] = $array[$i];
+						break;
+					}
+				}
+			}
+		
+			return $filteredArray;
+		}
+	}
+	
 
 	
 	

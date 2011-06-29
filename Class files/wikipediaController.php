@@ -32,19 +32,30 @@ class wikipediaController
 	}
 	
 	/**
-	 * public function wikiLinks()
-	 * Postcondition: the links from wikipedia are stored into Database.
+	 * Returns an array of links from wikipedia;
 	 */
-	public function wikiLinks()
+	public function getLinks($title)
 	{
+		$this->setTitle($title);
 		$this->setProp("links");
 		$this->setFormat("php");
-		$this->setAdditionalProperties("&pllimit=5000"); // 500 = max limit allowed
+		$this->setAdditionalProperties("&pllimit=500"); // 500 = max limit allowed
 		$this->setAPIUrl();
 		$source = urlParser::cURL($this->_apiURL);
 		$decoded = unserialize($source);
 		$key = key($decoded["query"]["pages"]);
 		$parentTitlesArray = $decoded["query"]["pages"][$key]["links"]; // replace 26977 with pageid
+		
+		return $parentTitlesArray;
+	}
+	
+	/**
+	 * public function wikiLinks()
+	 * Postcondition: the links from wikipedia are stored into Database.
+	 */
+	public function wikiLinks()
+	{
+		$parentTitlesArray = $this->getLinks();
 		$titlesArray = array();
 		for ($i=0; $i < count($parentTitlesArray); $i++) // should this use count?
 		{ 
@@ -52,10 +63,9 @@ class wikipediaController
 		}
 		// pass titlesArray to abhi's urlparser method, will sort and check titles
 	//	print_r($titlesArray);
-		$processedArray = urlParser::parseContent($titlesArray); // an array returned with [key = value of Title sArray] [ value = tag ] returned
-		return;
+		$processedArray = urlParser::parseContent($titlesArray); // add comment about structure of parseContent.....
 		// code to input into db
-		for($i = 0; $i < count($titlesArray); $i++)
+		for($i = 0; $i < count($processedArray); $i++)
 		{
 			$array = array("CollegeLink" => "$processedArray[$i][0]", "CollegeID" => "", "LinkTag" => "$processedArray[$i][1]");
 			$this->_dbConnection->insertIntoTable("CollegeLinks","CollegeSummary", "CollegeName", $this->_college, "CollegeID", $array);
@@ -68,6 +78,7 @@ class wikipediaController
 	 */
 	public function wikiPictures()
 	{
+		$this->setTitle($this->_college);
 		$this->setProp("images");
 		$this->setFormat("php");
 		$this->setAPIUrl();
@@ -110,6 +121,7 @@ class wikipediaController
 	// get info from list of properties, and use array elements to extract relevant info and keep in vars
 	public function wikiSnippet()
 	{
+		$this->setTitle($this->_college);
 		$this->setProp("revisions"); // section 0
 		$this->setFormat("php");
 		$this->setAdditionalProperties("&rvprop=content&rvsection&section=0"); // text content of page, only the text which appears before 
@@ -139,7 +151,7 @@ class wikipediaController
 		$athletics = parser::parseSnippet("|athletics", $valueArray);
 		$website = parser::parseSnippet("|website", $valueArray);
 		//print_r($website);
-		
+	/*	
 		for ($i=0; $i < ; $i++)
 		{ 
 			$nameArray = 
@@ -157,7 +169,7 @@ class wikipediaController
 			$athleticsArray = 
 			$websiteArray = 
 		}
-		
+		*/
 		// code to add to database "CollegeSummary"
 		
 		//$array = array("CollegeLink" => "$titlesArray[$i]", "CollegeID" => "");
@@ -206,7 +218,7 @@ class wikipediaController
 		return $this->_apiURL;
 	}
 	
-	public function setCollege($college)
+	private function setCollege($college)
 	{
 		$this->_college = $college;
 	}
