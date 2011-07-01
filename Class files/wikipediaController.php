@@ -193,9 +193,15 @@ class wikipediaController
 		$faculty = parser::parseSnippet("|faculty", $valueArray);
 		$faculty = parser::refineSnippet($faculty, "faculty");
 		//print_r($faculty);
+		if ($faculty == "") // uses staff keyword if faculty keyword is nonexistent
+		{
+			$staff = parser::parseSnippet("|staff", $valueArray);
+			$staff = parser::refineSnippet($staff, "staff");
+			//print_r($staff);
+		}
 		$undergrad = parser::parseSnippet("|undergrad", $valueArray);
 		$undergrad = parser::refineSnippet($undergrad, "undergrad");
-		print_r($undergrad);
+		//print_r($undergrad);
 		$postgrad = parser::parseSnippet("|postgrad", $valueArray);
 		$postgrad = parser::refineSnippet($postgrad, "postgrad");
 		//print_r($postgrad);
