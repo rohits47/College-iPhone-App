@@ -78,5 +78,17 @@ class databaseProperties extends dbConnections
 		else return false;
 	}
 	
+	/**
+	 * Altercolumn
+	 * Alter's a given column.
+	 */
+	public function alterColumn($tableName, $oldColumnName, $newColumnName, $properties)
+	{
+		$query = "ALTER TABLE `$tableName` CHANGE `$oldColumnName` `$newColumnName` $properties";
+		
+		if(mysql_query($query)) return true;
+		else return false;
+	}
+	
 	
 } // END class 

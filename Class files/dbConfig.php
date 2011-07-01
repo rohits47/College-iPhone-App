@@ -49,16 +49,17 @@ if($i == 1) {
 	$array1[8] = array("CollegeAPCredit", "TINYTEXT");
 	$array1[9] = array("CollegeLocation", "TEXT");
 	$array1[10] = array("CollegeAthletics", "Text");
-	$array1[11] = array("CollegePostGrads", "INT");
-	$array1[12] = array("CollegeAcademicStaff", "INT");
-	$array1[13] = array("CollegeEndowmentFund", "INT");
+	$array1[11] = array("CollegePostGrads", "TINYTEXT");
+	$array1[12] = array("CollegeAcademicStaff", "TINYTEXT");
+	$array1[13] = array("CollegeEndowmentFund", "TINYTEXT");
 	$array1[14] = array("CollegeType", "TINYTEXT");
 	$array1[15] = array("CollegeEstablished", "INT");
 	$array1[16] = array("CollegePresident", "TINYTEXT");
 	$array1[17] = array("CollegeCampus", "TEXT");
 	$array1[18] = array("CollegeRating", "INT");
 	$array1[19] = array("CollegeRaters", "INT");
-	$array1[20] = array("CollegeUnderGrads", "INT");
+	$array1[20] = array("CollegeUnderGrads", "TINYTEXT");
+	$array1[21] = array("CollegeSummary", "TEXT");
 
 	if($dbConfig->createINNODBTable("CollegeSummary", $array1)) echo "Success! Your CollegeSummary Table is now set up! <br />";
 //print_r($dbConfig->createINNODBTable("CollegeSummary", $array1));

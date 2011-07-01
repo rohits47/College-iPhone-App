@@ -30,13 +30,13 @@ class collegeSummaryController
 	 */
 	public function main()
 	{
-	//	$this->setCollegeList();
+		$this->setCollegeList();
 		$formatted = $this->getCollegeList();
 		
 		for($i = 0; $i < count($formatted); $i++)
 		{
 			$wiki = new wikipediaController($this->_relation, $formatted[$i]);
-		//	$wiki->wikiPictures();
+			$wiki->wikiPictures();
 			$wiki->wikiLinks();
 		}
 	}
