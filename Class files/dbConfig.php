@@ -18,7 +18,7 @@ function __autoload($class)
  * 
  * Before running this script, make sure to up the version number by 1 (or to the latest version (located at the bottom));
  */
-$version = 1;
+$version = 7;
 $databaseName = "lala";
 $dbhost = "localhost:8889";
 $dbuser = "root";
@@ -27,7 +27,7 @@ $dbpass = "root";
 
 //Do NOT EDIT THIS PORTION OF THE CODE.
 $dbConfig = new databaseProperties($databaseName, $dbhost, $dbuser, $dbpass);
-$totalVersions = 6;
+$totalVersions = 7;
 
 for($i = $version; $i <= $totalVersions; $i++)
 {
@@ -58,6 +58,7 @@ if($i == 1) {
 	$array1[17] = array("CollegeCampus", "TEXT");
 	$array1[18] = array("CollegeRating", "INT");
 	$array1[19] = array("CollegeRaters", "INT");
+	$array1[20] = array("CollegeUnderGrads", "INT");
 
 	if($dbConfig->createINNODBTable("CollegeSummary", $array1)) echo "Success! Your CollegeSummary Table is now set up! <br />";
 //print_r($dbConfig->createINNODBTable("CollegeSummary", $array1));
@@ -175,7 +176,18 @@ if($i == 6)
 	
 	if($dbConfig->setRelation("CollegeClubs", "CollegeSummary", "CollegeID")) echo "Success! Your CollegeClubs and CollegeSummary Table are now linked via CollegeID! <br />";
 }
-
+if($i == 7)
+{
+	$array1 = array();
+	$array1[0] = array("ArtID", "int", "NOT NULL", "AUTO_INCREMENT");
+	$array1[1] = array("PRIMARY KEY(ArtID)");
+	$array1[2] = array("CollegeArt", "TEXT");
+	$array1[3] = array("CollegeID", "INT");
+	
+	if($dbConfig->createINNODBTable("CollegeArts", $array1)) echo "Success! Your CollegeArts Table is now set up! <br />";
+	
+	if($dbConfig->setRelation("CollegeArts", "CollegeSummary", "CollegeID")) echo "Success! Your CollegeArts and CollegeSummary Table are now linked via CollegeID! <br />";
+}
 
 }
 ?>

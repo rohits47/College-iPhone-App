@@ -25,7 +25,7 @@ class wikipediaController
 		$this->_format = "json"; // should this be php?
 		$this->_action = "query";
 		$this->_titles = $college;
-		$this->_college = $college;
+		$this->_college = str_replace(" ", "_", $college);
 		$this->_additionalProperties = "";
 		$this->_baseURL = "http://en.wikipedia.org/w/api.php?";
 		$this->_apiURL = "http://en.wikipedia.org/w/api.php?format=" . $this->_format . "&action=" . $this->_action . "&prop=" . $this->_prop . "&titles=" . $this->_titles . $this->_additionalProperties;
@@ -36,6 +36,7 @@ class wikipediaController
 	 */
 	public function getLinks($title)
 	{
+		$title = str_replace(" ", "_", $title);
 		$this->setTitle($title);
 		$this->setProp("links");
 		$this->setFormat("php");
@@ -46,6 +47,8 @@ class wikipediaController
 		$key = key($decoded["query"]["pages"]);
 		$parentTitlesArray = $decoded["query"]["pages"][$key]["links"]; // replace 26977 with pageid
 		
+	//	print_r($parentTitlesArray);
+		
 		return $parentTitlesArray;
 	}
 	
@@ -55,7 +58,7 @@ class wikipediaController
 	 */
 	public function wikiLinks()
 	{
-		$parentTitlesArray = $this->getLinks();
+		$parentTitlesArray = $this->getLinks($this->_college);
 		$titlesArray = array();
 		for ($i=0; $i < count($parentTitlesArray); $i++) // should this use count?
 		{ 
@@ -65,10 +68,35 @@ class wikipediaController
 	//	print_r($titlesArray);
 		$processedArray = urlParser::parseContent($titlesArray); // add comment about structure of parseContent.....
 		// code to input into db
+		$college = str_replace("_", " ", $this->_college);
+		print_r($processedArray);
 		for($i = 0; $i < count($processedArray); $i++)
 		{
-			$array = array("CollegeLink" => "$processedArray[$i][0]", "CollegeID" => "", "LinkTag" => "$processedArray[$i][1]");
-			$this->_dbConnection->insertIntoTable("CollegeLinks","CollegeSummary", "CollegeName", $this->_college, "CollegeID", $array);
+			if($processedArray[$i][1] == "sports")
+			{
+				$array = array("CollegeDivSports" => "{$processedArray[$i][0]}", "CollegeID" => "");
+				$this->_dbConnection->insertIntoTable("CollegeDivSports","CollegeSummary", "CollegeName", $college, "CollegeID", $array);
+			}
+			elseif($processedArray[$i][1] == "clubs")
+			{
+				$array = array("CollegeClub" => "{$processedArray[$i][0]}", "CollegeID" => "");
+				$this->_dbConnection->insertIntoTable("CollegeClubs","CollegeSummary", "CollegeName", $college, "CollegeID", $array);	
+			}
+			elseif($processedArray[$i][1] == "research")
+			{
+				$array = array("CollegeResearch" => "{$processedArray[$i][0]}", "CollegeID" => "");
+				$this->_dbConnection->insertIntoTable("CollegeResearch","CollegeSummary", "CollegeName", $college, "CollegeID", $array);
+			}
+			elseif($processedArray[$i][1] == "arts")
+			{
+				$array = array("CollegeArt" => "{$processedArray[$i][0]}", "CollegeID" => "");
+				$this->_dbConnection->insertIntoTable("CollegeArts","CollegeSummary", "CollegeName", $college, "CollegeID", $array);
+			}
+			else
+			{
+				$array = array("CollegeLink" => "{$processedArray[$i][0]}", "CollegeID" => "", "LinkTag" => "{$processedArray[$i][1]}");
+				$this->_dbConnection->insertIntoTable("CollegeLinks","CollegeSummary", "CollegeName", $college, "CollegeID", $array);
+			}
 		}
 	}
 	
@@ -78,7 +106,8 @@ class wikipediaController
 	 */
 	public function wikiPictures()
 	{
-		$this->setTitle($this->_college);
+		$college = str_replace(" ", "_", $this->_college);
+		$this->setTitle($college);
 		$this->setProp("images");
 		$this->setFormat("php");
 		$this->setAPIUrl();
@@ -92,7 +121,7 @@ class wikipediaController
 		{
 			$imageTitleArray[$i] = $imagesArray[$i]["title"];
 		}
-
+		
 		$tempArray = array();
 		$this->setProp("imageinfo");
 		$this->setAdditionalProperties("&iiprop=url");
@@ -106,13 +135,20 @@ class wikipediaController
 			$decode = unserialize($source);
 			$tempArray[] = $decode["query"]["pages"][-1]["imageinfo"][0]["url"];
 		}
-	//	print_r($tempArray);
-		
-		
+
+		$college = str_replace("_", " ", $this->_college);
 		for($i = 0; $i < count($tempArray); $i++)
 		{
-			$array = array("CollegePicture" => "$tempArray[$i]", "CollegeID" => "");
-			$this->_dbConnection->insertIntoTable("CollegePictures","CollegeSummary", "CollegeName", $this->_college, "CollegeID", $array);
+			if(strpos($tempArray[$i], "Padlock-silver") === false && strpos($tempArray[$i], "Magnify-clip") === false && strpos($tempArray[$i], "Platopainting") === false && strpos($tempArray[$i], "Emblem-money") === false)
+			{
+			
+				$array = array("CollegePicture" => "$tempArray[$i]", "CollegeID" => "");
+			
+				//testing code
+				//	print_r("$college <p>");
+			
+				$this->_dbConnection->insertIntoTable("CollegePictures","CollegeSummary", "CollegeName", $college, "CollegeID", $array);
+			}
 		}
 		return true;
 

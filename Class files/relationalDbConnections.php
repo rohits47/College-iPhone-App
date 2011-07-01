@@ -39,7 +39,7 @@ class relationalDbConnections extends dbConnections
 			parent::insertIntoTable($tableName1, $arrayOfValues);
 			return true;
 		}
-		elseif($tableName1 != $keyTable)
+		elseif($tableName1 != $keyTable && $num != 0)
 		{
 			$formatted = $this->formatQueryResults($result, $primaryKey);
 			$arrayOfValues[$primaryKey] = $formatted[0];

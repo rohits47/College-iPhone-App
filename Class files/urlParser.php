@@ -101,8 +101,11 @@ class urlParser extends parser
 					$subString = strstr($array[$i], $completeArray[$j]);
 					if($subString !== false) 
 					{
-						$filteredArray[] = $array[$i];
-						break;
+						if(strlen($array[$i]) != strlen($completeArray[$j]))
+						{
+							$filteredArray[] = $array[$i];
+							break;
+						}
 					}
 				}
 			}
@@ -118,8 +121,11 @@ class urlParser extends parser
 					$subString = stristr($array[$i], $completeArray[$j]);
 					if($subString !== false) 
 					{
-						$filteredArray[] = $array[$i];
-						break;
+						if(strlen($array[$i]) != strlen($completeArray[$j]))
+						{
+							$filteredArray[] = $array[$i];
+							break;
+						}
 					}
 				}
 			}

@@ -31,7 +31,14 @@ class collegeSummaryController
 	public function main()
 	{
 	//	$this->setCollegeList();
-		$this->getCollegeList();
+		$formatted = $this->getCollegeList();
+		
+		for($i = 0; $i < count($formatted); $i++)
+		{
+			$wiki = new wikipediaController($this->_relation, $formatted[$i]);
+		//	$wiki->wikiPictures();
+			$wiki->wikiLinks();
+		}
 	}
 	
 	/**
@@ -48,22 +55,19 @@ class collegeSummaryController
 		
 		for($i = 0; $i < count($stateList); $i++)
 		{
-		//	print_r($stateList[$i]);
 			$temp = array();
 			$links = $this->_wikipedia->getLinks("List_of_colleges_and_universities_in_" . $stateList[$i]);
 			for ($j=0; $j < count($links); $j++) // should this use count?
-			{ 
+			{
 				$temp[$j] = $links[$j]["title"];
 			}
-		//	print_r($temp);
 			$totalLinks = array_merge($totalLinks, $temp);
 		}
-		
 		$filteredArray = urlParser::compareSearchArray($totalLinks, $filteringKeywords, true);
-	//	print_r($filteredArray);
-		
 		for($i = 0; $i < count($filteredArray); $i++)
 		{
+		//	print_r($filteredArray[$i]);
+		//	print_r("<p>");
 			$array_fieldValues = array("CollegeName" => $filteredArray[$i]);
 			$this->_dbConnection->insertIntoTable("CollegeSummary", $array_fieldValues);
 		}
@@ -75,11 +79,8 @@ class collegeSummaryController
 		$result = $this->_dbConnection->selectFromTable("CollegeSummary");
 		$formatted = $this->_dbConnection->formatQueryResults($result, "CollegeName");
 		
-		for($i = 0; $i < count($formatted); $i++)
-		{
-			$wiki = new wikipediaController($this->_relation, $formatted[$i]);
-			$wiki->wikiPictures();
-		}
+		return $formatted;
+		
 	}
 	
 
