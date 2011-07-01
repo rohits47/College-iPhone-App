@@ -44,7 +44,7 @@ class parser
 		for ($i=0; $i < count($array); $i++) { 
 			$str = str_replace($array[$i], "", $str);
 		}
-		if (!is_null($case) && ($case == "established" || $case == "faculty" || $case == "undergrad" || $case == "postgrad"))
+		if (!is_null($case) && ($case == "established" || $case == "faculty" || $case == "undergrad" || $case == "postgrad" || $case == "staff"))
 		{
 			$array = array("1", "2", "3", "4", "5", "6", "7", "8", "9", "0");
 			$posArray = array();
