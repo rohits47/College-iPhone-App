@@ -23,15 +23,39 @@ class parser
 	 */
 	public static function parseSnippet($keyword, $arrayStr)
 	{
+		$str = "";
 		if (strpos($arrayStr,$keyword))
 		{
 			$pos1 = strpos($arrayStr, $keyword);
-			$bigStr = substr($arrayStr, $pos1+1); // whole string starting from keyword
-			$pos2 = strpos($bigStr,"|") + $pos1;
-			$str = substr($arrayStr, $pos1, $pos2);
-			//print_r($bigStr);
+			$bigStr = substr($arrayStr, $pos1+1); // cut off everything before keyword, including the starting "|"
+			$pos2 = strpos($bigStr, "= ");
+			$bigStr2 = substr($bigStr, $pos2+2); // cut off keyword and "= "
+			$pos3 = strpos($bigStr2,"|");
+			$str = substr($bigStr2, 0, $pos3);
 		}
 		return $str;
+	}
+	
+	public static function refineSnippet($str, $case = null)
+	{
+		$array = array("{", "}", "[", "]"); // chars to eliminate
+		for ($i=0; $i < count($array); $i++) { 
+			$str = str_replace($array[$i], "", $str);
+		}
+		if (!is_null($case) && ($case == "established" || $case == "faculty" || $case == "undergrad" || $case == "postgrad"))
+		{
+			$array = array("1", "2", "3", "4", "5", "6", "7", "8", "9", "0");
+			$posArray = array();
+			for ($i=0; $i < count($array); $i++)
+			{
+				$posArray[] = strrpos($str, $array[$i]); // keeps array of positions of last nums in string
+			}
+			$lastPos = max($posArray); // the last number in the array
+			$str = substr($str, 0, $lastPos+1);
+		}
+		return $str;
+		//traverse string
+		//if found, replace string with null strings (essentially delete them)
 	}
 	
 	/**

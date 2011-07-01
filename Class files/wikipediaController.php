@@ -28,7 +28,7 @@ class wikipediaController
 		$this->_college = str_replace(" ", "_", $college);
 		$this->_additionalProperties = "";
 		$this->_baseURL = "http://en.wikipedia.org/w/api.php?";
-		$this->_apiURL = "http://en.wikipedia.org/w/api.php?format=" . $this->_format . "&action=" . $this->_action . "&prop=" . $this->_prop . "&titles=" . $this->_titles . $this->_additionalProperties;
+		$this->_apiURL = "http://en.wikipedia.org/w/api.php?prop=" . $this->_prop . "&action=" . $this->_action . "&format=" . $this->_format . "&titles=" . $this->_titles . $this->_additionalProperties;
 	}
 	
 	/**
@@ -45,7 +45,7 @@ class wikipediaController
 		$source = urlParser::cURL($this->_apiURL);
 		$decoded = unserialize($source);
 		$key = key($decoded["query"]["pages"]);
-		$parentTitlesArray = $decoded["query"]["pages"][$key]["links"]; // replace 26977 with pageid
+		$parentTitlesArray = $decoded["query"]["pages"][$key]["links"];
 		
 	//	print_r($parentTitlesArray);
 		
@@ -164,52 +164,53 @@ class wikipediaController
 		$this->setAPIUrl();
 		$source = urlParser::cURL($this->_apiURL);
 		$decoded = unserialize($source);
-		// write parser method in parser to look for keywords in the huge string
-		$valueArray = $decoded["query"]["pages"]["26977"]["revisions"]["0"]["*"];
+		$key = key($decoded["query"]["pages"]);
+		$valueArray = $decoded["query"]["pages"][$key]["revisions"]["0"]["*"];
 		//print_r($valueArray);
 		
-		$name = parser::parseSnippet("|name", $valueArray);
-		//print_r($name);
 		$established = parser::parseSnippet("|established", $valueArray);
+		$established = parser::refineSnippet($established, "established");
 		//print_r($established);
 		$type = parser::parseSnippet("|type", $valueArray);
+		$type = parser::refineSnippet($type);
 		//print_r($type);
 		$president = parser::parseSnippet("|president", $valueArray);
+		$president = parser::refineSnippet($president);
+		//print_r($president);
 		$city = parser::parseSnippet("|city", $valueArray);
-		$state = parser::parseSnippet("|state", $valueArray);
+		$city = parser::refineSnippet($city);
+		//print_r($city);
 		$country = parser::parseSnippet("|country", $valueArray);
+		$country = parser::refineSnippet($country);
+		//print_r($country);
+		$location = $city . ", " . $country;
+		//print_r($location);
 		$endowment = parser::parseSnippet("|endowment", $valueArray);
-		//print_r($endowment);
+		//$endowment = parser::refineSnippet($endowment);
+//		print_r($endowment); // needs further parsing
 		$faculty = parser::parseSnippet("|faculty", $valueArray);
+		$faculty = parser::refineSnippet($faculty, "faculty");
+		//print_r($faculty);
 		$undergrad = parser::parseSnippet("|undergrad", $valueArray);
+		$undergrad = parser::refineSnippet($undergrad, "undergrad");
+		//print_r($undergrad);
 		$postgrad = parser::parseSnippet("|postgrad", $valueArray);
+		$postgrad = parser::refineSnippet($postgrad, "postgrad");
+		//print_r($postgrad);
 		$campus = parser::parseSnippet("|campus", $valueArray);
+		$campus = parser::refineSnippet($campus);
+		//print_r($campus);
 		$athletics = parser::parseSnippet("|athletics", $valueArray);
+		$athletics = parser::refineSnippet($athletics);
+	//	print_r($athletics); // needs further parsing
 		$website = parser::parseSnippet("|website", $valueArray);
+		$website = parser::refineSnippet($website);
 		//print_r($website);
-	/*	
-		for ($i=0; $i < ; $i++)
-		{ 
-			$nameArray = 
-			$establishedArray = 
-			$typeArray = 
-			$presidentArray = 
-			$cityArray = 
-			$stateArray = 
-			$countryArray = 
-			$endowmentArray = 
-			$facultyArray = 
-			$undergradArray = 
-			$postgradArray = 
-			$campusArray = 
-			$athleticsArray = 
-			$websiteArray = 
-		}
-		*/
+		
 		// code to add to database "CollegeSummary"
 		
-		//$array = array("CollegeLink" => "$titlesArray[$i]", "CollegeID" => "");
-		$this->_dbConnection->updateTable("CollegeSummary","CollegeSummary", "CollegeName", $this->_college, "CollegeID", $array);		
+		$array = array("CollegeUrl" => "$website", "CollegeLocation" => "$location", "CollegePostGrads" => "$postgrad", "CollegeUnderGrads" => "$undergrad", "CollegeAcademicStaff" => "$faculty", "CollegeEndowmentFund" => "$endowment", "CollegeCampus" => "$campus", "CollegeType" => "$type", "CollegeEstablished" => "$established", "CollegePresident" => "$president", "CollegeAthletics" => "$athletics" );
+		$this->_dbConnection->updateTable("CollegeSummary", "CollegeSummary", "CollegeName", $this->_college, "CollegeID", $array, ""); // which condition?
 	}
 	
 		
@@ -259,8 +260,8 @@ class wikipediaController
 		$this->_college = $college;
 	}
 	
-	public function __destruct()
-	{
-		$this->_dbConnection->close_db_connection();
-	}
+//	public function __destruct()
+//	{
+//		$this->_dbConnection->close_db_connection();
+//	}
 } // END class 
