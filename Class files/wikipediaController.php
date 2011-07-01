@@ -187,13 +187,13 @@ class wikipediaController
 		//print_r($location);
 		$endowment = parser::parseSnippet("|endowment", $valueArray);
 		//$endowment = parser::refineSnippet($endowment);
-//		print_r($endowment); // needs further parsing
+	//	print_r($endowment); // needs further parsing
 		$faculty = parser::parseSnippet("|faculty", $valueArray);
 		$faculty = parser::refineSnippet($faculty, "faculty");
 		//print_r($faculty);
 		$undergrad = parser::parseSnippet("|undergrad", $valueArray);
 		$undergrad = parser::refineSnippet($undergrad, "undergrad");
-		//print_r($undergrad);
+		print_r($undergrad);
 		$postgrad = parser::parseSnippet("|postgrad", $valueArray);
 		$postgrad = parser::refineSnippet($postgrad, "postgrad");
 		//print_r($postgrad);
