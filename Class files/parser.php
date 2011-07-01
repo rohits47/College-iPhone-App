@@ -31,7 +31,9 @@ class parser
 			$pos2 = strpos($bigStr, "= ");
 			$bigStr2 = substr($bigStr, $pos2+2); // cut off keyword and "= "
 			$pos3 = strpos($bigStr2,"|");
-			$str = substr($bigStr2, 0, $pos3);
+			$pos4 = strpos($bigStr2,"<ref");
+			$min = min($pos3, $pos4);
+			$str = substr($bigStr2, 0, $min);
 		}
 		return $str;
 	}
