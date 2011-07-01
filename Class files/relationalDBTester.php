@@ -8,13 +8,15 @@ function __autoload($class)
 
 $relation = new relationalDbConnections('lala', 'localhost:8889', 'root', 'root');
 
-$array = array("CollegePicture" => "", "CollegeID" => "");
+$array = array("CollegeUrl" => "http://google.com", "CollegePresident" => "Abhinav Khanna");
 
 /**
  * Example usage of InsertIntoTable. Property1: is the Table You are updating, Property2, the place you are checking for your PrimaryID
  * 			Property3 is the Column You are checking exists, Property4 is the CollegeName, Property5 is the primaryKey,
  * 			$array is the array of IDs for the insertion.
  */
-$relation->insertIntoTable("CollegePictures","CollegeSummary", "CollegeName", "Stanford_University", "CollegeID", $array);
+//$relation->insertIntoTable("CollegeSummary","CollegeSummary", "CollegeName", "Harvard_University", "CollegeID", $array);
+$relation->updateTable("CollegeSummary","CollegeSummary", "CollegeName", "Princeton_University", "CollegeID", $array, "CollegeName = 'Princeton_University'");
 
+$relation->close_db_connection();
 ?>
