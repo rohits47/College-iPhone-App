@@ -157,7 +157,9 @@ class wikipediaController
 	// get info from list of properties, and use array elements to extract relevant info and keep in vars
 	public function wikiSnippet()
 	{
-		$this->setTitle($this->_college);
+		$college = $this->_college;
+		$college = str_replace(" ", "_", $college);
+		$this->setTitle($college);
 		$this->setProp("revisions"); // section 0
 		$this->setFormat("php");
 		$this->setAdditionalProperties("&rvprop=content&rvsection&section=0"); // text content of page, only the text which appears before 
@@ -208,9 +210,9 @@ class wikipediaController
 		//print_r($website);
 		
 		// code to add to database "CollegeSummary"
-		
+		$college = str_replace("_", " ", $this->_college);
 		$array = array("CollegeUrl" => "$website", "CollegeLocation" => "$location", "CollegePostGrads" => "$postgrad", "CollegeUnderGrads" => "$undergrad", "CollegeAcademicStaff" => "$faculty", "CollegeEndowmentFund" => "$endowment", "CollegeCampus" => "$campus", "CollegeType" => "$type", "CollegeEstablished" => "$established", "CollegePresident" => "$president", "CollegeAthletics" => "$athletics" );
-		$this->_dbConnection->updateTable("CollegeSummary", "CollegeSummary", "CollegeName", $this->_college, "CollegeID", $array, ""); // which condition?
+		$this->_dbConnection->updateTable("CollegeSummary", "CollegeSummary", "CollegeName", $college, "CollegeID", $array, "CollegeName = '$college'"); // which condition?
 	}
 	
 		
