@@ -195,8 +195,8 @@ class wikipediaController
 		//print_r($faculty);
 		if ($faculty == "") // uses staff keyword if faculty keyword is nonexistent
 		{
-			$staff = parser::parseSnippet("|staff", $valueArray);
-			$staff = parser::refineSnippet($staff, "staff");
+			$faculty = parser::parseSnippet("|staff", $valueArray);
+			$faculty = parser::refineSnippet($faculty, "staff");
 			//print_r($staff);
 		}
 		$undergrad = parser::parseSnippet("|undergrad", $valueArray);
