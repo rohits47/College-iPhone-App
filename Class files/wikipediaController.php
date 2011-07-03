@@ -187,17 +187,17 @@ class wikipediaController
 		//print_r($country);
 		$location = $city . ", " . $country;
 		//print_r($location);
-		$endowment = parser::parseSnippet("|endowment", $valueArray);
-		//$endowment = parser::refineSnippet($endowment);
-	//	print_r($endowment); // needs further parsing
+		$endowment = parser::deepParseSnippet("|endowment", $valueArray);
+		$endowment = parser::refineSnippet($endowment);
+		//print_r($endowment);
 		$faculty = parser::parseSnippet("|faculty", $valueArray);
 		$faculty = parser::refineSnippet($faculty, "faculty");
 		//print_r($faculty);
 		if ($faculty == "") // uses staff keyword if faculty keyword is nonexistent
 		{
-			$faculty = parser::parseSnippet("|staff", $valueArray);
-			$faculty = parser::refineSnippet($faculty, "staff");
-			//print_r($staff);
+			$faculty = parser::parseSnippet("|staff", $valueArray); // uses $faculty for ease of adding to db
+			$faculty = parser::refineSnippet($faculty, "faculty");
+			//print_r($athletics);
 		}
 		$undergrad = parser::parseSnippet("|undergrad", $valueArray);
 		$undergrad = parser::refineSnippet($undergrad, "undergrad");
@@ -208,17 +208,23 @@ class wikipediaController
 		$campus = parser::parseSnippet("|campus", $valueArray);
 		$campus = parser::refineSnippet($campus);
 		//print_r($campus);
-		$athletics = parser::parseSnippet("|athletics", $valueArray);
+		$athletics = parser::deepParseSnippet("|athletics", $valueArray);
 		$athletics = parser::refineSnippet($athletics);
 	//	print_r($athletics); // needs further parsing
+		if ($athletics == "") // uses staff keyword if faculty keyword is nonexistent
+		{
+			$athletics = parser::parseSnippet("|free", $valueArray); //  used $athletics for ease of adding to db
+			$athletics = parser::refineSnippet($faculty, "athletics");
+	//		print_r($athletics); // needs further parsing
+		}
 		$website = parser::parseSnippet("|website", $valueArray);
 		$website = parser::refineSnippet($website);
 		//print_r($website);
 		
 		// code to add to database "CollegeSummary"
-		$college = str_replace("_", " ", $this->_college);
-		$array = array("CollegeUrl" => "$website", "CollegeLocation" => "$location", "CollegePostGrads" => "$postgrad", "CollegeUnderGrads" => "$undergrad", "CollegeAcademicStaff" => "$faculty", "CollegeEndowmentFund" => "$endowment", "CollegeCampus" => "$campus", "CollegeType" => "$type", "CollegeEstablished" => "$established", "CollegePresident" => "$president", "CollegeAthletics" => "$athletics" );
-		$this->_dbConnection->updateTable("CollegeSummary", "CollegeSummary", "CollegeName", $college, "CollegeID", $array, "CollegeName = '$college'"); // which condition?
+		//$college = str_replace("_", " ", $this->_college);
+		//$array = array("CollegeUrl" => "$website", "CollegeLocation" => "$location", "CollegePostGrads" => "$postgrad", "CollegeUnderGrads" => "$undergrad", "CollegeAcademicStaff" => "$faculty", "CollegeEndowmentFund" => "$endowment", "CollegeCampus" => "$campus", "CollegeType" => "$type", "CollegeEstablished" => "$established", "CollegePresident" => "$president", "CollegeAthletics" => "$athletics" );
+		//$this->_dbConnection->updateTable("CollegeSummary", "CollegeSummary", "CollegeName", $college, "CollegeID", $array, "CollegeName = '$college'");
 	}
 	
 		
