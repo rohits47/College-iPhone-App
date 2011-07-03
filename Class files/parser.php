@@ -28,11 +28,15 @@ class parser
 		{
 			$pos1 = strpos($arrayStr, $keyword);
 			$bigStr = substr($arrayStr, $pos1+1); // cut off everything before keyword, including the starting "|"
-			$pos2 = strpos($bigStr, "= ");
-			$bigStr2 = substr($bigStr, $pos2+2); // cut off keyword and "= "
+			$pos2 = strpos($bigStr, "=");
+			$bigStr2 = substr($bigStr, $pos2+1); // cut off keyword and "="
 			$pos3 = strpos($bigStr2,"|");
 			$pos4 = strpos($bigStr2,"<ref");
 			$min = min($pos3, $pos4);
+			if ($min == 0)
+			{
+				$min = max($pos3,$pos4);
+			}
 			$str = substr($bigStr2, 0, $min);
 		}
 		return $str;
@@ -63,10 +67,18 @@ class parser
 				$str = str_replace($array2[$i], "", $str);
 			}
 		}
-		else if ($keyword == "|athletics" || $keyword == "|free")
+		elseif ($keyword == "|athletics" || $keyword == "|free")
 		{
-			$pos2 = strpos($bigStr, "{");
-			$bigStr2 = substr($bigStr, 0, $pos2);
+			$pos2 = strpos($bigStr, "=");
+			$bigStr2 = substr($bigStr, $pos2+2); // cut off keyword and "= "
+			$array1 = array("{", "website", "url", "free");
+			$posArr = array();
+			for ($i=0; $i < count($array1); $i++)
+			{
+				$posArr[] = strpos($bigStr2, $array1[$i]);
+			}
+			$pos3 = min($posArr);
+			$str = substr($bigStr2, 0, $pos3);
 			$array = array("National","Collegiate","Athletic","Association","University","Athletic","Association");
 			for ($i=0; $i < count($array); $i++)
 			{
@@ -78,7 +90,7 @@ class parser
 	
 	public static function refineSnippet($str, $case = null)
 	{
-		$array = array("{", "}", "[", "]", "(", ")", ",", "|"); // chars to eliminate
+		$array = array("{", "}", "[", "]", ",", "|", "<", ">"); // chars to eliminate
 		for ($i=0; $i < count($array); $i++)
 		{
 			$str = str_replace($array[$i], "", $str);
