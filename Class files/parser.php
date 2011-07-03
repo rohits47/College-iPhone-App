@@ -38,13 +38,52 @@ class parser
 		return $str;
 	}
 	
+	public static function deepParseSnippet($keyword, $arrayStr)
+	{
+		$pos1 = strpos($arrayStr, $keyword);
+		$bigStr = substr($arrayStr, $pos1+1); // cut off everything before keyword, including the starting "|"
+		if ($keyword == "|endowment")
+		{
+			$pos2 = strpos($bigStr, "$");
+			$bigStr2 = substr($bigStr, $pos2, 100); // cut off keyword and everything before the "$", arbitrary endpoint for string
+			$array = array("billion", "million", "thousand");
+			$posArr = array();
+			for ($i=0; $i < count($array); $i++)
+			{
+				$posArr[] = strpos($bigStr2, $array[$i]);
+			}
+			$lastPos = max($posArr);
+			//$pos3 = strpos($bigStr2,"|");
+			//$pos4 = strpos($bigStr2,"<ref");
+			//$min = min($pos3, $pos4);
+			$str = substr($bigStr2, 0, $lastPos+8);
+			$array2 = array("(number)", "1000","000"); // chars to eliminate
+			for ($i=0; $i < count($array2); $i++)
+			{
+				$str = str_replace($array2[$i], "", $str);
+			}
+		}
+		else if ($keyword == "|athletics" || $keyword == "|free")
+		{
+			$pos2 = strpos($bigStr, "{");
+			$bigStr2 = substr($bigStr, 0, $pos2);
+			$array = array("National","Collegiate","Athletic","Association","University","Athletic","Association");
+			for ($i=0; $i < count($array); $i++)
+			{
+				$str = str_replace($array[$i], "", $str);
+			}
+		}
+		return $str;
+	}
+	
 	public static function refineSnippet($str, $case = null)
 	{
-		$array = array("{", "}", "[", "]", ","); // chars to eliminate
-		for ($i=0; $i < count($array); $i++) { 
+		$array = array("{", "}", "[", "]", "(", ")", ",", "|"); // chars to eliminate
+		for ($i=0; $i < count($array); $i++)
+		{
 			$str = str_replace($array[$i], "", $str);
 		}
-		if (!is_null($case) && ($case == "established" || $case == "faculty" || $case == "undergrad" || $case == "postgrad" || $case == "staff"))
+		if (!is_null($case) && ($case == "established" || $case == "faculty" || $case == "undergrad" || $case == "postgrad"))
 		{
 			$array = array("1", "2", "3", "4", "5", "6", "7", "8", "9", "0");
 			$posArray = array();
@@ -56,8 +95,6 @@ class parser
 			$str = substr($str, 0, $lastPos+1);
 		}
 		return $str;
-		//traverse string
-		//if found, replace string with null strings (essentially delete them)
 	}
 	
 	/**
