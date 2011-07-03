@@ -204,13 +204,17 @@ class wikipediaController
 		//print_r($undergrad);
 		$postgrad = parser::parseSnippet("|postgrad", $valueArray);
 		$postgrad = parser::refineSnippet($postgrad, "postgrad");
+		if ($postgrad == "")
+		{
+			$postgrad = "0";
+		}
 		//print_r($postgrad);
 		$campus = parser::parseSnippet("|campus", $valueArray);
 		$campus = parser::refineSnippet($campus);
 		//print_r($campus);
 		$athletics = parser::deepParseSnippet("|athletics", $valueArray);
 		$athletics = parser::refineSnippet($athletics);
-		print_r($athletics); // needs further parsing
+	//	print_r($athletics); // needs further parsing
 		if ($athletics == "") // uses staff keyword if faculty keyword is nonexistent
 		{
 			$athletics = parser::deepParseSnippet("|free", $valueArray); //  used $athletics for ease of adding to db
