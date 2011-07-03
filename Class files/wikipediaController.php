@@ -222,9 +222,9 @@ class wikipediaController
 		//print_r($website);
 		
 		// code to add to database "CollegeSummary"
-		//$college = str_replace("_", " ", $this->_college);
-		//$array = array("CollegeUrl" => "$website", "CollegeLocation" => "$location", "CollegePostGrads" => "$postgrad", "CollegeUnderGrads" => "$undergrad", "CollegeAcademicStaff" => "$faculty", "CollegeEndowmentFund" => "$endowment", "CollegeCampus" => "$campus", "CollegeType" => "$type", "CollegeEstablished" => "$established", "CollegePresident" => "$president", "CollegeAthletics" => "$athletics" );
-		//$this->_dbConnection->updateTable("CollegeSummary", "CollegeSummary", "CollegeName", $college, "CollegeID", $array, "CollegeName = '$college'");
+		$college = str_replace("_", " ", $this->_college);
+		$array = array("CollegeUrl" => "$website", "CollegeLocation" => "$location", "CollegePostGrads" => "$postgrad", "CollegeUnderGrads" => "$undergrad", "CollegeAcademicStaff" => "$faculty", "CollegeEndowmentFund" => "$endowment", "CollegeCampus" => "$campus", "CollegeType" => "$type", "CollegeEstablished" => "$established", "CollegePresident" => "$president", "CollegeAthletics" => "$athletics" );
+		$this->_dbConnection->updateTable("CollegeSummary", "CollegeSummary", "CollegeName", $college, "CollegeID", $array, "CollegeName = '$college'");
 	}
 	
 		
