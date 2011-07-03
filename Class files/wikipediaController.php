@@ -210,11 +210,11 @@ class wikipediaController
 		//print_r($campus);
 		$athletics = parser::deepParseSnippet("|athletics", $valueArray);
 		$athletics = parser::refineSnippet($athletics);
-	//	print_r($athletics); // needs further parsing
+		print_r($athletics); // needs further parsing
 		if ($athletics == "") // uses staff keyword if faculty keyword is nonexistent
 		{
-			$athletics = parser::parseSnippet("|free", $valueArray); //  used $athletics for ease of adding to db
-			$athletics = parser::refineSnippet($faculty, "athletics");
+			$athletics = parser::deepParseSnippet("|free", $valueArray); //  used $athletics for ease of adding to db
+			$athletics = parser::refineSnippet($faculty);
 	//		print_r($athletics); // needs further parsing
 		}
 		$website = parser::parseSnippet("|website", $valueArray);
