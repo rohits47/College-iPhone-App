@@ -25,7 +25,7 @@ class wikipediaController
 		$this->_format = "json"; // should this be php?
 		$this->_action = "query";
 		$this->_titles = $college;
-		$this->_college = str_replace(" ", "_", $college);
+		$this->_college = $college;
 		$this->_additionalProperties = "";
 		$this->_baseURL = "http://en.wikipedia.org/w/api.php?";
 		$this->_apiURL = "http://en.wikipedia.org/w/api.php?prop=" . $this->_prop . "&action=" . $this->_action . "&format=" . $this->_format . "&titles=" . $this->_titles . $this->_additionalProperties;
