@@ -25,7 +25,7 @@ class wikipediaController
 		$this->_format = "json"; // should this be php?
 		$this->_action = "query";
 		$this->_titles = $college;
-		$this->_college = str_replace(" ", "_", $college);
+		$this->_college = $college;
 		$this->_additionalProperties = "";
 		$this->_baseURL = "http://en.wikipedia.org/w/api.php?";
 		$this->_apiURL = "http://en.wikipedia.org/w/api.php?prop=" . $this->_prop . "&action=" . $this->_action . "&format=" . $this->_format . "&titles=" . $this->_titles . $this->_additionalProperties;
@@ -169,7 +169,7 @@ class wikipediaController
 		$key = key($decoded["query"]["pages"]);
 		$valueArray = $decoded["query"]["pages"][$key]["revisions"]["0"]["*"];
 		//print_r($valueArray);
-		
+
 		$established = parser::parseSnippet("|established", $valueArray);
 		$established = parser::refineSnippet($established, "established");
 		//print_r($established);
@@ -222,13 +222,13 @@ class wikipediaController
 	//		print_r($athletics); // needs further parsing
 		}
 		$website = parser::parseSnippet("|website", $valueArray);
+	//	print_r($website);
 		$website = parser::refineSnippet($website);
-		//print_r($website);
-		
+	//	print_r($website);
 		// code to add to database "CollegeSummary"
-		//$college = str_replace("_", " ", $this->_college);
-		//$array = array("CollegeUrl" => "$website", "CollegeLocation" => "$location", "CollegePostGrads" => "$postgrad", "CollegeUnderGrads" => "$undergrad", "CollegeAcademicStaff" => "$faculty", "CollegeEndowmentFund" => "$endowment", "CollegeCampus" => "$campus", "CollegeType" => "$type", "CollegeEstablished" => "$established", "CollegePresident" => "$president", "CollegeAthletics" => "$athletics" );
-		//$this->_dbConnection->updateTable("CollegeSummary", "CollegeSummary", "CollegeName", $college, "CollegeID", $array, "CollegeName = '$college'");
+		$college = str_replace("_", " ", $this->_college);
+		$array = array("CollegeUrl" => "$website", "CollegeLocation" => "$location", "CollegePostGrads" => "$postgrad", "CollegeUnderGrads" => "$undergrad", "CollegeAcademicStaff" => "$faculty", "CollegeEndowmentFund" => "$endowment", "CollegeCampus" => "$campus", "CollegeType" => "$type", "CollegeEstablished" => "$established", "CollegePresident" => "$president", "CollegeAthletics" => "$athletics" );
+		$this->_dbConnection->updateTable("CollegeSummary", "CollegeSummary", "CollegeName", $college, "CollegeID", $array, "CollegeName = '$college'");
 	}
 	
 		
