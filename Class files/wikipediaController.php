@@ -169,7 +169,7 @@ class wikipediaController
 		$key = key($decoded["query"]["pages"]);
 		$valueArray = $decoded["query"]["pages"][$key]["revisions"]["0"]["*"];
 		//print_r($valueArray);
-		
+
 		$established = parser::parseSnippet("|established", $valueArray);
 		$established = parser::refineSnippet($established, "established");
 		//print_r($established);
@@ -222,9 +222,9 @@ class wikipediaController
 	//		print_r($athletics); // needs further parsing
 		}
 		$website = parser::parseSnippet("|website", $valueArray);
+	//	print_r($website);
 		$website = parser::refineSnippet($website);
-		//print_r($website);
-		
+	//	print_r($website);
 		// code to add to database "CollegeSummary"
 		$college = str_replace("_", " ", $this->_college);
 		$array = array("CollegeUrl" => "$website", "CollegeLocation" => "$location", "CollegePostGrads" => "$postgrad", "CollegeUnderGrads" => "$undergrad", "CollegeAcademicStaff" => "$faculty", "CollegeEndowmentFund" => "$endowment", "CollegeCampus" => "$campus", "CollegeType" => "$type", "CollegeEstablished" => "$established", "CollegePresident" => "$president", "CollegeAthletics" => "$athletics" );
