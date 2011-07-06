@@ -69,7 +69,6 @@ class relationalDbConnections extends dbConnections
 	{
 		$result = $this->selectFromTable($keyTable, $foreignKey, $valueForKey);
 		$num = mysql_num_rows($result);
-		
 		if($num == 0)
 		{
 			$this->insertIntoTable($tableName1, $keyTable, $foreignKey, $valueForKey, $primaryKey, $arrayOfValues);

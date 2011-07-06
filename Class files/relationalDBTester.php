@@ -6,7 +6,7 @@ function __autoload($class)
 	require_once $class . '.php';
 }
 
-$relation = new relationalDbConnections('lala', 'localhost:8889', 'root', 'root');
+$relation = new relationalDbConnections('lala', 'localhost:3306', 'root', 'root');
 
 $array = array("CollegeUrl" => "http://google.com", "CollegePresident" => "Abhinav Khanna");
 

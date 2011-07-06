@@ -70,7 +70,7 @@ class parser
 		elseif ($keyword == "|athletics" || $keyword == "|free")
 		{
 			$pos2 = strpos($bigStr, "=");
-			$bigStr2 = substr($bigStr, $pos2+2); // cut off keyword and "= "
+			$bigStr2 = substr($bigStr, $pos2+1); // cut off keyword and "="
 			$array1 = array("{", "website", "url", "free");
 			$posArr = array();
 			for ($i=0; $i < count($array1); $i++)
