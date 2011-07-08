@@ -19,6 +19,7 @@ class ratings
 	
 	/**
 	 * $college: The college to get the average rating of.
+	 * A value of 0 means no ratings exist
 	 * This method returns the average rating (int) for a college from among the user ratings of the college so far. If no users have rated the college, it returns a string saying that not enough ratings exist to calculate an average.
 	 */
 	public function getAverageRating($college)
@@ -31,14 +32,11 @@ class ratings
 		$totalRaters = $totalRaterArray[0];
 		if ($totalRating == 0 || $totalRaters == 0)
 		{
-			return "There are not enough ratings for this college to calculate an average.";
-		//	print 'successb';
+			return 0;
 		}
 		else
 		{
 			$avgRating = $totalRating/$totalRaters;
-		//	print 'successa';
-		//	print_r($avgRating);
 			return $avgRating;
 		}
 	}
@@ -90,7 +88,7 @@ class ratings
 		$first = $this->isFirst($college);
 		$newTotalRating;
 		$newTotalRaters;
-		if ($first == true)
+		if ($first === true)
 		{
 			$newTotalRaters = 1;
 			$newTotalRating = $rating;

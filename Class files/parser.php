@@ -26,7 +26,6 @@ class parser
 			$bigStr = substr($arrayStr, $pos1+1); // cut off everything before keyword, including the starting "|"
 			$pos2 = strpos($bigStr, "=");
 			$bigStr2 = substr($bigStr, $pos2+1); // cut off keyword and "="
-			$values = array();
 			$posN = strpos($bigStr2,"\n");
 			$str = substr($bigStr2, 0, $posN);	
 		}	
