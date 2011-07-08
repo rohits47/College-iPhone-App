@@ -17,6 +17,22 @@ class parser
 		
 	}
 	
+	public static function parseNew()
+	{
+		$str = "";
+		if (strpos($arrayStr,$keyword))
+		{			
+			$pos1 = strpos($arrayStr, $keyword);			
+			$bigStr = substr($arrayStr, $pos1+1); // cut off everything before keyword, including the starting "|"
+			$pos2 = strpos($bigStr, "=");
+			$bigStr2 = substr($bigStr, $pos2+1); // cut off keyword and "="
+			$values = array();
+			$posN = strpos($bigStr2,"\n");
+			$str = substr($bigStr2, 0, $posN);	
+		}	
+			return $str;
+	}
+	
 	/**
 	 * To be used as part of wikiSnippet in wikipediaController.php
 	 * @return: the string of text associated with the keyword that was extracted from the array.
@@ -32,6 +48,7 @@ class parser
 			$bigStr2 = substr($bigStr, $pos2+1); // cut off keyword and "="
 			$values = array();
 			$pos3 = strpos($bigStr2,"|");
+			$pos9 = strpos($bigStr2,"\n");
 			
 			if($pos3 !== false) $values[] = $pos3;
 			$pos4 = strpos($bigStr2,"<ref");
@@ -39,7 +56,7 @@ class parser
 			$pos5 = strpos($bigStr2, "}");
 			if($pos5 !== false) $values[] = $pos5;			
 			$min = min($values);
-			$str = substr($bigStr2, 0, $min);		
+			$str = substr($bigStr2, 0, $pos9);		
 			return $str;
 		}
 		else
