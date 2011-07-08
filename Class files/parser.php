@@ -48,7 +48,6 @@ class parser
 			$bigStr2 = substr($bigStr, $pos2+1); // cut off keyword and "="
 			$values = array();
 			$pos3 = strpos($bigStr2,"|");
-			$pos9 = strpos($bigStr2,"\n");
 			
 			if($pos3 !== false) $values[] = $pos3;
 			$pos4 = strpos($bigStr2,"<ref");
@@ -56,7 +55,8 @@ class parser
 			$pos5 = strpos($bigStr2, "}");
 			if($pos5 !== false) $values[] = $pos5;			
 			$min = min($values);
-			$str = substr($bigStr2, 0, $pos9);		
+
+			$str = substr($bigStr2, 0, $min);		
 			return $str;
 		}
 		else
