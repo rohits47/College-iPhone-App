@@ -194,8 +194,24 @@ class wikipediaController
 	
 	public function wikiSummary()
 	{
+		$result = $this->_dbConnection->selectFromTable("CollegeSummary", "CollegeName", $this->_college);
+		$formatted = $this->_dbConnection->formatQueryResults($result);
+		if(!empty($formatted["Summary"]))
+			return true;
+		
 		$pageInfo = $this->getPageContents();
-		print_r($pageInfo);
+	//	print_r($pageInfo);
+		$pos1 = strpos($pageInfo, '"' . $this->_college . '"');
+		if($pos1 === false) $pos1 = strpos($pageInfo, "'" . $this->_college . "'") - 1;
+		$finalString = substr($pageInfo, $pos1);
+		$pos2 = strpos($finalString, "\n");
+		if($pos2 !== false) $finalString = substr($finalString, 0, $pos2);
+		$filtered = parser::refineSnippet($finalString);
+		print_r($filtered);
+		$array = array("Summary" => "$filtered");
+		$college = str_replace("_", " ", $this->_college);
+		$this->_dbConnection->updateTable("CollegeSummary", "CollegeSummary", "CollegeName", $college, "CollegeID", $array, "CollegeName = '$college'");
+		
 	}
 	
 	// get info from list of properties, and use array elements to extract relevant info and keep in vars

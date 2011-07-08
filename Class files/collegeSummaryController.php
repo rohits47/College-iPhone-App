@@ -39,7 +39,8 @@ class collegeSummaryController
 		//	$fb = new fbController($this->_relation, $formatted[$i]);
 		//	$wiki->wikiPictures();
 		//	$wiki->wikiLinks();
-			$wiki->wikiSnippet();
+		//	$wiki->wikiSnippet();
+			$wiki->wikiSummary();
 		//	$fb->getFBSummary();
 		}
 	}

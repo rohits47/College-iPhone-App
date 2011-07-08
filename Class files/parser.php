@@ -110,7 +110,7 @@ class parser
 	
 	public static function refineSnippet($str, $case = null)
 	{
-		$array = array("{", "}", "[", "]", ",", "|", "<", ">"); // chars to eliminate
+		$array = array("{", "}", "[", "]", ",", "|", "<", ">", "'", '"'); // chars to eliminate
 		for ($i=0; $i < count($array); $i++)
 		{
 			$str = str_replace($array[$i], "", $str);
