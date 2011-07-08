@@ -30,7 +30,7 @@ class collegeSummaryController
 	 */
 	public function main()
 	{
-	//	$this->setCollegeList();
+		$this->setCollegeList();
 		$formatted = $this->getCollegeList();
 		
 		for($i = 0; $i < count($formatted); $i++)
