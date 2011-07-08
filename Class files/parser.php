@@ -25,26 +25,30 @@ class parser
 	{
 		$str = "";
 		if (strpos($arrayStr,$keyword))
-		{
-			$pos1 = strpos($arrayStr, $keyword);
+		{			
+			$pos1 = strpos($arrayStr, $keyword);			
 			$bigStr = substr($arrayStr, $pos1+1); // cut off everything before keyword, including the starting "|"
 			$pos2 = strpos($bigStr, "=");
 			$bigStr2 = substr($bigStr, $pos2+1); // cut off keyword and "="
 			$values = array();
 			$pos3 = strpos($bigStr2,"|");
+			
 			if($pos3 !== false) $values[] = $pos3;
 			$pos4 = strpos($bigStr2,"<ref");
 			if($pos4 !== false) $values[] = $pos4;
 			$pos5 = strpos($bigStr2, "}");
 			if($pos5 !== false) $values[] = $pos5;			
-			$min = min($values);			
+			$min = min($values);
+						
 			if ($min == 0)
 			{
 				$min = max($pos3,$pos4);
 			}
-			$str = substr($bigStr2, 0, $min);			
+			$str = substr($bigStr2, 0, $min);		
+			return $str;
 		}
-		return $str;
+		else
+			return false;
 	}
 	
 	public static function deepParseSnippet($keyword, $arrayStr)

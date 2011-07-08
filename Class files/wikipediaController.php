@@ -53,6 +53,27 @@ class wikipediaController
 	}
 	
 	/**
+	 * returns externalLinks from wikipedia....
+	 */
+	public function getExternalLinks($title)
+	{
+		$title = str_replace(" ", "_", $title);
+		$this->setTitle($title);
+		$this->setProp("extlinks");
+		$this->setFormat("php");
+		$this->setAdditionalProperties("&pllimit=500"); // 500 = max limit allowed
+		$this->setAPIUrl();
+		$source = urlParser::cURL($this->_apiURL);
+		$decoded = unserialize($source);
+		$key = key($decoded["query"]["pages"]);
+		$parentTitlesArray = $decoded["query"]["pages"][$key]["extlinks"];
+		
+	//	print_r($parentTitlesArray);
+		
+		return $parentTitlesArray;
+	}
+	
+	/**
 	 * public function wikiLinks()
 	 * Postcondition: the links from wikipedia are stored into Database.
 	 */
@@ -154,6 +175,29 @@ class wikipediaController
 
 	}
 	
+	protected function getPageContents()
+	{
+		$college = $this->_college;
+		$college = str_replace(" ", "_", $college);
+		$this->setTitle($college);
+		$this->setProp("revisions"); // section 0
+		$this->setFormat("php");
+		$this->setAdditionalProperties("&rvprop=content&rvsection&section=0"); // text content of page, only the text which appears before 
+		$this->setAPIUrl();
+		$source = urlParser::cURL($this->_apiURL);
+		$decoded = unserialize($source);
+		$key = key($decoded["query"]["pages"]);
+		$valueArray = $decoded["query"]["pages"][$key]["revisions"]["0"]["*"];
+		
+		return $valueArray;
+	}
+	
+	public function wikiSummary()
+	{
+		$pageInfo = $this->getPageContents();
+		print_r($pageInfo);
+	}
+	
 	// get info from list of properties, and use array elements to extract relevant info and keep in vars
 	public function wikiSnippet()
 	{
@@ -168,7 +212,7 @@ class wikipediaController
 		$decoded = unserialize($source);
 		$key = key($decoded["query"]["pages"]);
 		$valueArray = $decoded["query"]["pages"][$key]["revisions"]["0"]["*"];
-		//print_r($valueArray);
+	//	print_r($valueArray);
 
 		$established = parser::parseSnippet("|established", $valueArray);
 		$established = parser::refineSnippet($established, "established");
@@ -200,9 +244,11 @@ class wikipediaController
 			//print_r($athletics);
 		}
 		$undergrad = parser::parseSnippet("|undergrad", $valueArray);
+		if($undergrad == null) $undergrad = parser::parseSnippet("| undergrad", $valueArray);
 		$undergrad = parser::refineSnippet($undergrad, "undergrad");
 		//print_r($undergrad);
 		$postgrad = parser::parseSnippet("|postgrad", $valueArray);
+		if($postgrad == null) $postgrad = parser::parseSnippet("| postgrad", $valueArray);
 		$postgrad = parser::refineSnippet($postgrad, "postgrad");
 		if ($postgrad == "")
 		{
@@ -222,16 +268,30 @@ class wikipediaController
 	//		print_r($athletics); // needs further parsing
 		}
 		$website = parser::parseSnippet("|website", $valueArray);
+		if($website == false) $website = parser::parseSnippet("website", $valueArray);
+		if($website == false) $website = $this->getUrl();
 	//	print_r($website);
 		$website = parser::refineSnippet($website);
 	//	print_r($website);
 		// code to add to database "CollegeSummary"
 		$college = str_replace("_", " ", $this->_college);
-		$array = array("CollegeUrl" => "$website", "CollegeLocation" => "$location", "CollegePostGrads" => "$postgrad", "CollegeUnderGrads" => "$undergrad", "CollegeAcademicStaff" => "$faculty", "CollegeEndowmentFund" => "$endowment", "CollegeCampus" => "$campus", "CollegeType" => "$type", "CollegeEstablished" => "$established", "CollegePresident" => "$president", "CollegeAthletics" => "$athletics" );
+		$array = array("CollegeUrl" => "$website", "CollegeLocation" => "$location", "CollegePostGrads" => "$postgrad", "CollegeUnderGrads" => "$undergrad", "CollegeAcademicStaff" => "$faculty", "CollegeEndowmentFund" => "$endowment", "CollegeCampus" => "$campus", "CollegeType" => "$type", "CollegeEstablished" => "$established", "CollegePresident" => "$president" );
 		$this->_dbConnection->updateTable("CollegeSummary", "CollegeSummary", "CollegeName", $college, "CollegeID", $array, "CollegeName = '$college'");
 	}
 	
-		
+	/**
+	 * Retrieves the websiteURL via externalLinks
+	 */
+	public function getUrl()
+	{
+		$array = $this->getExternalLinks($this->_college);
+		$completeArray = array(".edu");
+	//	print_r($array);
+		$newArray = array();
+		for($i = 0; $i < count($array); $i++) $newArray[] = $array[$i]["*"];
+		$filtered = urlParser::compareSearchArray($newArray, $completeArray, false);
+		return $filtered[0];
+	}
 	
 	protected function setAction($action)
 	{
