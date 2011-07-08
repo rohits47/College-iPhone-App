@@ -30,7 +30,7 @@ class parser
 			$posN = strpos($bigStr2,"\n");
 			$str = substr($bigStr2, 0, $posN);	
 		}	
-			return $str;
+		return $str;
 	}
 	
 	/**
