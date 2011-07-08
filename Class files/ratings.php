@@ -17,40 +17,53 @@ class ratings
 		$this->_connection = $this->_dbConnection->open_db_connection();
 	}
 	
-	
-/*	public  function getAverageRating($college)
-	{
-		$dbConnection = new relationalDbConnections('lala', 'localhost:3306', 'root', 'root');
-		$id = $dbConnection->selectFromTable("CollegeSummary", "CollegeName", $college)
-		$totalRatingArray = $dbConnection->formatQueryResults($id, "CollegeRating");
-		$totalRating = $totalRatingArray[0];
-		$totalRaterArray = $dbConnection->formatQueryResults($id, "CollegeRaters");
-		$totalRaters = $totalRaterArray[0];
-		$avgRating = $totalRating/$totalRaters;
-		return $avgRating;
-	}
-*/	
-/*	public  function updateRatings($college, $newRating, $oldRating)
-	{
-		$dbConnection = new relationalDbConnections('lala', 'localhost:3306', 'root', 'root');
-		$id = $dbConnection->selectFromTable("CollegeSummary", "CollegeName", $college) // value?
-		$totalRatingArray = $dbConnection->formatQueryResults($id, "CollegeRating");
-		$totalRating = $totalRatingArray[0];
-		$id2 = $dbConnection->selectFromTable("CollegeSummary", "CollegeName", $college)
-		$totalRaterArray = $dbConnection->formatQueryResults($id2, "CollegeRaters");
-		$totalRaters = $totalRaterArray[0];
-		// update ints appropriately
-//		$totalRaters = $totalRaters + 1;
-//		$totalRating = $totalRating - 5;
-		$totalRating = $totalRating + $newRating; // runs regardless of first time
-		$newRatingArray = array( "CollegeRating" => $totalRating );
-		$newRatersArray = array( "CollegeRaters" => $totalRaters );
-		$dbConnection->updateTable("CollegeSummary","CollegeSummary", "CollegeName", $college, "CollegeID", $newRatingArray, "CollegeName = $college");
-		$dbConnection->updateTable("CollegeSummary","CollegeSummary", "CollegeName", $college, "CollegeID", $newRatersArray, "CollegeName = $college");
-	}
-*/
 	/**
-     * returns
+	 * $college: The college to get the average rating of.
+	 * This method returns the average rating (int) for a college from among the user ratings of the college so far. If no users have rated the college, it returns a string saying that not enough ratings exist to calculate an average.
+	 */
+	public function getAverageRating($college)
+	{
+		$id = $this->_dbConnection->selectFromTable("CollegeSummary", "CollegeName", "$college");
+		$totalRatingArray = $this->_dbConnection->formatQueryResults($id, "CollegeRating");
+		$totalRating = $totalRatingArray[0];
+		$id2 = $this->_dbConnection->selectFromTable("CollegeSummary", "CollegeName", $college);
+		$totalRaterArray = $this->_dbConnection->formatQueryResults($id2, "CollegeRaters");
+		$totalRaters = $totalRaterArray[0];
+		if ($totalRating == 0 || $totalRaters == 0)
+		{
+			return "There are not enough ratings for this college to calculate an average.";
+		//	print 'successb';
+		}
+		else
+		{
+			$avgRating = $totalRating/$totalRaters;
+		//	print 'successa';
+		//	print_r($avgRating);
+			return $avgRating;
+		}
+	}
+	
+	/**
+	 * $college: The string name of the college being rated
+	 * $rating: The rating of the college to be added to the db
+	 * $oldRating: The users oldRating, that is to be replaced with the new rating
+	 * Use this method when a user changes his/her rating on a college
+	 */
+	public function updateRatings($college, $newRating, $oldRating)
+	{
+		$id = $this->_dbConnection->selectFromTable("CollegeSummary", "CollegeName", "$college");
+		$totalRatingArray = $this->_dbConnection->formatQueryResults($id, "CollegeRating");
+		$totalRating = $totalRatingArray[0];
+		$newTotalRating = ($totalRating - $oldRating) + $newRating;
+		$newRatingArray = array( "CollegeRating" => $newTotalRating );
+		// pushes new rating to db
+		$this->_dbConnection->updateTable("CollegeSummary","CollegeSummary", "CollegeName", $college, "CollegeID", $newRatingArray, "CollegeName = '$college'");
+	//	print 'successu';
+	}
+
+	/**
+     * returns true if this is the college's first rating, returns the college's total rating otherwise
+	 * $college: The college to check the totalRating of.
      */
 	public function isFirst($college)
 	{
@@ -59,7 +72,7 @@ class ratings
 		$totalRating = $totalRatingArray[0];
 		if ( is_null($totalRating) || $totalRating == "" ) 
 		{
-			return true;
+			return true; // this means first time that this college is being rated
 		}
 		else
 		{
@@ -67,10 +80,10 @@ class ratings
 		}
 	}
 	
-	// change depending on whether formatQueryResults returns empty array or error or null
 	/**
-	 * $college:
-	 * 
+	 * $college: The string name of the college being rated
+	 * $rating: The rating of the college to be added to the db
+	 * Use this method when it's the users first time rating a college
 	 */
 	public function addToRatings($college, $rating)
 	{
@@ -81,12 +94,10 @@ class ratings
 		{
 			$newTotalRaters = 1;
 			$newTotalRating = $rating;
-		//	print 'if';
-		//	return;
 		}
 		else
 		{
-			$newTotalRating = $rating + $first;
+			$newTotalRating = $rating + $first; // adds the new rating to the previous total rating of the college
 			$id2 = $this->_dbConnection->selectFromTable("CollegeSummary", "CollegeName", $college);
 			$totalRaterArray = $this->_dbConnection->formatQueryResults($id2, "CollegeRaters");
 			$oldRaters = $totalRaterArray[0];
@@ -94,8 +105,9 @@ class ratings
 		}
 		$newRatingArray = array( "CollegeRating" => $newTotalRating );
 		$newRatersArray = array( "CollegeRaters" => $newTotalRaters );
-		// pushes new ratings and users to db
+		// pushes new rating and user to db
 		$this->_dbConnection->updateTable("CollegeSummary","CollegeSummary", "CollegeName", $college, "CollegeID", $newRatingArray, "CollegeName = '$college'");
 		$this->_dbConnection->updateTable("CollegeSummary","CollegeSummary", "CollegeName", $college, "CollegeID", $newRatersArray, "CollegeName = '$college'");
+	//	print 'successia';
 	}
 } // END class 
