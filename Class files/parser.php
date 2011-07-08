@@ -17,7 +17,7 @@ class parser
 		
 	}
 	
-	public static function parseNew()
+	public static function parseNew($keyword, $arrayStr)
 	{
 		$str = "";
 		if (strpos($arrayStr,$keyword))
@@ -30,7 +30,7 @@ class parser
 			$posN = strpos($bigStr2,"\n");
 			$str = substr($bigStr2, 0, $posN);	
 		}	
-			return $str;
+		return $str;
 	}
 	
 	/**
@@ -55,11 +55,6 @@ class parser
 			$pos5 = strpos($bigStr2, "}");
 			if($pos5 !== false) $values[] = $pos5;			
 			$min = min($values);
-						
-			if ($min == 0)
-			{
-				$min = max($pos3,$pos4);
-			}
 			$str = substr($bigStr2, 0, $min);		
 			return $str;
 		}
