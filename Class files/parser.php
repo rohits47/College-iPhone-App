@@ -39,11 +39,6 @@ class parser
 			$pos5 = strpos($bigStr2, "}");
 			if($pos5 !== false) $values[] = $pos5;			
 			$min = min($values);
-						
-			if ($min == 0)
-			{
-				$min = max($pos3,$pos4);
-			}
 			$str = substr($bigStr2, 0, $min);		
 			return $str;
 		}
