@@ -206,8 +206,22 @@ class wikipediaController
 		$finalString = substr($pageInfo, $pos1);
 		$pos2 = strpos($finalString, "\n");
 		if($pos2 !== false) $finalString = substr($finalString, 0, $pos2);
+		
+		$pos = true;
+		$posEnd = true;
+		
+		while($pos !== false && $posEnd !== false)
+		{
+			$pos = strpos($finalString, "{");
+			$posEnd = strpos($finalString, "}") + 1;
+			
+			$finalString = "" . substr($finalString, 0, $pos) . substr($finalString, $posEnd + 1);
+			print_r($finalString ."<p>");
+		}
+		
 		$filtered = parser::refineSnippet($finalString);
-		print_r($filtered);
+//		print_r($filtered);
+
 		$array = array("Summary" => "$filtered");
 		$college = str_replace("_", " ", $this->_college);
 		$this->_dbConnection->updateTable("CollegeSummary", "CollegeSummary", "CollegeName", $college, "CollegeID", $array, "CollegeName = '$college'");
@@ -288,8 +302,9 @@ class wikipediaController
 	//	print_r($website);
 		$website = parser::refineSnippet($website);
 	//	print_r($website);
+	*/
 	}
-*/	
+	
 	// get info from list of properties, and use array elements to extract relevant info and keep in vars
 	public function wikiSnippet()
 	{
