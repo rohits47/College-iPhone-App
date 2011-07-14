@@ -249,34 +249,34 @@ class wikipediaController
 		$country = parser::refineSnippet($country);
 		//print_r($country);
 		$location = $city . ", " . $country;
-		print_r($location);
-/*		$established = parser::parseSnippet("|established", $valueArray);
+		//print_r($location);
+		$established = parser::parseNew("|established", $valueArray);
 		$established = parser::refineSnippet($established, "established");
 		//print_r($established);
-		$type = parser::parseSnippet("|type", $valueArray);
+		$type = parser::parseNew("|type", $valueArray);
 		$type = parser::refineSnippet($type);
 		//print_r($type);
-		$president = parser::parseSnippet("|president", $valueArray);
+		$president = parser::parseNew("|president", $valueArray);
 		$president = parser::refineSnippet($president);
 		//print_r($president);
-		$endowment = parser::deepParseSnippet("|endowment", $valueArray);
+		$endowment = parser::parseNew("|endowment", $valueArray);
 		$endowment = parser::refineSnippet($endowment);
 		//print_r($endowment);
-		$faculty = parser::parseSnippet("|faculty", $valueArray);
+		$faculty = parser::parseNew("|faculty", $valueArray);
 		$faculty = parser::refineSnippet($faculty, "faculty");
 		//print_r($faculty);
 		if ($faculty == "") // uses staff keyword if faculty keyword is nonexistent
 		{
-			$faculty = parser::parseSnippet("|staff", $valueArray); // uses $faculty for ease of adding to db
+			$faculty = parser::parseNew("|staff", $valueArray); // uses $faculty for ease of adding to db
 			$faculty = parser::refineSnippet($faculty, "faculty");
-			//print_r($athletics);
+			//print_r($faculty);
 		}
-		$undergrad = parser::parseSnippet("|undergrad", $valueArray);
-		if($undergrad == null) $undergrad = parser::parseSnippet("| undergrad", $valueArray);
+		$undergrad = parser::parseNew("|undergrad", $valueArray);
+		if($undergrad == null) $undergrad = parser::parseNew("| undergrad", $valueArray);
 		$undergrad = parser::refineSnippet($undergrad, "undergrad");
 		//print_r($undergrad);
-		$postgrad = parser::parseSnippet("|postgrad", $valueArray);
-		if($postgrad == null) $postgrad = parser::parseSnippet("| postgrad", $valueArray);
+		$postgrad = parser::parseNew("|postgrad", $valueArray);
+		if($postgrad == null) $postgrad = parser::parseNew("| postgrad", $valueArray);
 		$postgrad = parser::refineSnippet($postgrad, "postgrad");
 		if ($postgrad == "")
 		{
@@ -285,19 +285,18 @@ class wikipediaController
 		//print_r($postgrad);
 		$campus = parser::parseNew("|campus", $valueArray);
 		$campus = parser::refineSnippet($campus);
-		print_r($campus);
-		return;
-		$athletics = parser::deepParseSnippet("|athletics", $valueArray);
+		//print_r($campus);
+		$athletics = parser::parseNew("|athletics", $valueArray);
 		$athletics = parser::refineSnippet($athletics);
 	//	print_r($athletics); // needs further parsing
 		if ($athletics == "") // uses staff keyword if faculty keyword is nonexistent
 		{
-			$athletics = parser::deepParseSnippet("|free", $valueArray); //  used $athletics for ease of adding to db
+			$athletics = parser::parseNew("|free", $valueArray); //  used $athletics for ease of adding to db
 			$athletics = parser::refineSnippet($faculty);
 	//		print_r($athletics); // needs further parsing
 		}
-		$website = parser::parseSnippet("|website", $valueArray);
-		if($website == false) $website = parser::parseSnippet("website", $valueArray);
+		$website = parser::parseNew("|website", $valueArray);
+		if($website == false) $website = parser::parseNew("website", $valueArray);
 		if($website == false) $website = $this->getUrl();
 	//	print_r($website);
 		$website = parser::refineSnippet($website);

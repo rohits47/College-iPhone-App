@@ -27,9 +27,42 @@ class parser
 			$pos2 = strpos($bigStr, "=");
 			$bigStr2 = substr($bigStr, $pos2+1); // cut off keyword and "="
 			$posN = strpos($bigStr2,"\n");
-			$str = substr($bigStr2, 0, $posN);	
+			$str1 = substr($bigStr2, 0, $posN);	
+			
+			$values = array();
+			$pos3 = strpos($str1,"|");
+			
+			if($pos3 !== false) $values[] = $pos3;
+			$pos4 = strpos($str1,"<ref");
+			if($pos4 !== false) $values[] = $pos4;
+			$pos5 = strpos($str1, "}");
+			if($pos5 !== false) $values[] = $pos5;			
+			$min = min($values);
+			$str = substr($str1, 0, $min);
+		}
+		if ($str == "")
+		{
+			$str = "N/A";
 		}	
 		return $str;
+	}
+	
+	//useless
+	public static function removeDuplicates($str)
+	{
+     	$words = explode(" ", trim($str));
+        $len = count($words);
+        for ($i = 0; $i < $len; $i++)
+        {
+                for ($p = 0; $p < $len; $p++)
+                {
+                        if ($p != $i && $words[$i] == $words[$p])
+                        {
+                                return false;
+                        }
+                }
+        }
+        return true;
 	}
 	
 	/**
@@ -45,7 +78,7 @@ class parser
 			$bigStr = substr($arrayStr, $pos1+1); // cut off everything before keyword, including the starting "|"
 			$pos2 = strpos($bigStr, "=");
 			$bigStr2 = substr($bigStr, $pos2+1); // cut off keyword and "="
-			$values = array();
+			$values = array(); // array to hold values for positions of cutoff characters
 			$pos3 = strpos($bigStr2,"|");
 			
 			if($pos3 !== false) $values[] = $pos3;
@@ -58,7 +91,7 @@ class parser
 			return $str;
 		}
 		else
-			return false;
+			return false; // unable to parse
 	}
 	
 	public static function deepParseSnippet($keyword, $arrayStr)
