@@ -2,87 +2,42 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>currentDocument</key>
-	<string>urlTester.php</string>
 	<key>documents</key>
 	<array>
 		<dict>
 			<key>filename</key>
 			<string>parser.php</string>
 			<key>lastUsed</key>
-			<date>2011-06-14T04:02:31Z</date>
+			<date>2011-07-20T04:39:54Z</date>
 		</dict>
 		<dict>
 			<key>filename</key>
 			<string>urlParser.php</string>
 			<key>lastUsed</key>
-			<date>2011-06-14T04:45:42Z</date>
+			<date>2011-07-20T04:39:53Z</date>
+		</dict>
+		<dict>
+			<key>filename</key>
+			<string>CSAPI.php</string>
+			<key>lastUsed</key>
+			<date>2011-07-20T04:39:56Z</date>
+			<key>selected</key>
+			<true/>
 		</dict>
 		<dict>
 			<key>filename</key>
 			<string>urlTester.php</string>
 			<key>lastUsed</key>
-			<date>2011-06-14T04:45:42Z</date>
-			<key>selected</key>
-			<true/>
+			<date>2011-07-20T04:39:48Z</date>
 		</dict>
 	</array>
 	<key>fileHierarchyDrawerWidth</key>
 	<integer>200</integer>
 	<key>metaData</key>
-	<dict>
-		<key>parser.php</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>1</integer>
-				<key>line</key>
-				<integer>12</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>0</integer>
-		</dict>
-		<key>urlParser.php</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>60</integer>
-				<key>line</key>
-				<integer>13</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>0</integer>
-		</dict>
-		<key>urlTester.php</key>
-		<dict>
-			<key>caret</key>
-			<dict>
-				<key>column</key>
-				<integer>50</integer>
-				<key>line</key>
-				<integer>6</integer>
-			</dict>
-			<key>firstVisibleColumn</key>
-			<integer>0</integer>
-			<key>firstVisibleLine</key>
-			<integer>0</integer>
-		</dict>
-	</dict>
-	<key>openDocuments</key>
-	<array>
-		<string>parser.php</string>
-		<string>urlParser.php</string>
-		<string>urlTester.php</string>
-	</array>
+	<dict/>
 	<key>showFileHierarchyDrawer</key>
 	<true/>
 	<key>windowFrame</key>
-	<string>{{203, 20}, {1076, 758}}</string>
+	<string>{{211, 4}, {1069, 774}}</string>
 </dict>
 </plist>
