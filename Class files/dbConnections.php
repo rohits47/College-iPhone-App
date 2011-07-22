@@ -171,4 +171,17 @@ class dbConnections
 		return $result;
 	}
 	
+	
+	/**
+	 * setDb()
+	 * $dbName is the name of the db you wish to switch to.
+	 * @return $boolean = true if successful OR false if not.
+	 */
+	public function setDb($dbName)
+	{
+		$this->_dbname = $dbName;
+		$boolean = mysql_select_db($dbName);
+		return $boolean;
+	}
+	
 }
