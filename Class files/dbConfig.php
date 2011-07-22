@@ -27,7 +27,7 @@ $dbpass = "root";
 
 //Do NOT EDIT THIS PORTION OF THE CODE.
 $dbConfig = new databaseProperties($databaseName, $dbhost, $dbuser, $dbpass);
-$totalVersions = 7;
+$totalVersions = 15;
 
 for($i = $version; $i <= $totalVersions; $i++)
 {
@@ -35,6 +35,8 @@ for($i = $version; $i <= $totalVersions; $i++)
  * CollegeID Table + ProfessorID Table
  */
 if($i == 1) {
+	$dbConfig->createDatabase("CollegeSummary");
+	$dbConfig->setDb("CollegeSummary");
 	$array1 = array();
 
 	$array1[0] = array("CollegeID", "int", "NOT NULL", "AUTO_INCREMENT");
@@ -188,6 +190,154 @@ if($i == 7)
 	if($dbConfig->createINNODBTable("CollegeArts", $array1)) echo "Success! Your CollegeArts Table is now set up! <br />";
 	
 	if($dbConfig->setRelation("CollegeArts", "CollegeSummary", "CollegeID")) echo "Success! Your CollegeArts and CollegeSummary Table are now linked via CollegeID! <br />";
+}
+/**
+ * The Profile Tables are added here....
+ * Huge additions, See google doc on What's Left for details on table specifications.
+ */
+if($i == 8)
+{
+	$dbConfig->createDatabase("UserProfile");
+}
+if($i == 9)
+{
+	$dbConfig->setDb("UserProfile");
+	$array = array();
+	$array[0] = array("StudentID", "int", "NOT NULL", "AUTO_INCREMENT");
+	$array[1] = array("PRIMARY KEY(StudentID)");
+	$array[2] = array("StudentFirstName", "TINYTEXT");
+	$array[3] = array("StudentLastName", "TINYTEXT");
+	$array[4] = array("StudentGPA", "DOUBLE");
+	$array[5] = array("StudentSATMath", "INT");
+	$array[6] = array("StudentSATWriting", "INT");
+	$array[7] = array("StudentSATCR", "INT");
+	$array[8] = array("StudentMajor", "TINYTEXT");
+	$array[9] = array("StudentSATII1", "INT");
+	$array[10] = array("StudentSATII2", "INT");
+	$array[11] = array("StudentSATII3", "INT");
+	$array[12] = array("StudentSchool", "TINYTEXT");
+	
+	if($dbConfig->createINNODBTable("StudentUsers", $array)) echo "Success! Your StudentUsers Table is now set up! <br />";
+
+}
+
+if($i == 10)
+{	
+	$array = array();
+	$array[0] = array("CounselorID", "int", "NOT NULL", "AUTO_INCREMENT");
+	$array[1] = array("PRIMARY KEY(CounselorID)");
+	$array[2] = array("CounselorName", "TINYTEXT");
+	$array[3] = array("CounselorSchoolName", "INT");
+	
+	if($dbConfig->createINNODBTable("CounselorUsers", $array)) echo "Success! Your CounselorUsers Table is now set up! <br />";
+	
+	$array1 = array();
+	$array1[0] = array("ListID", "INT", "NOT NULL", "AUTO_INCREMENT");
+	$array1[1] = array("PRIMARY KEY(ListID)");
+	$array1[2] = array("StudentListStudentFirstName", "TINYTEXT");
+	$array1[3] = array("StudentListStudentLastName", "TINYTEXT");
+	$array1[4] = array("StudentID", "INT");
+	$array1[5] = array("CounselorID", "INT");
+	
+	if($dbConfig->createINNODBTable("CounselorStudents", $array1)) echo "Success! Your CounselorStudents Table is now set up! <br />";
+	
+	if($dbConfig->setRelation("CounselorStudents", "StudentUsers", "StudentID")) echo "Success! Your CounselorStudents and StudentUsers Table are now linked via StudentID! <br />";
+
+	if($dbConfig->setRelation("CounselorStudents", "CounselorUsers", "CounselorID")) echo "Success! Your CounselorStudents and CounselorUsers Table are now linked via CounselorID! <br />";
+}
+
+if($i == 11)
+{
+	$array = array();
+	$array[0] = array("CommentID", "int", "NOT NULL", "AUTO_INCREMENT");
+	$array[1] = array("PRIMARY KEY(CommentID)");
+	$array[2] = array("CommentContent", "TEXT");
+	$array[3] = array("StudentID", "INT");
+	$array[4] = array("CounselorID", "INT");
+	$array[5] = array("CommentTagID", "INT");
+	$array[6] = array("CommentTagTable", "TINYTEXT");
+	
+	if($dbConfig->createINNODBTable("StudentComments", $array)) echo "Success! Your StudentComments Table is now set up! <br />";
+	
+	if($dbConfig->setRelation("StudentComments", "StudentUsers", "StudentID")) echo "Success! Your StudentComments and StudentUsers Table are now linked via StudentID! <br />";
+	
+	if($dbConfig->setRelation("StudentComments", "CounselorUsers", "CounselorID")) echo "Success! Your StudentComments and CounselorUser Tables are now linked via CounselorID";
+
+}
+if($i == 12)
+{
+	$array = array();
+	$array[0] = array("RecommendedID", "int", "NOT NULL", "AUTO_INCREMENT");
+	$array[1] = array("PRIMARY KEY(RecommendedID)");
+	$array[2] = array("RecommendedName", "TINYTEXT");
+	$array[3] = array("StudentID", "INT");
+	$array[4] = array("CollegeID", "INT");
+	
+	if($dbConfig->createINNODBTable("StudentRecommended", $array)) echo "Success! Your StudentRecommended Table is now set up! <br />";
+	
+	if($dbConfig->setRelation("StudentRecommended", "StudentUsers", "StudentID")) echo "Success! Your StudentRecommended and StudentUsers Table are now linked via StudentID! <br />";
+	
+	if($dbConfig->setRelation("StudentRecommended", "CollegeSummary", "CollegeID", "CollegeSummary")) echo "Success! Your StudentRecommended and CollegeSummary Table are now linked via CollegeID! <br />";
+	
+}
+
+if($i == 13)
+{
+	$array = array();
+	$array[0] = array("SCollegeID", "int", "NOT NULL", "AUTO_INCREMENT");
+	$array[1] = array("PRIMARY KEY(SCollegeID)");
+	$array[2] = array("SCollegeName", "TINYTEXT");
+	$array[3] = array("StudentID", "INT");
+	$array[4] = array("CollegeID", "INT");
+	
+	if($dbConfig->createINNODBTable("StudentColleges", $array)) echo "Success! Your StudentColleges Table is now set up! <br />";
+	
+	if($dbConfig->setRelation("StudentColleges", "StudentUsers", "StudentID")) echo "Success! Your StudentColleges and StudentUsers Table are now linked via StudentID! <br />";
+	
+	if($dbConfig->setRelation("StudentColleges", "CollegeSummary", "CollegeID", "CollegeSummary")) echo "Success! Your StudentColleges and CollegeSummary Table are now linked via CollegeID! <br />";
+	
+}
+if($i == 14)
+{
+	$array = array();
+	$array[0] = array("NoteID", "int", "NOT NULL", "AUTO_INCREMENT");
+	$array[1] = array("PRIMARY KEY(NoteID)");
+	$array[2] = array("NoteContent", "TEXT");
+	$array[3] = array("StudentID", "INT");
+	$array[4] = array("CollegeID", "INT");
+	
+	if($dbConfig->createINNODBTable("StudentNotes", $array)) echo "Success! Your StudentNotes Table is now set up! <br />";
+	
+	if($dbConfig->setRelation("StudentNotes", "StudentUsers", "StudentID")) echo "Success! Your StudentNotes and StudentUsers Table are now linked via StudentID! <br />";
+	
+	if($dbConfig->setRelation("StudentNotes", "CollegeSummary", "CollegeID", "CollegeSummary")) echo "Success! Your StudentNotes and CollegeSummary Table are now linked via CollegeID! <br />";
+}
+
+if($i == 15)
+{
+	//This covers the Tours Tables
+	$array = array();
+	$array[0] = array("TourID", "int", "NOT NULL", "AUTO_INCREMENT");
+	$array[1] = array("PRIMARY KEY(TourID)");
+	$array[2] = array("StudentID", "INT");
+	
+	if($dbConfig->createINNODBTable("StudentTours", $array)) echo "Success! Your StudentTours Table is now set up! <br />";
+	
+	if($dbConfig->setRelation("StudentTours", "StudentUsers", "StudentID")) echo "Success! Your StudentTours and StudentUsers Table are now linked via StudentID! <br />";	
+	
+	$array1 = array();
+	$array1[0] = array("HitListID", "int", "NOT NULL", "AUTO_INCREMENT");
+	$array1[1] = array("PRIMARY KEY(HitListID)");
+	$array1[2] = array("TourID", "INT");
+	$array1[3] = array("TourCollegeName", "TINYTEXT");
+	$array1[4] = array("CollegeID", "INT");
+	
+	if($dbConfig->createINNODBTable("ToursHitList", $array1)) echo "Success! Your ToursHitList Table is now set up! <br />";
+	
+	if($dbConfig->setRelation("ToursHitList", "CollegeSummary", "CollegeID", "CollegeSummary")) echo "Success! Your ToursHitList and CollegeSummary Table are now linked via CollegeID! <br />";
+
+	if($dbConfig->setRelation("ToursHitList", "StudentTours", "ToursID")) echo "Success! Your ToursHitList and StudentTours Table are now linked via ToursID! <br />";
+	
 }
 
 }

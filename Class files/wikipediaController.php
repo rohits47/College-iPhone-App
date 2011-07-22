@@ -228,6 +228,7 @@ class wikipediaController
 		
 	}
 	
+	/*
 	public function wikiNewline()
 	{
 		$college = $this->_college;
@@ -301,8 +302,10 @@ class wikipediaController
 	//	print_r($website);
 		$website = parser::refineSnippet($website);
 	//	print_r($website);
-	*/
+	
 	}
+	
+	*/
 	
 	// get info from list of properties, and use array elements to extract relevant info and keep in vars
 	public function wikiSnippet()

@@ -59,13 +59,24 @@ class databaseProperties extends dbConnections
 	 * @param: table2 is the table you are linking to
 	 * @param: $foreignkey is the foreignkey you are linking.
 	 */
-	public function setRelation($table1, $table2, $foreignKey)
+	public function setRelation($table1, $table2, $foreignKey, $dbName = null)
 	{
-		$query = mysql_query("ALTER TABLE  `$table1` ADD FOREIGN KEY (  `$foreignKey` ) REFERENCES  `$this->_dbname`.`$table2` (
-		`$foreignKey`)");
+		if(is_null($dbName))
+		{
+			$query = mysql_query("ALTER TABLE  `$table1` ADD FOREIGN KEY (  `$foreignKey` ) REFERENCES  `$this->_dbname`.`$table2` (
+			`$foreignKey`)");
 		
-		if($query) return true;
-		else return false;
+			if($query) return true;
+			else return false;
+		}
+		else
+		{
+			$query = mysql_query("ALTER TABLE  `$table1` ADD FOREIGN KEY (  `$foreignKey` ) REFERENCES  `$dbName`.`$table2` (
+			`$foreignKey`)");
+		
+			if($query) return true;
+			else return false;
+		}
 	}
 	
 	/**
