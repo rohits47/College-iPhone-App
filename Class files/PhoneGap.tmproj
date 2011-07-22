@@ -3,35 +3,121 @@
 <plist version="1.0">
 <dict>
 	<key>currentDocument</key>
-	<string>urlTester.php</string>
+	<string>parser.php</string>
 	<key>documents</key>
 	<array>
 		<dict>
 			<key>filename</key>
 			<string>parser.php</string>
 			<key>lastUsed</key>
-			<date>2011-06-14T04:02:31Z</date>
+			<date>2011-07-21T18:57:08Z</date>
+			<key>selected</key>
+			<true/>
 		</dict>
 		<dict>
 			<key>filename</key>
 			<string>urlParser.php</string>
 			<key>lastUsed</key>
-			<date>2011-06-14T04:45:42Z</date>
+			<date>2011-07-08T03:09:07Z</date>
 		</dict>
 		<dict>
 			<key>filename</key>
 			<string>urlTester.php</string>
 			<key>lastUsed</key>
-			<date>2011-06-14T04:45:42Z</date>
-			<key>selected</key>
-			<true/>
+			<date>2011-06-19T17:11:17Z</date>
+		</dict>
+		<dict>
+			<key>filename</key>
+			<string>collegeSummaryController.php</string>
+			<key>lastUsed</key>
+			<date>2011-07-14T17:22:59Z</date>
+		</dict>
+		<dict>
+			<key>filename</key>
+			<string>databaseProperties.php</string>
+			<key>lastUsed</key>
+			<date>2011-07-21T05:11:39Z</date>
+		</dict>
+		<dict>
+			<key>filename</key>
+			<string>dbConfig.php</string>
+			<key>lastUsed</key>
+			<date>2011-07-21T18:57:08Z</date>
+		</dict>
+		<dict>
+			<key>filename</key>
+			<string>dbConnections.php</string>
+			<key>lastUsed</key>
+			<date>2011-07-20T05:12:40Z</date>
+		</dict>
+		<dict>
+			<key>filename</key>
+			<string>dnUtilities.php</string>
+		</dict>
+		<dict>
+			<key>filename</key>
+			<string>doubleNode.php</string>
+		</dict>
+		<dict>
+			<key>filename</key>
+			<string>parserTester.php</string>
+			<key>lastUsed</key>
+			<date>2011-06-25T16:13:38Z</date>
+		</dict>
+		<dict>
+			<key>filename</key>
+			<string>ratings.php</string>
+			<key>lastUsed</key>
+			<date>2011-07-08T22:28:49Z</date>
+		</dict>
+		<dict>
+			<key>filename</key>
+			<string>wikipediaController.php</string>
+			<key>lastUsed</key>
+			<date>2011-07-18T03:00:12Z</date>
+		</dict>
+		<dict>
+			<key>filename</key>
+			<string>fbController.php</string>
+			<key>lastUsed</key>
+			<date>2011-07-01T16:57:17Z</date>
+		</dict>
+		<dict>
+			<key>filename</key>
+			<string>collegeStatistics.php</string>
+			<key>lastUsed</key>
+			<date>2011-06-29T03:07:40Z</date>
+		</dict>
+		<dict>
+			<key>filename</key>
+			<string>relationalDbConnections.php</string>
+			<key>lastUsed</key>
+			<date>2011-07-07T00:50:56Z</date>
+		</dict>
+		<dict>
+			<key>filename</key>
+			<string>relationalDBTester.php</string>
+			<key>lastUsed</key>
+			<date>2011-07-07T00:50:32Z</date>
+		</dict>
+		<dict>
+			<key>filename</key>
+			<string>wikipediaTester.php</string>
+			<key>lastUsed</key>
+			<date>2011-07-08T22:44:13Z</date>
+		</dict>
+		<dict>
+			<key>filename</key>
+			<string>collegeSummaryTester.php</string>
+			<key>lastUsed</key>
+			<date>2011-07-14T17:21:36Z</date>
 		</dict>
 	</array>
 	<key>fileHierarchyDrawerWidth</key>
 	<integer>200</integer>
 	<key>metaData</key>
 	<dict>
-		<key>parser.php</key>
+		<key>collegeStatistics.php</key>
 		<dict>
 			<key>caret</key>
 			<dict>
@@ -45,28 +131,210 @@
 			<key>firstVisibleLine</key>
 			<integer>0</integer>
 		</dict>
-		<key>urlParser.php</key>
+		<key>collegeSummaryController.php</key>
 		<dict>
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>60</integer>
+				<integer>2</integer>
 				<key>line</key>
-				<integer>13</integer>
+				<integer>43</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>17</integer>
+		</dict>
+		<key>collegeSummaryTester.php</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>8</integer>
+				<key>line</key>
+				<integer>11</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
 			<integer>0</integer>
 		</dict>
+		<key>databaseProperties.php</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>110</integer>
+				<key>line</key>
+				<integer>73</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>53</integer>
+		</dict>
+		<key>dbConfig.php</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>41</integer>
+				<key>line</key>
+				<integer>308</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>290</integer>
+		</dict>
+		<key>dbConnections.php</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>58</integer>
+				<key>line</key>
+				<integer>177</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>147</integer>
+		</dict>
+		<key>fbController.php</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>2</integer>
+				<key>line</key>
+				<integer>23</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+		</dict>
+		<key>parser.php</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>21</integer>
+				<key>line</key>
+				<integer>103</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>25</integer>
+		</dict>
+		<key>parserTester.php</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>0</integer>
+				<key>line</key>
+				<integer>0</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+		</dict>
+		<key>ratings.php</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>16</integer>
+				<key>line</key>
+				<integer>15</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>50</integer>
+		</dict>
+		<key>relationalDBTester.php</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>64</integer>
+				<key>line</key>
+				<integer>18</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+		</dict>
+		<key>relationalDbConnections.php</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>24</integer>
+				<key>line</key>
+				<integer>43</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+		</dict>
+		<key>urlParser.php</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>7</integer>
+				<key>line</key>
+				<integer>107</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>12</integer>
+		</dict>
 		<key>urlTester.php</key>
 		<dict>
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>50</integer>
+				<integer>5</integer>
 				<key>line</key>
-				<integer>6</integer>
+				<integer>0</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+		</dict>
+		<key>wikipediaController.php</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>2</integer>
+				<key>line</key>
+				<integer>311</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>305</integer>
+		</dict>
+		<key>wikipediaTester.php</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>93</integer>
+				<key>line</key>
+				<integer>7</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
@@ -76,9 +344,20 @@
 	</dict>
 	<key>openDocuments</key>
 	<array>
+		<string>collegeSummaryTester.php</string>
+		<string>dbConfig.php</string>
+		<string>wikipediaController.php</string>
 		<string>parser.php</string>
 		<string>urlParser.php</string>
-		<string>urlTester.php</string>
+		<string>fbController.php</string>
+		<string>dbConnections.php</string>
+		<string>parserTester.php</string>
+		<string>ratings.php</string>
+		<string>relationalDBTester.php</string>
+		<string>relationalDbConnections.php</string>
+		<string>wikipediaTester.php</string>
+		<string>collegeSummaryController.php</string>
+		<string>databaseProperties.php</string>
 	</array>
 	<key>showFileHierarchyDrawer</key>
 	<true/>
