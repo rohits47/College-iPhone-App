@@ -1,0 +1,443 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E917C29313DA324400D62CB6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E917C29213DA324400D62CB6 /* UIKit.framework */; };
+		E917C29513DA324400D62CB6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E917C29413DA324400D62CB6 /* Foundation.framework */; };
+		E917C29713DA324400D62CB6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E917C29613DA324400D62CB6 /* CoreGraphics.framework */; };
+		E917C29D13DA324400D62CB6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E917C29B13DA324400D62CB6 /* InfoPlist.strings */; };
+		E917C2A013DA324400D62CB6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E917C29F13DA324400D62CB6 /* main.m */; };
+		E917C2A313DA324400D62CB6 /* CollegeiPhoneAppAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E917C2A213DA324400D62CB6 /* CollegeiPhoneAppAppDelegate.m */; };
+		E917C2A613DA324400D62CB6 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = E917C2A413DA324400D62CB6 /* MainWindow.xib */; };
+		E917C2AD13DA324400D62CB6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E917C29213DA324400D62CB6 /* UIKit.framework */; };
+		E917C2AE13DA324400D62CB6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E917C29413DA324400D62CB6 /* Foundation.framework */; };
+		E917C2AF13DA324400D62CB6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E917C29613DA324400D62CB6 /* CoreGraphics.framework */; };
+		E917C2B713DA324400D62CB6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E917C2B513DA324400D62CB6 /* InfoPlist.strings */; };
+		E917C2BA13DA324400D62CB6 /* CollegeiPhoneAppTests.h in Resources */ = {isa = PBXBuildFile; fileRef = E917C2B913DA324400D62CB6 /* CollegeiPhoneAppTests.h */; };
+		E917C2BC13DA324400D62CB6 /* CollegeiPhoneAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E917C2BB13DA324400D62CB6 /* CollegeiPhoneAppTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E917C2B013DA324400D62CB6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E917C28513DA324400D62CB6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E917C28D13DA324400D62CB6;
+			remoteInfo = CollegeiPhoneApp;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		E917C28E13DA324400D62CB6 /* CollegeiPhoneApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CollegeiPhoneApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E917C29213DA324400D62CB6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		E917C29413DA324400D62CB6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		E917C29613DA324400D62CB6 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		E917C29A13DA324400D62CB6 /* CollegeiPhoneApp-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CollegeiPhoneApp-Info.plist"; sourceTree = "<group>"; };
+		E917C29C13DA324400D62CB6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		E917C29E13DA324400D62CB6 /* CollegeiPhoneApp-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CollegeiPhoneApp-Prefix.pch"; sourceTree = "<group>"; };
+		E917C29F13DA324400D62CB6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		E917C2A113DA324400D62CB6 /* CollegeiPhoneAppAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollegeiPhoneAppAppDelegate.h; sourceTree = "<group>"; };
+		E917C2A213DA324400D62CB6 /* CollegeiPhoneAppAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CollegeiPhoneAppAppDelegate.m; sourceTree = "<group>"; };
+		E917C2A513DA324400D62CB6 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
+		E917C2AC13DA324400D62CB6 /* CollegeiPhoneAppTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CollegeiPhoneAppTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E917C2B413DA324400D62CB6 /* CollegeiPhoneAppTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CollegeiPhoneAppTests-Info.plist"; sourceTree = "<group>"; };
+		E917C2B613DA324400D62CB6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		E917C2B813DA324400D62CB6 /* CollegeiPhoneAppTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CollegeiPhoneAppTests-Prefix.pch"; sourceTree = "<group>"; };
+		E917C2B913DA324400D62CB6 /* CollegeiPhoneAppTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollegeiPhoneAppTests.h; sourceTree = "<group>"; };
+		E917C2BB13DA324400D62CB6 /* CollegeiPhoneAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CollegeiPhoneAppTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E917C28B13DA324400D62CB6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E917C29313DA324400D62CB6 /* UIKit.framework in Frameworks */,
+				E917C29513DA324400D62CB6 /* Foundation.framework in Frameworks */,
+				E917C29713DA324400D62CB6 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E917C2A813DA324400D62CB6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E917C2AD13DA324400D62CB6 /* UIKit.framework in Frameworks */,
+				E917C2AE13DA324400D62CB6 /* Foundation.framework in Frameworks */,
+				E917C2AF13DA324400D62CB6 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E917C28313DA324400D62CB6 = {
+			isa = PBXGroup;
+			children = (
+				E917C29813DA324400D62CB6 /* CollegeiPhoneApp */,
+				E917C2B213DA324400D62CB6 /* CollegeiPhoneAppTests */,
+				E917C29113DA324400D62CB6 /* Frameworks */,
+				E917C28F13DA324400D62CB6 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E917C28F13DA324400D62CB6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E917C28E13DA324400D62CB6 /* CollegeiPhoneApp.app */,
+				E917C2AC13DA324400D62CB6 /* CollegeiPhoneAppTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E917C29113DA324400D62CB6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E917C29213DA324400D62CB6 /* UIKit.framework */,
+				E917C29413DA324400D62CB6 /* Foundation.framework */,
+				E917C29613DA324400D62CB6 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E917C29813DA324400D62CB6 /* CollegeiPhoneApp */ = {
+			isa = PBXGroup;
+			children = (
+				E917C2A113DA324400D62CB6 /* CollegeiPhoneAppAppDelegate.h */,
+				E917C2A213DA324400D62CB6 /* CollegeiPhoneAppAppDelegate.m */,
+				E917C2A413DA324400D62CB6 /* MainWindow.xib */,
+				E917C29913DA324400D62CB6 /* Supporting Files */,
+			);
+			path = CollegeiPhoneApp;
+			sourceTree = "<group>";
+		};
+		E917C29913DA324400D62CB6 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E917C29A13DA324400D62CB6 /* CollegeiPhoneApp-Info.plist */,
+				E917C29B13DA324400D62CB6 /* InfoPlist.strings */,
+				E917C29E13DA324400D62CB6 /* CollegeiPhoneApp-Prefix.pch */,
+				E917C29F13DA324400D62CB6 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E917C2B213DA324400D62CB6 /* CollegeiPhoneAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				E917C2B913DA324400D62CB6 /* CollegeiPhoneAppTests.h */,
+				E917C2BB13DA324400D62CB6 /* CollegeiPhoneAppTests.m */,
+				E917C2B313DA324400D62CB6 /* Supporting Files */,
+			);
+			path = CollegeiPhoneAppTests;
+			sourceTree = "<group>";
+		};
+		E917C2B313DA324400D62CB6 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E917C2B413DA324400D62CB6 /* CollegeiPhoneAppTests-Info.plist */,
+				E917C2B513DA324400D62CB6 /* InfoPlist.strings */,
+				E917C2B813DA324400D62CB6 /* CollegeiPhoneAppTests-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E917C28D13DA324400D62CB6 /* CollegeiPhoneApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E917C2BF13DA324400D62CB6 /* Build configuration list for PBXNativeTarget "CollegeiPhoneApp" */;
+			buildPhases = (
+				E917C28A13DA324400D62CB6 /* Sources */,
+				E917C28B13DA324400D62CB6 /* Frameworks */,
+				E917C28C13DA324400D62CB6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CollegeiPhoneApp;
+			productName = CollegeiPhoneApp;
+			productReference = E917C28E13DA324400D62CB6 /* CollegeiPhoneApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E917C2AB13DA324400D62CB6 /* CollegeiPhoneAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E917C2C213DA324400D62CB6 /* Build configuration list for PBXNativeTarget "CollegeiPhoneAppTests" */;
+			buildPhases = (
+				E917C2A713DA324400D62CB6 /* Sources */,
+				E917C2A813DA324400D62CB6 /* Frameworks */,
+				E917C2A913DA324400D62CB6 /* Resources */,
+				E917C2AA13DA324400D62CB6 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E917C2B113DA324400D62CB6 /* PBXTargetDependency */,
+			);
+			name = CollegeiPhoneAppTests;
+			productName = CollegeiPhoneAppTests;
+			productReference = E917C2AC13DA324400D62CB6 /* CollegeiPhoneAppTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E917C28513DA324400D62CB6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = Student;
+			};
+			buildConfigurationList = E917C28813DA324400D62CB6 /* Build configuration list for PBXProject "CollegeiPhoneApp" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = E917C28313DA324400D62CB6;
+			productRefGroup = E917C28F13DA324400D62CB6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E917C28D13DA324400D62CB6 /* CollegeiPhoneApp */,
+				E917C2AB13DA324400D62CB6 /* CollegeiPhoneAppTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E917C28C13DA324400D62CB6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E917C29D13DA324400D62CB6 /* InfoPlist.strings in Resources */,
+				E917C2A613DA324400D62CB6 /* MainWindow.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E917C2A913DA324400D62CB6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E917C2B713DA324400D62CB6 /* InfoPlist.strings in Resources */,
+				E917C2BA13DA324400D62CB6 /* CollegeiPhoneAppTests.h in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		E917C2AA13DA324400D62CB6 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E917C28A13DA324400D62CB6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E917C2A013DA324400D62CB6 /* main.m in Sources */,
+				E917C2A313DA324400D62CB6 /* CollegeiPhoneAppAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E917C2A713DA324400D62CB6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E917C2BC13DA324400D62CB6 /* CollegeiPhoneAppTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E917C2B113DA324400D62CB6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E917C28D13DA324400D62CB6 /* CollegeiPhoneApp */;
+			targetProxy = E917C2B013DA324400D62CB6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		E917C29B13DA324400D62CB6 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E917C29C13DA324400D62CB6 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		E917C2A413DA324400D62CB6 /* MainWindow.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E917C2A513DA324400D62CB6 /* en */,
+			);
+			name = MainWindow.xib;
+			sourceTree = "<group>";
+		};
+		E917C2B513DA324400D62CB6 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E917C2B613DA324400D62CB6 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E917C2BD13DA324400D62CB6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		E917C2BE13DA324400D62CB6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+			};
+			name = Release;
+		};
+		E917C2C013DA324400D62CB6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CollegeiPhoneApp/CollegeiPhoneApp-Prefix.pch";
+				INFOPLIST_FILE = "CollegeiPhoneApp/CollegeiPhoneApp-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		E917C2C113DA324400D62CB6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CollegeiPhoneApp/CollegeiPhoneApp-Prefix.pch";
+				INFOPLIST_FILE = "CollegeiPhoneApp/CollegeiPhoneApp-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		E917C2C313DA324400D62CB6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/CollegeiPhoneApp.app/CollegeiPhoneApp";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CollegeiPhoneAppTests/CollegeiPhoneAppTests-Prefix.pch";
+				INFOPLIST_FILE = "CollegeiPhoneAppTests/CollegeiPhoneAppTests-Info.plist";
+				OTHER_LDFLAGS = (
+					"-framework",
+					SenTestingKit,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		E917C2C413DA324400D62CB6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/CollegeiPhoneApp.app/CollegeiPhoneApp";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CollegeiPhoneAppTests/CollegeiPhoneAppTests-Prefix.pch";
+				INFOPLIST_FILE = "CollegeiPhoneAppTests/CollegeiPhoneAppTests-Info.plist";
+				OTHER_LDFLAGS = (
+					"-framework",
+					SenTestingKit,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E917C28813DA324400D62CB6 /* Build configuration list for PBXProject "CollegeiPhoneApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E917C2BD13DA324400D62CB6 /* Debug */,
+				E917C2BE13DA324400D62CB6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E917C2BF13DA324400D62CB6 /* Build configuration list for PBXNativeTarget "CollegeiPhoneApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E917C2C013DA324400D62CB6 /* Debug */,
+				E917C2C113DA324400D62CB6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		E917C2C213DA324400D62CB6 /* Build configuration list for PBXNativeTarget "CollegeiPhoneAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E917C2C313DA324400D62CB6 /* Debug */,
+				E917C2C413DA324400D62CB6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E917C28513DA324400D62CB6 /* Project object */;
+}
