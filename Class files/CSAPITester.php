@@ -5,4 +5,15 @@ function __autoload($class)
 {
 	require_once $class . '.php';
 }
+
+$baseurl = "http://localhost.com:8888/CSAPI.php?"
+$queryArr = array("CollegeSummary", "CollegeResearch", "CollegeProfessors", "CollegePictures", "CollegeMajors", "CollegeLinks", "CollegeDivSports", "CollegeClubs", "CollegeArts");
+$id = "all";
+$attribute = 
+$format = 
+
+$url = $baseurl . "query=" . $query . "&id=" . $id . "&format=" . $format; // query and id must be specified
+if (!empty($attribute))
+	$url = $url . "&attribute=" . $attribute;
+	
 ?>
