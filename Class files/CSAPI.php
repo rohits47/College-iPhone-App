@@ -4,12 +4,11 @@
  * Allows the client to access the data stored in the CollegeSummary Table
  * 
  * Parameters:
-	- query: the name of the field in CollegeSummary table being requested
-		"tablename"
+	- query: the name of the table in CollegeSummary db being requested
 		values>summary,research,professors,pictures,majors,links,divsports,clubs,arts
 	- id: the id of the college to get the info of
 		values> all, "college_id"
-	- attribute: the specific attribute of the collegeid (i.e. collegeurl, etc.)
+	- attribute: the specific attribute of the collegeid (i.e. CollegeUrl, etc.)
 		"name_of_attribute"
 		values> default:all, 
 	- format: The type of format to return the db contents as
@@ -35,37 +34,36 @@ $outputcontent = "";
 // query parameter code block
 switch ($query)
 {
-	case 'summary':
+	case 'Summary' || 'summary':
 		$query = "CollegeSummary";
 		break;
-	case 'research':
+	case 'Research' || 'research':
 		$query = "CollegeResearch";
 		break;
-	case 'professors':
+	case 'Professors' || 'professors':
 		$query = "CollegeProfessors";
 		break;
-	case 'pictures':
+	case 'Pictures' || 'pictures':
 		$query = "CollegePictures";
 		break;
-	case 'majors':
+	case 'Majors' || 'majors':
 		$query = "CollegeMajors";
 		break;
-	case 'links':
+	case 'Links' || 'links':
 		$query = "CollegeLinks";
 		break;
-	case 'divsports':
+	case 'DivSports' || 'divsports' || 'Divsports':
 		$query = "CollegeDivSports";
 		break;
-	case 'clubs':
+	case 'Clubs' || 'clubs':
 		$query = "CollegeClubs";
 		break;
-	case 'arts':
+	case 'Arts' || 'arts':
 		$query = "CollegeArts";
 		break;
 	default:
 		error_log("Invalid parameter for query.");
 		//print 'The query parameter could not be recognized. Please check that you are using a permitted value.'
-		# code...
 		return false;
 		break;
 }
@@ -78,7 +76,7 @@ switch ($id)
 		$resourceid2 = $dbConnection->selectFromTable($query, "CollegeID");
 		break;
 	case empty($id): // null case
-		error_log("The parameter id has not been specified.")
+		error_log("The parameter id has not been specified.");
 		return false;
 		break;
 	default: // assumes id is set to the specific id of the college
@@ -95,9 +93,11 @@ if (!empty($attribute))
 		$array = $dbConnection->formatQueryResults($resourceid, $attribute);
 		$array2 = $dbConnection->formatQueryResults($resourceid2, "CollegeID");
 	}
-	if ($array[0] == 0)
+	if (is_null($array[0])) // can't destinguish between null value in table and invalid attribute parameter (both return array with single, null element)
 	{
-		error_log("The attribute parameter is invalid.");
+		error_log("This attribute is null for the query and id you have specified.");
+		print 'NULL VALUE OR INVALID ATTRIBUTE';
+		//error_log("The attribute parameter is invalid.");
 		return false;
 	}
 	$array = array_merge($array, $array2);
@@ -109,6 +109,8 @@ else
 
 $outputcontent = $array;
 
+//print_r($outputcontent[0]); // testing purposes only, without formatting
+
 switch ($format)
 {
 	case 'json':
@@ -117,13 +119,13 @@ switch ($format)
 	case 'php':
 		$outputcontent = serialize($outputcontent);
 		break;
-	case 'txt':
-		
-		break;
+	//case 'txt':
+	//	break;
 	default:
 		error_log("Invalid parameter for format.");
 		return false;
 		break;
 }
+print_r($outputcontent);
 
 ?>
