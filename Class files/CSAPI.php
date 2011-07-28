@@ -34,31 +34,32 @@ $outputcontent = "";
 // query parameter code block
 switch ($query)
 {
-	case 'Summary' || 'summary':
+	$query = strtolower($query); // lowercases the query, makes it easier for case statements
+	case 'summary':
 		$query = "CollegeSummary";
 		break;
-	case 'Research' || 'research':
+	case 'research':
 		$query = "CollegeResearch";
 		break;
-	case 'Professors' || 'professors':
+	case 'professors':
 		$query = "CollegeProfessors";
 		break;
-	case 'Pictures' || 'pictures':
+	case 'pictures':
 		$query = "CollegePictures";
 		break;
-	case 'Majors' || 'majors':
+	case 'majors':
 		$query = "CollegeMajors";
 		break;
-	case 'Links' || 'links':
+	case 'links':
 		$query = "CollegeLinks";
 		break;
-	case 'DivSports' || 'divsports' || 'Divsports':
+	case 'divsports':
 		$query = "CollegeDivSports";
 		break;
-	case 'Clubs' || 'clubs':
+	case 'clubs':
 		$query = "CollegeClubs";
 		break;
-	case 'Arts' || 'arts':
+	case 'arts':
 		$query = "CollegeArts";
 		break;
 	default:
@@ -72,8 +73,8 @@ $resourceid2;
 switch ($id)
 {
 	case 'all':
-		$resourceid = $dbConnection->selectFromTable($query, "CollegeID");
-		$resourceid2 = $dbConnection->selectFromTable($query, "CollegeID");
+		$resourceid = $dbConnection->selectFromTable($query);
+		$resourceid2 = $dbConnection->selectFromTable($query);
 		break;
 	case empty($id): // null case
 		error_log("The parameter id has not been specified.");
@@ -91,12 +92,14 @@ if (!empty($attribute))
 	else
 	{
 		$array = $dbConnection->formatQueryResults($resourceid, $attribute);
+		//print_r($array);
 		$array2 = $dbConnection->formatQueryResults($resourceid2, "CollegeID");
+		//print_r($array2);
 	}
-	if (is_null($array[0])) // can't destinguish between null value in table and invalid attribute parameter (both return array with single, null element)
+	if (is_null($array[0])) // NOTE: can't destinguish between null value in table and invalid attribute parameter (both return array with single, null element)
 	{
 		error_log("This attribute is null for the query and id you have specified.");
-		print 'NULL VALUE OR INVALID ATTRIBUTE';
+		//print 'NULL VALUE OR INVALID ATTRIBUTE';
 		//error_log("The attribute parameter is invalid.");
 		return false;
 	}
@@ -126,6 +129,7 @@ switch ($format)
 		return false;
 		break;
 }
-print_r($outputcontent);
+//print_r($outputcontent);
+echo $outputcontent; // better than print_r
 
 ?>
