@@ -1,7 +1,17 @@
 <?PHP
 /**
  * databaseProperties class
- * Configures the database correctly
+ * Contains functions that allow the configuration ofthe database server.
+ * All mysql admin functionality should go into this file
+ * ********************************************************
+ * All major edits should be logged here:
+ * 
+ * 
+ * 
+ * 
+ * 
+ * 
+ * *********************************************************
  * @package default
  * @author Abhinav  Khanna
  **/
@@ -15,10 +25,11 @@ class databaseProperties extends dbConnections
 	}
 	
 	/**
-	 * public function createTable
+	 * Public function createINNODBTable
 	 * @param: $tableName = the table you wish to create
 	 * @param: $column is a reference to an array of the columns you are going to have in your table.
 	 * 			The set up for the array is in an array(0 => array(ColumnName, setting1, setting2, . . . ), 1 => array(....))
+	 * Postcondition: the table will be created as an INNODB table in the database (specify database in the $dbName);
 	 */
 	public function createINNODBTable($tableName, $columns)
 	{

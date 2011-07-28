@@ -16,7 +16,7 @@ $array = array("CollegeUrl" => "http://google.com", "CollegePresident" => "Abhin
  * 			$array is the array of IDs for the insertion.
  */
 //$relation->insertIntoTable("CollegeSummary","CollegeSummary", "CollegeName", "Harvard_University", "CollegeID", $array);
-$relation->updateTable("CollegeSummary","CollegeSummary", "CollegeName", "Princeton_University", "CollegeID", $array, "CollegeName = 'Princeton_University'");
+//$relation->updateTable("CollegeSummary","CollegeSummary", "CollegeName", "Princeton_University", "CollegeID", $array, "CollegeName = 'Princeton_University'");
 
 $relation->close_db_connection();
 ?>

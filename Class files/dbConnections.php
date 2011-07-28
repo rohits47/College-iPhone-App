@@ -7,6 +7,7 @@ class dbConnections
 	protected $_dbname;
 	protected $_dbhost;
 	protected $_conn;
+	protected $_second;
 	protected $_queryResults;
 	protected $_connDB;
 	
@@ -32,6 +33,7 @@ class dbConnections
 	{
 		try{
 			$this->_conn = mysql_connect($this->_dbhost, $this->_dbuser, $this->_dbpass);
+			$this->_second = $this->_conn;
 			$this->_connDB = mysql_select_db($this->_dbname);
 			return $this->_connDB;
 		}
@@ -42,10 +44,11 @@ class dbConnections
 	
 	/**
 	 * Not working as of 24th June, 2011
+	 * Working as of July 25th, 2011
 	 */
 	public function close_db_connection()
 	{
-		mysql_close($this->_conn);
+		mysql_close($this->_second);
 	}
 	
 	//returns the result of the SELECT query;
@@ -182,6 +185,11 @@ class dbConnections
 		$this->_dbname = $dbName;
 		$boolean = mysql_select_db($dbName);
 		return $boolean;
+	}
+	
+	public function __destruct()
+	{
+		$this->close_db_connection();
 	}
 	
 }

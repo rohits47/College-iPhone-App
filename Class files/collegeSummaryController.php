@@ -27,6 +27,13 @@ class collegeSummaryController
 	/**
 	 * main()
 	 * the function that will execute the sequence that will fill the entire databank.
+	 * Runs:
+	 * 			Wikipictures
+	 * 			Wikilinks
+	 * 			WikiSnippet
+	 * 			WikiSummary
+	 * 			FacebookSummary
+	 * Current RunTime: Log here.......
 	 */
 	public function main()
 	{
@@ -46,7 +53,13 @@ class collegeSummaryController
 	}
 	
 	/**
-	 * function for getting and storing the entire collegeList
+	 * Public function setCollegeList
+	 * No parameters
+	 * 
+	 * @operates by searching wikipedia for all the state college categories and scraping all the college names.
+	 * Should get 3147 colleges as of 07/25/11
+	 * 
+	 * Postcondition: the database is loaded with all the scrapeable colleges off of wikipedia.
 	 */
 	private function setCollegeList()
 	{
@@ -78,6 +91,11 @@ class collegeSummaryController
 	
 	}
 	
+	/**
+	 * Public function getCollegeList()
+	 * No parameters
+	 * @return the entire college list stored in the database: CollegeSummary;
+	 */
 	public function getCollegeList()
 	{
 		$result = $this->_dbConnection->selectFromTable("CollegeSummary");

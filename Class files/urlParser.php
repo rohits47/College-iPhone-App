@@ -1,15 +1,32 @@
 <?PHP
 /**
- * cURL class
+ * urlParser class
  *	Purpose is to parse the content of a given url Page. 
  * All methods are static as this is a UTIL class as well. No need to have it be instantiated in object form.
+ * Parses content that is specific to urls and not to simply text. Has a broader usage than parser.php
+ * 
+ * ************************************************************************************************************
+ * Separates values from a grand collection of strings or an array of strings.....
+ * ************************************************************************************************************
+ * Notes:
+ * 
+ * 1) This class may need some refactoring at a later time. It seems like this has become a catch all group for functions we could
+ * not place earlier.
+ * 
+ * 2) We need to add a file_get_Contents function type thing.....
+ * 
+ * ************************************************************************************************************
+ * 
+ * 
  * @package default
- * @author Abhinav  Khanna
+ * @author Abhinav  Khanna and Rohit Sandbhati.
  **/
 class urlParser extends parser
 {
 	/**
 	 * Public static function cURL
+	 * @operates using the cURL library provided by PHP....
+	 * @param $url is the url you wish to cUrl.
 	 * @return: a variable containing the contents of the curl.
 	 */
 	public static function cURL($url)
@@ -24,9 +41,12 @@ class urlParser extends parser
 	}
 	
 	/**
-	 * parseContent function
-	 * figures out what content in the $array passed to it is by matching it against sets.
-	 * Currently instead of sets we are comparing against arrays, it needs to be converted to sets rather soon.
+	 * Public function parseContent
+	 * @param $array is the array of values you want to place into separate bins.
+	 * @operates by comparing against a static set of bins
+	 * TODO: Add a dynamic binninng system that will allow the computer to grow its number of bins based upon what data it collects.
+	 * TODO: Currently all items not binned get deleted, ideally they should be tagged with the ID of Links and separated.
+	 * @return an ARRAY containing all the binned values in the form of array(array(binned_value, category), array(binned_value, ...)...)
 	 */
 	public static function parseContent($array)
 	{
@@ -41,6 +61,7 @@ class urlParser extends parser
 	//	print_r($completeArray);
 		
 		$filteredArray = array();
+		$linksArray = array();
 	//	print_r(count($array));
 	//	print_r(count($completeArray));
 		
@@ -54,6 +75,8 @@ class urlParser extends parser
 					$filteredArray[] = $array[$i];
 					break;
 				}
+				else
+					$linksArray[] = $array[$i];
 			}
 		}
 		

@@ -11,12 +11,15 @@
 class parser
 {
 	
-	
-	public static function stringBreaker($str)
-	{
-		
-	}
-	
+	/**
+	 * Public static function parseNew
+	 * Operates by searching for the new line character at the end of the keyword search.
+	 * @param $keyword: is the keyword you are looking for in your search string $arrayStr
+	 * @param $arrayStr: is the array which you are looking through for the given keyword.
+	 * @return: the string which directly follows the keyword you gave.
+	 * 			Example: if arrayStr = string: This is the value of this attribute
+	 * 					return This is the value of this attribute.
+	 */
 	public static function parseNew($keyword, $arrayStr)
 	{
 		$str = "";
@@ -48,6 +51,11 @@ class parser
 	}
 	
 	//useless
+	/**
+	 * public function removeDuplicates($str)
+	 * @param: $str: is the string which you are going to remove the duplicates of.
+	 * Currently this function does not do anything, idea is to remove duplicate entries of string str.
+	 */
 	public static function removeDuplicates($str)
 	{
      	$words = explode(" ", trim($str));
@@ -66,6 +74,15 @@ class parser
 	}
 	
 	/**
+	 * Public function parseSnippet
+	 * @operates by removing all the extra characteristics and leaving the text directly after a keyword.
+	 * 			Specifically designed with Wikipedia API connection in mind. However may be used for other services
+	 * 			Example: keyword: value of keyword
+	 * 			This will extract the value of keyword
+	 * 			$arrayStr in this example = keyword: value of keyword;
+	 * 			$keyword = keyword;
+	 * @param $keyword: is the keyword you are looking for within the $arrayStr
+	 * @param $arrayStr: is the arrayStr that you are looking through for the value keyword.
 	 * To be used as part of wikiSnippet in wikipediaController.php
 	 * @return: the string of text associated with the keyword that was extracted from the array.
 	 */
@@ -94,6 +111,17 @@ class parser
 			return false; // unable to parse
 	}
 	
+	/**
+	 * Public function deepParseSnippet
+	 * @param: $keyword is the keyword you are looking for in the $arrayStr
+	 * @param: $arrayStr is the string within which you wish to search for given keyword;
+	 * @operates with Wikipedia API specifically in mind.....Very specific to Wikipedia API...
+	 * 			Works specifically for Wikipedia keywords: |endwoment and |athletics
+	 * 			Example: if $keyword = |endowment
+	 * 					if $arrayStr = "|endowment = 28.6 billion dollars";
+	 * 					This function will return 28.6 billion dollars;
+	 * @return the value of the keyword....
+	 */
 	public static function deepParseSnippet($keyword, $arrayStr)
 	{
 		$pos1 = strpos($arrayStr, $keyword);
@@ -140,6 +168,13 @@ class parser
 		return $str;
 	}
 	
+	/**
+	 * Public function refineSnippet()
+	 * @param $str is the string you are searching through.
+	 * @param $case specifies if you are refining the snippet (from Wikipedia API) for a specific section
+	 * @operates by removing the values of various characters in order to make the parsed values neater and easier for reading.
+	 * @return the refined string without the excessive values.
+	 */
 	public static function refineSnippet($str, $case = null)
 	{
 		$array = array("{", "}", "[", "]", ",", "|", "<", ">", "'", '"'); // chars to eliminate
