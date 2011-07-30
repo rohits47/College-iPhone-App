@@ -8,9 +8,9 @@ function __autoload($class)
 
 //$dbConnection = new relationalDbConnections('collegeSummary', "localhost", "root", "");
 $ratings = new ratings(new relationalDBConnections('lala', 'localhost:8889', 'root', 'root'));
-//$ratings->addToRatings("Huntingdon College", 3);
-//$ratings->updateRatings("Huntingdon College", 5, 3);
-//$ratings->getAverageRating("Huntingdon College");
+//$ratings->addToRatings(6, 3);
+//$ratings->updateRatings(6, 3, 5);
+//$ratings->getAverageRating(6);
 //print 'testend';
 
 ?>
