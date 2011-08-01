@@ -216,6 +216,8 @@ if($i == 9)
 	$array[10] = array("StudentSATII2", "INT");
 	$array[11] = array("StudentSATII3", "INT");
 	$array[12] = array("StudentSchool", "TINYTEXT");
+	//NOTE: Not sure if this one is needed.
+	$array[13] = array("CounselorName", "TINYTEXT");
 	
 	if($dbConfig->createINNODBTable("StudentUsers", $array)) echo "Success! Your StudentUsers Table is now set up! <br />";
 
@@ -228,6 +230,9 @@ if($i == 10)
 	$array[1] = array("PRIMARY KEY(CounselorID)");
 	$array[2] = array("CounselorName", "TINYTEXT");
 	$array[3] = array("CounselorSchoolName", "INT");
+	$array[4] = array("CounselorUsername", "TINYTEXT");
+	$array[5] = array("CounselorPassword", "TINYTEXT");
+	$array[6] = array("CounselorSecretKey", "TINYTEXT");
 	
 	if($dbConfig->createINNODBTable("CounselorUsers", $array)) echo "Success! Your CounselorUsers Table is now set up! <br />";
 	
