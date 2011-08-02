@@ -428,6 +428,7 @@
 				E917C2C113DA324400D62CB6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E917C2C213DA324400D62CB6 /* Build configuration list for PBXNativeTarget "CollegeiPhoneAppTests" */ = {
 			isa = XCConfigurationList;
@@ -436,6 +437,7 @@
 				E917C2C413DA324400D62CB6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
