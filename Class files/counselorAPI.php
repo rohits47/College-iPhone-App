@@ -136,12 +136,14 @@ switch ($content)
 		//print 'here';
 		if ($user == "StudentID")
 		{
-			$dbConnection->updateTable($query, "StudentUsers", "StudentID", $id, "StudentID", $array, "StudentID = '$id'");
+			//$dbConnection->updateTable($query, "StudentUsers", "StudentID", $id, "StudentID", $array, "StudentID = '$id'");
+			$dbConnection->insertIntoTable($query, "StudentUsers", "StudentID", $id, "StudentID", $array);
 			//print '1';
 		}
 		else
 		{
 			$dbConnection->updateTable($query, "CounselorUsers", "CounselorID", $id, "CounselorID", $array, "CounselorID = '$id'");
+			$dbConnection->insertIntoTable($query, "CounselorUsers", "CounselorID", $id, "CounselorID", $array);
 			//print '2';
 		}
 		break;
