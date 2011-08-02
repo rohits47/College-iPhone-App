@@ -20,6 +20,15 @@
 		E917C2B713DA324400D62CB6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E917C2B513DA324400D62CB6 /* InfoPlist.strings */; };
 		E917C2BA13DA324400D62CB6 /* CollegeiPhoneAppTests.h in Resources */ = {isa = PBXBuildFile; fileRef = E917C2B913DA324400D62CB6 /* CollegeiPhoneAppTests.h */; };
 		E917C2BC13DA324400D62CB6 /* CollegeiPhoneAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E917C2BB13DA324400D62CB6 /* CollegeiPhoneAppTests.m */; };
+		F920B59713E6940F00DF5E52 /* MyApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = F920B59613E6940F00DF5E52 /* MyApplication.m */; };
+		F920B59B13E69D1300DF5E52 /* CollegeDatabaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = F920B59A13E69D1300DF5E52 /* CollegeDatabaseView.m */; };
+		F920B59F13E69DF400DF5E52 /* RecommendedColleges.m in Sources */ = {isa = PBXBuildFile; fileRef = F920B59E13E69DF400DF5E52 /* RecommendedColleges.m */; };
+		F920B5A413E6AC5600DF5E52 /* NewTourBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = F920B5A313E6AC5600DF5E52 /* NewTourBuilder.m */; };
+		F920B5A713E6AD0B00DF5E52 /* VisitedColleges.m in Sources */ = {isa = PBXBuildFile; fileRef = F920B5A613E6AD0B00DF5E52 /* VisitedColleges.m */; };
+		F921A2BB13E34F8900772B87 /* CollegeDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = F921A2BA13E34F8900772B87 /* CollegeDetail.m */; };
+		F9841D0B13E4874600D07DD1 /* CollegeTours.m in Sources */ = {isa = PBXBuildFile; fileRef = F9841D0A13E4874600D07DD1 /* CollegeTours.m */; };
+		F9841D0F13E487A800D07DD1 /* NotifCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = F9841D0E13E487A800D07DD1 /* NotifCenter.m */; };
+		F9841D1213E487ED00D07DD1 /* MyProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = F9841D1113E487ED00D07DD1 /* MyProfile.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +59,24 @@
 		E917C2B813DA324400D62CB6 /* CollegeiPhoneAppTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CollegeiPhoneAppTests-Prefix.pch"; sourceTree = "<group>"; };
 		E917C2B913DA324400D62CB6 /* CollegeiPhoneAppTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollegeiPhoneAppTests.h; sourceTree = "<group>"; };
 		E917C2BB13DA324400D62CB6 /* CollegeiPhoneAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CollegeiPhoneAppTests.m; sourceTree = "<group>"; };
+		F920B59513E6940F00DF5E52 /* MyApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyApplication.h; sourceTree = "<group>"; };
+		F920B59613E6940F00DF5E52 /* MyApplication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyApplication.m; sourceTree = "<group>"; };
+		F920B59913E69D1300DF5E52 /* CollegeDatabaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollegeDatabaseView.h; sourceTree = "<group>"; };
+		F920B59A13E69D1300DF5E52 /* CollegeDatabaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollegeDatabaseView.m; sourceTree = "<group>"; };
+		F920B59D13E69DF400DF5E52 /* RecommendedColleges.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecommendedColleges.h; sourceTree = "<group>"; };
+		F920B59E13E69DF400DF5E52 /* RecommendedColleges.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecommendedColleges.m; sourceTree = "<group>"; };
+		F920B5A213E6AC5600DF5E52 /* NewTourBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewTourBuilder.h; sourceTree = "<group>"; };
+		F920B5A313E6AC5600DF5E52 /* NewTourBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewTourBuilder.m; sourceTree = "<group>"; };
+		F920B5A513E6AD0B00DF5E52 /* VisitedColleges.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VisitedColleges.h; sourceTree = "<group>"; };
+		F920B5A613E6AD0B00DF5E52 /* VisitedColleges.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VisitedColleges.m; sourceTree = "<group>"; };
+		F921A2B913E34F8900772B87 /* CollegeDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollegeDetail.h; sourceTree = "<group>"; };
+		F921A2BA13E34F8900772B87 /* CollegeDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollegeDetail.m; sourceTree = "<group>"; };
+		F9841D0913E4874600D07DD1 /* CollegeTours.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollegeTours.h; sourceTree = "<group>"; };
+		F9841D0A13E4874600D07DD1 /* CollegeTours.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollegeTours.m; sourceTree = "<group>"; };
+		F9841D0D13E487A800D07DD1 /* NotifCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotifCenter.h; sourceTree = "<group>"; };
+		F9841D0E13E487A800D07DD1 /* NotifCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotifCenter.m; sourceTree = "<group>"; };
+		F9841D1013E487ED00D07DD1 /* MyProfile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyProfile.h; sourceTree = "<group>"; };
+		F9841D1113E487ED00D07DD1 /* MyProfile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyProfile.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,7 +136,16 @@
 			isa = PBXGroup;
 			children = (
 				E917C2A113DA324400D62CB6 /* CollegeiPhoneAppAppDelegate.h */,
+				F920B5A013E69E0A00DF5E52 /* CollegeLists */,
+				F9841D0D13E487A800D07DD1 /* NotifCenter.h */,
+				F9841D1013E487ED00D07DD1 /* MyProfile.h */,
+				F9841D1113E487ED00D07DD1 /* MyProfile.m */,
+				F9841D0E13E487A800D07DD1 /* NotifCenter.m */,
+				F920B59C13E69DB600DF5E52 /* Application */,
 				E917C2A213DA324400D62CB6 /* CollegeiPhoneAppAppDelegate.m */,
+				F921A2B913E34F8900772B87 /* CollegeDetail.h */,
+				F920B5A113E6AC4100DF5E52 /* Tours */,
+				F921A2BA13E34F8900772B87 /* CollegeDetail.m */,
 				E917C2A413DA324400D62CB6 /* MainWindow.xib */,
 				E917C29913DA324400D62CB6 /* Supporting Files */,
 			);
@@ -145,6 +181,39 @@
 				E917C2B813DA324400D62CB6 /* CollegeiPhoneAppTests-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F920B59C13E69DB600DF5E52 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				F920B59513E6940F00DF5E52 /* MyApplication.h */,
+				F920B59613E6940F00DF5E52 /* MyApplication.m */,
+			);
+			name = Application;
+			sourceTree = "<group>";
+		};
+		F920B5A013E69E0A00DF5E52 /* CollegeLists */ = {
+			isa = PBXGroup;
+			children = (
+				F920B59913E69D1300DF5E52 /* CollegeDatabaseView.h */,
+				F920B59A13E69D1300DF5E52 /* CollegeDatabaseView.m */,
+				F920B59D13E69DF400DF5E52 /* RecommendedColleges.h */,
+				F920B59E13E69DF400DF5E52 /* RecommendedColleges.m */,
+			);
+			name = CollegeLists;
+			sourceTree = "<group>";
+		};
+		F920B5A113E6AC4100DF5E52 /* Tours */ = {
+			isa = PBXGroup;
+			children = (
+				F9841D0913E4874600D07DD1 /* CollegeTours.h */,
+				F920B5A213E6AC5600DF5E52 /* NewTourBuilder.h */,
+				F920B5A313E6AC5600DF5E52 /* NewTourBuilder.m */,
+				F9841D0A13E4874600D07DD1 /* CollegeTours.m */,
+				F920B5A513E6AD0B00DF5E52 /* VisitedColleges.h */,
+				F920B5A613E6AD0B00DF5E52 /* VisitedColleges.m */,
+			);
+			name = Tours;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -256,6 +325,15 @@
 			files = (
 				E917C2A013DA324400D62CB6 /* main.m in Sources */,
 				E917C2A313DA324400D62CB6 /* CollegeiPhoneAppAppDelegate.m in Sources */,
+				F921A2BB13E34F8900772B87 /* CollegeDetail.m in Sources */,
+				F9841D0B13E4874600D07DD1 /* CollegeTours.m in Sources */,
+				F9841D0F13E487A800D07DD1 /* NotifCenter.m in Sources */,
+				F9841D1213E487ED00D07DD1 /* MyProfile.m in Sources */,
+				F920B59713E6940F00DF5E52 /* MyApplication.m in Sources */,
+				F920B59B13E69D1300DF5E52 /* CollegeDatabaseView.m in Sources */,
+				F920B59F13E69DF400DF5E52 /* RecommendedColleges.m in Sources */,
+				F920B5A413E6AC5600DF5E52 /* NewTourBuilder.m in Sources */,
+				F920B5A713E6AD0B00DF5E52 /* VisitedColleges.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
