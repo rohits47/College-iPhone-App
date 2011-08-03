@@ -1,0 +1,315 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		48B657D613E8D0C60074CEE1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48B657D513E8D0C60074CEE1 /* UIKit.framework */; };
+		48B657D813E8D0C60074CEE1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48B657D713E8D0C60074CEE1 /* Foundation.framework */; };
+		48B657DA13E8D0C60074CEE1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48B657D913E8D0C60074CEE1 /* CoreGraphics.framework */; };
+		48B657E013E8D0C70074CEE1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 48B657DE13E8D0C70074CEE1 /* InfoPlist.strings */; };
+		48B657E313E8D0C70074CEE1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 48B657E213E8D0C70074CEE1 /* main.m */; };
+		48B657E613E8D0C70074CEE1 /* CollegeSocialAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 48B657E513E8D0C70074CEE1 /* CollegeSocialAppDelegate.m */; };
+		48B657E913E8D0C80074CEE1 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48B657E713E8D0C80074CEE1 /* MainWindow.xib */; };
+		48B657F213E8D5060074CEE1 /* CollegeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48B657F013E8D5060074CEE1 /* CollegeViewController.m */; };
+		48B657F313E8D5060074CEE1 /* CollegeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48B657F113E8D5060074CEE1 /* CollegeViewController.xib */; };
+		48B657F713E8D51D0074CEE1 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48B657F513E8D51C0074CEE1 /* ProfileViewController.m */; };
+		48B657F813E8D51D0074CEE1 /* ProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48B657F613E8D51D0074CEE1 /* ProfileViewController.xib */; };
+		48B657FC13E8DD7C0074CEE1 /* ApplicationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48B657FA13E8DD7A0074CEE1 /* ApplicationViewController.m */; };
+		48B657FD13E8DD7C0074CEE1 /* ApplicationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48B657FB13E8DD7B0074CEE1 /* ApplicationViewController.xib */; };
+		48B6580113E8DD8E0074CEE1 /* ToursViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48B657FF13E8DD8D0074CEE1 /* ToursViewController.m */; };
+		48B6580213E8DD8E0074CEE1 /* ToursViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48B6580013E8DD8E0074CEE1 /* ToursViewController.xib */; };
+		48B6580B13E8DDBD0074CEE1 /* NotificationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48B6580913E8DDBC0074CEE1 /* NotificationsViewController.m */; };
+		48B6580C13E8DDBD0074CEE1 /* NotificationsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48B6580A13E8DDBC0074CEE1 /* NotificationsViewController.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		48B657D113E8D0C60074CEE1 /* CollegeSocial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CollegeSocial.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		48B657D513E8D0C60074CEE1 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		48B657D713E8D0C60074CEE1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		48B657D913E8D0C60074CEE1 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		48B657DD13E8D0C70074CEE1 /* CollegeSocial-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CollegeSocial-Info.plist"; sourceTree = "<group>"; };
+		48B657DF13E8D0C70074CEE1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		48B657E113E8D0C70074CEE1 /* CollegeSocial-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CollegeSocial-Prefix.pch"; sourceTree = "<group>"; };
+		48B657E213E8D0C70074CEE1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		48B657E413E8D0C70074CEE1 /* CollegeSocialAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CollegeSocialAppDelegate.h; sourceTree = "<group>"; };
+		48B657E513E8D0C70074CEE1 /* CollegeSocialAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CollegeSocialAppDelegate.m; sourceTree = "<group>"; };
+		48B657E813E8D0C80074CEE1 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
+		48B657EF13E8D5060074CEE1 /* CollegeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollegeViewController.h; sourceTree = "<group>"; };
+		48B657F013E8D5060074CEE1 /* CollegeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollegeViewController.m; sourceTree = "<group>"; };
+		48B657F113E8D5060074CEE1 /* CollegeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollegeViewController.xib; sourceTree = "<group>"; };
+		48B657F413E8D51C0074CEE1 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
+		48B657F513E8D51C0074CEE1 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
+		48B657F613E8D51D0074CEE1 /* ProfileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileViewController.xib; sourceTree = "<group>"; };
+		48B657F913E8DD7A0074CEE1 /* ApplicationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ApplicationViewController.h; sourceTree = "<group>"; };
+		48B657FA13E8DD7A0074CEE1 /* ApplicationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ApplicationViewController.m; sourceTree = "<group>"; };
+		48B657FB13E8DD7B0074CEE1 /* ApplicationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ApplicationViewController.xib; sourceTree = "<group>"; };
+		48B657FE13E8DD8D0074CEE1 /* ToursViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToursViewController.h; sourceTree = "<group>"; };
+		48B657FF13E8DD8D0074CEE1 /* ToursViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToursViewController.m; sourceTree = "<group>"; };
+		48B6580013E8DD8E0074CEE1 /* ToursViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ToursViewController.xib; sourceTree = "<group>"; };
+		48B6580813E8DDBC0074CEE1 /* NotificationsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationsViewController.h; sourceTree = "<group>"; };
+		48B6580913E8DDBC0074CEE1 /* NotificationsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationsViewController.m; sourceTree = "<group>"; };
+		48B6580A13E8DDBC0074CEE1 /* NotificationsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NotificationsViewController.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		48B657CE13E8D0C50074CEE1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				48B657D613E8D0C60074CEE1 /* UIKit.framework in Frameworks */,
+				48B657D813E8D0C60074CEE1 /* Foundation.framework in Frameworks */,
+				48B657DA13E8D0C60074CEE1 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		48B657C613E8D0C30074CEE1 = {
+			isa = PBXGroup;
+			children = (
+				48B657DB13E8D0C70074CEE1 /* CollegeSocial */,
+				48B657D413E8D0C60074CEE1 /* Frameworks */,
+				48B657D213E8D0C60074CEE1 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		48B657D213E8D0C60074CEE1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				48B657D113E8D0C60074CEE1 /* CollegeSocial.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		48B657D413E8D0C60074CEE1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				48B657D513E8D0C60074CEE1 /* UIKit.framework */,
+				48B657D713E8D0C60074CEE1 /* Foundation.framework */,
+				48B657D913E8D0C60074CEE1 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		48B657DB13E8D0C70074CEE1 /* CollegeSocial */ = {
+			isa = PBXGroup;
+			children = (
+				48B657E413E8D0C70074CEE1 /* CollegeSocialAppDelegate.h */,
+				48B657E513E8D0C70074CEE1 /* CollegeSocialAppDelegate.m */,
+				48B657E713E8D0C80074CEE1 /* MainWindow.xib */,
+				48B657DC13E8D0C70074CEE1 /* Supporting Files */,
+				48B657EF13E8D5060074CEE1 /* CollegeViewController.h */,
+				48B657F013E8D5060074CEE1 /* CollegeViewController.m */,
+				48B657F113E8D5060074CEE1 /* CollegeViewController.xib */,
+				48B657F413E8D51C0074CEE1 /* ProfileViewController.h */,
+				48B657F513E8D51C0074CEE1 /* ProfileViewController.m */,
+				48B657F613E8D51D0074CEE1 /* ProfileViewController.xib */,
+				48B657F913E8DD7A0074CEE1 /* ApplicationViewController.h */,
+				48B657FA13E8DD7A0074CEE1 /* ApplicationViewController.m */,
+				48B657FB13E8DD7B0074CEE1 /* ApplicationViewController.xib */,
+				48B657FE13E8DD8D0074CEE1 /* ToursViewController.h */,
+				48B657FF13E8DD8D0074CEE1 /* ToursViewController.m */,
+				48B6580013E8DD8E0074CEE1 /* ToursViewController.xib */,
+				48B6580813E8DDBC0074CEE1 /* NotificationsViewController.h */,
+				48B6580913E8DDBC0074CEE1 /* NotificationsViewController.m */,
+				48B6580A13E8DDBC0074CEE1 /* NotificationsViewController.xib */,
+			);
+			path = CollegeSocial;
+			sourceTree = "<group>";
+		};
+		48B657DC13E8D0C70074CEE1 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				48B657DD13E8D0C70074CEE1 /* CollegeSocial-Info.plist */,
+				48B657DE13E8D0C70074CEE1 /* InfoPlist.strings */,
+				48B657E113E8D0C70074CEE1 /* CollegeSocial-Prefix.pch */,
+				48B657E213E8D0C70074CEE1 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		48B657D013E8D0C50074CEE1 /* CollegeSocial */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 48B657EC13E8D0C80074CEE1 /* Build configuration list for PBXNativeTarget "CollegeSocial" */;
+			buildPhases = (
+				48B657CD13E8D0C50074CEE1 /* Sources */,
+				48B657CE13E8D0C50074CEE1 /* Frameworks */,
+				48B657CF13E8D0C50074CEE1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CollegeSocial;
+			productName = CollegeSocial;
+			productReference = 48B657D113E8D0C60074CEE1 /* CollegeSocial.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		48B657C813E8D0C40074CEE1 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 48B657CB13E8D0C40074CEE1 /* Build configuration list for PBXProject "CollegeSocial" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 48B657C613E8D0C30074CEE1;
+			productRefGroup = 48B657D213E8D0C60074CEE1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				48B657D013E8D0C50074CEE1 /* CollegeSocial */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		48B657CF13E8D0C50074CEE1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				48B657E013E8D0C70074CEE1 /* InfoPlist.strings in Resources */,
+				48B657E913E8D0C80074CEE1 /* MainWindow.xib in Resources */,
+				48B657F313E8D5060074CEE1 /* CollegeViewController.xib in Resources */,
+				48B657F813E8D51D0074CEE1 /* ProfileViewController.xib in Resources */,
+				48B657FD13E8DD7C0074CEE1 /* ApplicationViewController.xib in Resources */,
+				48B6580213E8DD8E0074CEE1 /* ToursViewController.xib in Resources */,
+				48B6580C13E8DDBD0074CEE1 /* NotificationsViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		48B657CD13E8D0C50074CEE1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				48B657E313E8D0C70074CEE1 /* main.m in Sources */,
+				48B657E613E8D0C70074CEE1 /* CollegeSocialAppDelegate.m in Sources */,
+				48B657F213E8D5060074CEE1 /* CollegeViewController.m in Sources */,
+				48B657F713E8D51D0074CEE1 /* ProfileViewController.m in Sources */,
+				48B657FC13E8DD7C0074CEE1 /* ApplicationViewController.m in Sources */,
+				48B6580113E8DD8E0074CEE1 /* ToursViewController.m in Sources */,
+				48B6580B13E8DDBD0074CEE1 /* NotificationsViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		48B657DE13E8D0C70074CEE1 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				48B657DF13E8D0C70074CEE1 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		48B657E713E8D0C80074CEE1 /* MainWindow.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				48B657E813E8D0C80074CEE1 /* en */,
+			);
+			name = MainWindow.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		48B657EA13E8D0C80074CEE1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		48B657EB13E8D0C80074CEE1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+			};
+			name = Release;
+		};
+		48B657ED13E8D0C80074CEE1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CollegeSocial/CollegeSocial-Prefix.pch";
+				INFOPLIST_FILE = "CollegeSocial/CollegeSocial-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		48B657EE13E8D0C80074CEE1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CollegeSocial/CollegeSocial-Prefix.pch";
+				INFOPLIST_FILE = "CollegeSocial/CollegeSocial-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		48B657CB13E8D0C40074CEE1 /* Build configuration list for PBXProject "CollegeSocial" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				48B657EA13E8D0C80074CEE1 /* Debug */,
+				48B657EB13E8D0C80074CEE1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		48B657EC13E8D0C80074CEE1 /* Build configuration list for PBXNativeTarget "CollegeSocial" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				48B657ED13E8D0C80074CEE1 /* Debug */,
+				48B657EE13E8D0C80074CEE1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 48B657C813E8D0C40074CEE1 /* Project object */;
+}
