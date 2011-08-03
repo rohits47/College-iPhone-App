@@ -14,6 +14,7 @@
 /**
  * MANUAL TEST CASES:
 	- http://localhost:8888/counselorWriteAPI.php?tablename=StudentUsers&keytable=StudentUsers&foreignkey=StudentFirstName&foreignkeyval=Ron_Weasley&primarykey=StudentID&arrayofvals=John_Weasley&conditionkey=StudentFirstName&conditionval=Ron_Weasley
+	- http://localhost:8888/counselorWriteAPI.php?tablename=StudentUsers&keytable=StudentUsers&foreignkey=StudentFirstName&foreignkeyval=Harry&primarykey=StudentID&arrayofvals=John&conditionkey=StudentFirstName&conditionval=Harry
  */
 
 // The function __autoload is the method for loading all the classes being used in the script. Use it at the beginning of every php main
