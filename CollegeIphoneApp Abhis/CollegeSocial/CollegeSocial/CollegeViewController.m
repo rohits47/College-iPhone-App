@@ -11,6 +11,8 @@
 
 @implementation CollegeViewController
 
+@synthesize navController;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -22,6 +24,7 @@
 
 - (void)dealloc
 {
+    [navController release];
     [super dealloc];
 }
 
@@ -37,6 +40,7 @@
 
 - (void)viewDidLoad
 {
+    [self.view addSubview:navController.view];
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
 }

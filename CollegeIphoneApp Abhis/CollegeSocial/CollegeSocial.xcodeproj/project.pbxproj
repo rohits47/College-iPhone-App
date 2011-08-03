@@ -24,6 +24,8 @@
 		48B6580213E8DD8E0074CEE1 /* ToursViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48B6580013E8DD8E0074CEE1 /* ToursViewController.xib */; };
 		48B6580B13E8DDBD0074CEE1 /* NotificationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48B6580913E8DDBC0074CEE1 /* NotificationsViewController.m */; };
 		48B6580C13E8DDBD0074CEE1 /* NotificationsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48B6580A13E8DDBC0074CEE1 /* NotificationsViewController.xib */; };
+		48B6581A13E98F640074CEE1 /* CollegeTableView1.m in Sources */ = {isa = PBXBuildFile; fileRef = 48B6581813E98F630074CEE1 /* CollegeTableView1.m */; };
+		48B6581B13E98F640074CEE1 /* CollegeTableView1.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48B6581913E98F630074CEE1 /* CollegeTableView1.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +55,9 @@
 		48B6580813E8DDBC0074CEE1 /* NotificationsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationsViewController.h; sourceTree = "<group>"; };
 		48B6580913E8DDBC0074CEE1 /* NotificationsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationsViewController.m; sourceTree = "<group>"; };
 		48B6580A13E8DDBC0074CEE1 /* NotificationsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NotificationsViewController.xib; sourceTree = "<group>"; };
+		48B6581713E98F630074CEE1 /* CollegeTableView1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollegeTableView1.h; sourceTree = "<group>"; };
+		48B6581813E98F630074CEE1 /* CollegeTableView1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollegeTableView1.m; sourceTree = "<group>"; };
+		48B6581913E98F630074CEE1 /* CollegeTableView1.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollegeTableView1.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +123,9 @@
 				48B6580813E8DDBC0074CEE1 /* NotificationsViewController.h */,
 				48B6580913E8DDBC0074CEE1 /* NotificationsViewController.m */,
 				48B6580A13E8DDBC0074CEE1 /* NotificationsViewController.xib */,
+				48B6581713E98F630074CEE1 /* CollegeTableView1.h */,
+				48B6581813E98F630074CEE1 /* CollegeTableView1.m */,
+				48B6581913E98F630074CEE1 /* CollegeTableView1.xib */,
 			);
 			path = CollegeSocial;
 			sourceTree = "<group>";
@@ -187,6 +195,7 @@
 				48B657FD13E8DD7C0074CEE1 /* ApplicationViewController.xib in Resources */,
 				48B6580213E8DD8E0074CEE1 /* ToursViewController.xib in Resources */,
 				48B6580C13E8DDBD0074CEE1 /* NotificationsViewController.xib in Resources */,
+				48B6581B13E98F640074CEE1 /* CollegeTableView1.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -204,6 +213,7 @@
 				48B657FC13E8DD7C0074CEE1 /* ApplicationViewController.m in Sources */,
 				48B6580113E8DD8E0074CEE1 /* ToursViewController.m in Sources */,
 				48B6580B13E8DDBD0074CEE1 /* NotificationsViewController.m in Sources */,
+				48B6581A13E98F640074CEE1 /* CollegeTableView1.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

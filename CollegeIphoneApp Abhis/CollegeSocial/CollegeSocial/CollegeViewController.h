@@ -10,7 +10,9 @@
 
 
 @interface CollegeViewController : UIViewController {
-    
+    UINavigationController *navController;
 }
+
+@property (nonatomic, retain) IBOutlet UINavigationController *navController;
 
 @end
