@@ -9,7 +9,6 @@
 		result: working (returns counselor name for counselorid 1)
 	- http://localhost:8888/counselorReadAPI.php?query=counselorusers&columnforid=CounselorSchoolName&id=22&attribute=CounselorName
 		result: working (returns counselor name for CounselorSchoolName with value 22)
-	- 
  */
 
 // The function __autoload is the method for loading all the classes being used in the script. Use it at the beginning of every php main
