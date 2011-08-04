@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		488EE02E13EAC7EE005F1D6A /* ProfileTableView1.m in Sources */ = {isa = PBXBuildFile; fileRef = 488EE02C13EAC7EC005F1D6A /* ProfileTableView1.m */; };
+		488EE02F13EAC7EE005F1D6A /* ProfileTableView1.xib in Resources */ = {isa = PBXBuildFile; fileRef = 488EE02D13EAC7ED005F1D6A /* ProfileTableView1.xib */; };
+		488EE03313EAC813005F1D6A /* CollegeTableView1.m in Sources */ = {isa = PBXBuildFile; fileRef = 488EE03113EAC813005F1D6A /* CollegeTableView1.m */; };
+		488EE03413EAC813005F1D6A /* CollegeTableView1.xib in Resources */ = {isa = PBXBuildFile; fileRef = 488EE03213EAC813005F1D6A /* CollegeTableView1.xib */; };
 		48B657D613E8D0C60074CEE1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48B657D513E8D0C60074CEE1 /* UIKit.framework */; };
 		48B657D813E8D0C60074CEE1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48B657D713E8D0C60074CEE1 /* Foundation.framework */; };
 		48B657DA13E8D0C60074CEE1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48B657D913E8D0C60074CEE1 /* CoreGraphics.framework */; };
@@ -24,6 +28,7 @@
 		48B6580213E8DD8E0074CEE1 /* ToursViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48B6580013E8DD8E0074CEE1 /* ToursViewController.xib */; };
 		48B6580B13E8DDBD0074CEE1 /* NotificationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 48B6580913E8DDBC0074CEE1 /* NotificationsViewController.m */; };
 		48B6580C13E8DDBD0074CEE1 /* NotificationsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48B6580A13E8DDBC0074CEE1 /* NotificationsViewController.xib */; };
+<<<<<<< HEAD
 		48B6581A13E98F640074CEE1 /* CollegeTableView1.m in Sources */ = {isa = PBXBuildFile; fileRef = 48B6581813E98F630074CEE1 /* CollegeTableView1.m */; };
 		48B6581B13E98F640074CEE1 /* CollegeTableView1.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48B6581913E98F630074CEE1 /* CollegeTableView1.xib */; };
 		F98563BB13EB21F4006B888A /* LocalStorageController.m in Sources */ = {isa = PBXBuildFile; fileRef = F98563BA13EB21F4006B888A /* LocalStorageController.m */; };
@@ -49,9 +54,17 @@
 		F989D21813EA2F580093B1A1 /* RecommendedColleges.m in Sources */ = {isa = PBXBuildFile; fileRef = F989D20E13EA2F580093B1A1 /* RecommendedColleges.m */; };
 		F989D21913EA2F580093B1A1 /* VisitedColleges.m in Sources */ = {isa = PBXBuildFile; fileRef = F989D21013EA2F580093B1A1 /* VisitedColleges.m */; };
 		F989D21C13EA307F0093B1A1 /* DBFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = F989D21B13EA307F0093B1A1 /* DBFetcher.m */; };
+=======
+>>>>>>> 132448dd347d38a1d8ba8c71098b28b9a875feff
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		488EE02B13EAC7EC005F1D6A /* ProfileTableView1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileTableView1.h; sourceTree = "<group>"; };
+		488EE02C13EAC7EC005F1D6A /* ProfileTableView1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileTableView1.m; sourceTree = "<group>"; };
+		488EE02D13EAC7ED005F1D6A /* ProfileTableView1.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileTableView1.xib; sourceTree = "<group>"; };
+		488EE03013EAC813005F1D6A /* CollegeTableView1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollegeTableView1.h; sourceTree = "<group>"; };
+		488EE03113EAC813005F1D6A /* CollegeTableView1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollegeTableView1.m; sourceTree = "<group>"; };
+		488EE03213EAC813005F1D6A /* CollegeTableView1.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollegeTableView1.xib; sourceTree = "<group>"; };
 		48B657D113E8D0C60074CEE1 /* CollegeSocial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CollegeSocial.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		48B657D513E8D0C60074CEE1 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		48B657D713E8D0C60074CEE1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -78,6 +91,7 @@
 		48B6580813E8DDBC0074CEE1 /* NotificationsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotificationsViewController.h; sourceTree = "<group>"; };
 		48B6580913E8DDBC0074CEE1 /* NotificationsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotificationsViewController.m; sourceTree = "<group>"; };
 		48B6580A13E8DDBC0074CEE1 /* NotificationsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NotificationsViewController.xib; sourceTree = "<group>"; };
+<<<<<<< HEAD
 		48B6581713E98F630074CEE1 /* CollegeTableView1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollegeTableView1.h; sourceTree = "<group>"; };
 		48B6581813E98F630074CEE1 /* CollegeTableView1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollegeTableView1.m; sourceTree = "<group>"; };
 		48B6581913E98F630074CEE1 /* CollegeTableView1.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollegeTableView1.xib; sourceTree = "<group>"; };
@@ -127,6 +141,8 @@
 		F989D21013EA2F580093B1A1 /* VisitedColleges.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VisitedColleges.m; sourceTree = "<group>"; };
 		F989D21A13EA307F0093B1A1 /* DBFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBFetcher.h; sourceTree = "<group>"; };
 		F989D21B13EA307F0093B1A1 /* DBFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBFetcher.m; sourceTree = "<group>"; };
+=======
+>>>>>>> 132448dd347d38a1d8ba8c71098b28b9a875feff
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,9 +210,12 @@
 				48B6580813E8DDBC0074CEE1 /* NotificationsViewController.h */,
 				48B6580913E8DDBC0074CEE1 /* NotificationsViewController.m */,
 				48B6580A13E8DDBC0074CEE1 /* NotificationsViewController.xib */,
-				48B6581713E98F630074CEE1 /* CollegeTableView1.h */,
-				48B6581813E98F630074CEE1 /* CollegeTableView1.m */,
-				48B6581913E98F630074CEE1 /* CollegeTableView1.xib */,
+				488EE02B13EAC7EC005F1D6A /* ProfileTableView1.h */,
+				488EE02C13EAC7EC005F1D6A /* ProfileTableView1.m */,
+				488EE02D13EAC7ED005F1D6A /* ProfileTableView1.xib */,
+				488EE03013EAC813005F1D6A /* CollegeTableView1.h */,
+				488EE03113EAC813005F1D6A /* CollegeTableView1.m */,
+				488EE03213EAC813005F1D6A /* CollegeTableView1.xib */,
 			);
 			path = CollegeSocial;
 			sourceTree = "<group>";
@@ -326,8 +345,13 @@
 				48B657FD13E8DD7C0074CEE1 /* ApplicationViewController.xib in Resources */,
 				48B6580213E8DD8E0074CEE1 /* ToursViewController.xib in Resources */,
 				48B6580C13E8DDBD0074CEE1 /* NotificationsViewController.xib in Resources */,
+<<<<<<< HEAD
 				48B6581B13E98F640074CEE1 /* CollegeTableView1.xib in Resources */,
 				F98563BE13EB271B006B888A /* Data.plist in Resources */,
+=======
+				488EE02F13EAC7EE005F1D6A /* ProfileTableView1.xib in Resources */,
+				488EE03413EAC813005F1D6A /* CollegeTableView1.xib in Resources */,
+>>>>>>> 132448dd347d38a1d8ba8c71098b28b9a875feff
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -345,6 +369,7 @@
 				48B657FC13E8DD7C0074CEE1 /* ApplicationViewController.m in Sources */,
 				48B6580113E8DD8E0074CEE1 /* ToursViewController.m in Sources */,
 				48B6580B13E8DDBD0074CEE1 /* NotificationsViewController.m in Sources */,
+<<<<<<< HEAD
 				48B6581A13E98F640074CEE1 /* CollegeTableView1.m in Sources */,
 				F989D21113EA2F580093B1A1 /* CollegeDatabaseView.m in Sources */,
 				F989D21213EA2F580093B1A1 /* CollegeDetail.m in Sources */,
@@ -368,6 +393,10 @@
 				F98563DF13EB4844006B888A /* SBJsonTokeniser.m in Sources */,
 				F98563E013EB4844006B888A /* SBJsonUTF8Stream.m in Sources */,
 				F98563E113EB4844006B888A /* SBJsonWriter.m in Sources */,
+=======
+				488EE02E13EAC7EE005F1D6A /* ProfileTableView1.m in Sources */,
+				488EE03313EAC813005F1D6A /* CollegeTableView1.m in Sources */,
+>>>>>>> 132448dd347d38a1d8ba8c71098b28b9a875feff
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
