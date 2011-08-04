@@ -40,9 +40,10 @@
 
 - (void)viewDidLoad
 {
-    [self.view addSubview:navController.view];
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    [self.view addSubview:navController.view];
+
 }
 
 - (void)viewDidUnload

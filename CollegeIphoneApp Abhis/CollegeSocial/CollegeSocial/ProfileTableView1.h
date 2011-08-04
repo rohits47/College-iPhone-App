@@ -1,5 +1,5 @@
 //
-//  CollegeTableView1.h
+//  ProfileTableView1.h
 //  CollegeSocial
 //
 //  Created by Abhinav  Khanna on 8/4/11.
@@ -9,8 +9,8 @@
 #import <UIKit/UIKit.h>
 
 
-@interface CollegeTableView1 : UIViewController {
-    
+@interface ProfileTableView1 : UITableViewController {
+    NSMutableArray *tableset;
 }
 
 @end
