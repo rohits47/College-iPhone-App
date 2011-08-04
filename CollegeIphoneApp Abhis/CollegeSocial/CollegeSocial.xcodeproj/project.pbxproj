@@ -26,6 +26,29 @@
 		48B6580C13E8DDBD0074CEE1 /* NotificationsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48B6580A13E8DDBC0074CEE1 /* NotificationsViewController.xib */; };
 		48B6581A13E98F640074CEE1 /* CollegeTableView1.m in Sources */ = {isa = PBXBuildFile; fileRef = 48B6581813E98F630074CEE1 /* CollegeTableView1.m */; };
 		48B6581B13E98F640074CEE1 /* CollegeTableView1.xib in Resources */ = {isa = PBXBuildFile; fileRef = 48B6581913E98F630074CEE1 /* CollegeTableView1.xib */; };
+		F98563BB13EB21F4006B888A /* LocalStorageController.m in Sources */ = {isa = PBXBuildFile; fileRef = F98563BA13EB21F4006B888A /* LocalStorageController.m */; };
+		F98563BE13EB271B006B888A /* Data.plist in Resources */ = {isa = PBXBuildFile; fileRef = F98563BD13EB271B006B888A /* Data.plist */; };
+		F98563D713EB4844006B888A /* NSObject+SBJson.m in Sources */ = {isa = PBXBuildFile; fileRef = F98563C113EB4844006B888A /* NSObject+SBJson.m */; };
+		F98563D813EB4844006B888A /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = F98563C413EB4844006B888A /* SBJsonParser.m */; };
+		F98563D913EB4844006B888A /* SBJsonStreamParser.m in Sources */ = {isa = PBXBuildFile; fileRef = F98563C613EB4844006B888A /* SBJsonStreamParser.m */; };
+		F98563DA13EB4844006B888A /* SBJsonStreamParserAccumulator.m in Sources */ = {isa = PBXBuildFile; fileRef = F98563C813EB4844006B888A /* SBJsonStreamParserAccumulator.m */; };
+		F98563DB13EB4844006B888A /* SBJsonStreamParserState.m in Sources */ = {isa = PBXBuildFile; fileRef = F98563CA13EB4844006B888A /* SBJsonStreamParserState.m */; };
+		F98563DC13EB4844006B888A /* SBJsonStreamWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = F98563CC13EB4844006B888A /* SBJsonStreamWriter.m */; };
+		F98563DD13EB4844006B888A /* SBJsonStreamWriterAccumulator.m in Sources */ = {isa = PBXBuildFile; fileRef = F98563CE13EB4844006B888A /* SBJsonStreamWriterAccumulator.m */; };
+		F98563DE13EB4844006B888A /* SBJsonStreamWriterState.m in Sources */ = {isa = PBXBuildFile; fileRef = F98563D013EB4844006B888A /* SBJsonStreamWriterState.m */; };
+		F98563DF13EB4844006B888A /* SBJsonTokeniser.m in Sources */ = {isa = PBXBuildFile; fileRef = F98563D213EB4844006B888A /* SBJsonTokeniser.m */; };
+		F98563E013EB4844006B888A /* SBJsonUTF8Stream.m in Sources */ = {isa = PBXBuildFile; fileRef = F98563D413EB4844006B888A /* SBJsonUTF8Stream.m */; };
+		F98563E113EB4844006B888A /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = F98563D613EB4844006B888A /* SBJsonWriter.m */; };
+		F989D21113EA2F580093B1A1 /* CollegeDatabaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = F989D20013EA2F580093B1A1 /* CollegeDatabaseView.m */; };
+		F989D21213EA2F580093B1A1 /* CollegeDetail.m in Sources */ = {isa = PBXBuildFile; fileRef = F989D20213EA2F580093B1A1 /* CollegeDetail.m */; };
+		F989D21313EA2F580093B1A1 /* CollegeTours.m in Sources */ = {isa = PBXBuildFile; fileRef = F989D20413EA2F580093B1A1 /* CollegeTours.m */; };
+		F989D21413EA2F580093B1A1 /* MyApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = F989D20613EA2F580093B1A1 /* MyApplication.m */; };
+		F989D21513EA2F580093B1A1 /* MyProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = F989D20813EA2F580093B1A1 /* MyProfile.m */; };
+		F989D21613EA2F580093B1A1 /* NewTourBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = F989D20A13EA2F580093B1A1 /* NewTourBuilder.m */; };
+		F989D21713EA2F580093B1A1 /* NotifCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = F989D20C13EA2F580093B1A1 /* NotifCenter.m */; };
+		F989D21813EA2F580093B1A1 /* RecommendedColleges.m in Sources */ = {isa = PBXBuildFile; fileRef = F989D20E13EA2F580093B1A1 /* RecommendedColleges.m */; };
+		F989D21913EA2F580093B1A1 /* VisitedColleges.m in Sources */ = {isa = PBXBuildFile; fileRef = F989D21013EA2F580093B1A1 /* VisitedColleges.m */; };
+		F989D21C13EA307F0093B1A1 /* DBFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = F989D21B13EA307F0093B1A1 /* DBFetcher.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +81,52 @@
 		48B6581713E98F630074CEE1 /* CollegeTableView1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollegeTableView1.h; sourceTree = "<group>"; };
 		48B6581813E98F630074CEE1 /* CollegeTableView1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollegeTableView1.m; sourceTree = "<group>"; };
 		48B6581913E98F630074CEE1 /* CollegeTableView1.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollegeTableView1.xib; sourceTree = "<group>"; };
+		F98563B913EB21F4006B888A /* LocalStorageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocalStorageController.h; sourceTree = "<group>"; };
+		F98563BA13EB21F4006B888A /* LocalStorageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocalStorageController.m; sourceTree = "<group>"; };
+		F98563BD13EB271B006B888A /* Data.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Data.plist; sourceTree = "<group>"; };
+		F98563C013EB4844006B888A /* NSObject+SBJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SBJson.h"; sourceTree = "<group>"; };
+		F98563C113EB4844006B888A /* NSObject+SBJson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SBJson.m"; sourceTree = "<group>"; };
+		F98563C213EB4844006B888A /* SBJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJson.h; sourceTree = "<group>"; };
+		F98563C313EB4844006B888A /* SBJsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonParser.h; sourceTree = "<group>"; };
+		F98563C413EB4844006B888A /* SBJsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonParser.m; sourceTree = "<group>"; };
+		F98563C513EB4844006B888A /* SBJsonStreamParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamParser.h; sourceTree = "<group>"; };
+		F98563C613EB4844006B888A /* SBJsonStreamParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamParser.m; sourceTree = "<group>"; };
+		F98563C713EB4844006B888A /* SBJsonStreamParserAccumulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamParserAccumulator.h; sourceTree = "<group>"; };
+		F98563C813EB4844006B888A /* SBJsonStreamParserAccumulator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamParserAccumulator.m; sourceTree = "<group>"; };
+		F98563C913EB4844006B888A /* SBJsonStreamParserState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamParserState.h; sourceTree = "<group>"; };
+		F98563CA13EB4844006B888A /* SBJsonStreamParserState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamParserState.m; sourceTree = "<group>"; };
+		F98563CB13EB4844006B888A /* SBJsonStreamWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamWriter.h; sourceTree = "<group>"; };
+		F98563CC13EB4844006B888A /* SBJsonStreamWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamWriter.m; sourceTree = "<group>"; };
+		F98563CD13EB4844006B888A /* SBJsonStreamWriterAccumulator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamWriterAccumulator.h; sourceTree = "<group>"; };
+		F98563CE13EB4844006B888A /* SBJsonStreamWriterAccumulator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamWriterAccumulator.m; sourceTree = "<group>"; };
+		F98563CF13EB4844006B888A /* SBJsonStreamWriterState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamWriterState.h; sourceTree = "<group>"; };
+		F98563D013EB4844006B888A /* SBJsonStreamWriterState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamWriterState.m; sourceTree = "<group>"; };
+		F98563D113EB4844006B888A /* SBJsonTokeniser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonTokeniser.h; sourceTree = "<group>"; };
+		F98563D213EB4844006B888A /* SBJsonTokeniser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonTokeniser.m; sourceTree = "<group>"; };
+		F98563D313EB4844006B888A /* SBJsonUTF8Stream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonUTF8Stream.h; sourceTree = "<group>"; };
+		F98563D413EB4844006B888A /* SBJsonUTF8Stream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonUTF8Stream.m; sourceTree = "<group>"; };
+		F98563D513EB4844006B888A /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
+		F98563D613EB4844006B888A /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
+		F989D1FF13EA2F580093B1A1 /* CollegeDatabaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollegeDatabaseView.h; sourceTree = "<group>"; };
+		F989D20013EA2F580093B1A1 /* CollegeDatabaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollegeDatabaseView.m; sourceTree = "<group>"; };
+		F989D20113EA2F580093B1A1 /* CollegeDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollegeDetail.h; sourceTree = "<group>"; };
+		F989D20213EA2F580093B1A1 /* CollegeDetail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollegeDetail.m; sourceTree = "<group>"; };
+		F989D20313EA2F580093B1A1 /* CollegeTours.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollegeTours.h; sourceTree = "<group>"; };
+		F989D20413EA2F580093B1A1 /* CollegeTours.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollegeTours.m; sourceTree = "<group>"; };
+		F989D20513EA2F580093B1A1 /* MyApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyApplication.h; sourceTree = "<group>"; };
+		F989D20613EA2F580093B1A1 /* MyApplication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyApplication.m; sourceTree = "<group>"; };
+		F989D20713EA2F580093B1A1 /* MyProfile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyProfile.h; sourceTree = "<group>"; };
+		F989D20813EA2F580093B1A1 /* MyProfile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyProfile.m; sourceTree = "<group>"; };
+		F989D20913EA2F580093B1A1 /* NewTourBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewTourBuilder.h; sourceTree = "<group>"; };
+		F989D20A13EA2F580093B1A1 /* NewTourBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewTourBuilder.m; sourceTree = "<group>"; };
+		F989D20B13EA2F580093B1A1 /* NotifCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotifCenter.h; sourceTree = "<group>"; };
+		F989D20C13EA2F580093B1A1 /* NotifCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotifCenter.m; sourceTree = "<group>"; };
+		F989D20D13EA2F580093B1A1 /* RecommendedColleges.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecommendedColleges.h; sourceTree = "<group>"; };
+		F989D20E13EA2F580093B1A1 /* RecommendedColleges.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecommendedColleges.m; sourceTree = "<group>"; };
+		F989D20F13EA2F580093B1A1 /* VisitedColleges.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VisitedColleges.h; sourceTree = "<group>"; };
+		F989D21013EA2F580093B1A1 /* VisitedColleges.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VisitedColleges.m; sourceTree = "<group>"; };
+		F989D21A13EA307F0093B1A1 /* DBFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBFetcher.h; sourceTree = "<group>"; };
+		F989D21B13EA307F0093B1A1 /* DBFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBFetcher.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,12 +182,14 @@
 				48B657F113E8D5060074CEE1 /* CollegeViewController.xib */,
 				48B657F413E8D51C0074CEE1 /* ProfileViewController.h */,
 				48B657F513E8D51C0074CEE1 /* ProfileViewController.m */,
+				F98563BF13EB4803006B888A /* SBJson Code */,
 				48B657F613E8D51D0074CEE1 /* ProfileViewController.xib */,
 				48B657F913E8DD7A0074CEE1 /* ApplicationViewController.h */,
 				48B657FA13E8DD7A0074CEE1 /* ApplicationViewController.m */,
 				48B657FB13E8DD7B0074CEE1 /* ApplicationViewController.xib */,
 				48B657FE13E8DD8D0074CEE1 /* ToursViewController.h */,
 				48B657FF13E8DD8D0074CEE1 /* ToursViewController.m */,
+				F989D1FD13EA2F1A0093B1A1 /* Code files (temp) */,
 				48B6580013E8DD8E0074CEE1 /* ToursViewController.xib */,
 				48B6580813E8DDBC0074CEE1 /* NotificationsViewController.h */,
 				48B6580913E8DDBC0074CEE1 /* NotificationsViewController.m */,
@@ -135,10 +206,70 @@
 			children = (
 				48B657DD13E8D0C70074CEE1 /* CollegeSocial-Info.plist */,
 				48B657DE13E8D0C70074CEE1 /* InfoPlist.strings */,
+				F98563BD13EB271B006B888A /* Data.plist */,
 				48B657E113E8D0C70074CEE1 /* CollegeSocial-Prefix.pch */,
 				48B657E213E8D0C70074CEE1 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F98563BF13EB4803006B888A /* SBJson Code */ = {
+			isa = PBXGroup;
+			children = (
+				F98563C013EB4844006B888A /* NSObject+SBJson.h */,
+				F98563C113EB4844006B888A /* NSObject+SBJson.m */,
+				F98563C213EB4844006B888A /* SBJson.h */,
+				F98563C313EB4844006B888A /* SBJsonParser.h */,
+				F98563C413EB4844006B888A /* SBJsonParser.m */,
+				F98563C513EB4844006B888A /* SBJsonStreamParser.h */,
+				F98563C613EB4844006B888A /* SBJsonStreamParser.m */,
+				F98563C713EB4844006B888A /* SBJsonStreamParserAccumulator.h */,
+				F98563C813EB4844006B888A /* SBJsonStreamParserAccumulator.m */,
+				F98563C913EB4844006B888A /* SBJsonStreamParserState.h */,
+				F98563CA13EB4844006B888A /* SBJsonStreamParserState.m */,
+				F98563CB13EB4844006B888A /* SBJsonStreamWriter.h */,
+				F98563CC13EB4844006B888A /* SBJsonStreamWriter.m */,
+				F98563CD13EB4844006B888A /* SBJsonStreamWriterAccumulator.h */,
+				F98563CE13EB4844006B888A /* SBJsonStreamWriterAccumulator.m */,
+				F98563CF13EB4844006B888A /* SBJsonStreamWriterState.h */,
+				F98563D013EB4844006B888A /* SBJsonStreamWriterState.m */,
+				F98563D113EB4844006B888A /* SBJsonTokeniser.h */,
+				F98563D213EB4844006B888A /* SBJsonTokeniser.m */,
+				F98563D313EB4844006B888A /* SBJsonUTF8Stream.h */,
+				F98563D413EB4844006B888A /* SBJsonUTF8Stream.m */,
+				F98563D513EB4844006B888A /* SBJsonWriter.h */,
+				F98563D613EB4844006B888A /* SBJsonWriter.m */,
+			);
+			name = "SBJson Code";
+			sourceTree = "<group>";
+		};
+		F989D1FD13EA2F1A0093B1A1 /* Code files (temp) */ = {
+			isa = PBXGroup;
+			children = (
+				F989D1FF13EA2F580093B1A1 /* CollegeDatabaseView.h */,
+				F989D20013EA2F580093B1A1 /* CollegeDatabaseView.m */,
+				F989D20113EA2F580093B1A1 /* CollegeDetail.h */,
+				F989D20213EA2F580093B1A1 /* CollegeDetail.m */,
+				F989D20313EA2F580093B1A1 /* CollegeTours.h */,
+				F989D21A13EA307F0093B1A1 /* DBFetcher.h */,
+				F98563B913EB21F4006B888A /* LocalStorageController.h */,
+				F98563BA13EB21F4006B888A /* LocalStorageController.m */,
+				F989D21B13EA307F0093B1A1 /* DBFetcher.m */,
+				F989D20413EA2F580093B1A1 /* CollegeTours.m */,
+				F989D20513EA2F580093B1A1 /* MyApplication.h */,
+				F989D20613EA2F580093B1A1 /* MyApplication.m */,
+				F989D20713EA2F580093B1A1 /* MyProfile.h */,
+				F989D20813EA2F580093B1A1 /* MyProfile.m */,
+				F989D20913EA2F580093B1A1 /* NewTourBuilder.h */,
+				F989D20A13EA2F580093B1A1 /* NewTourBuilder.m */,
+				F989D20B13EA2F580093B1A1 /* NotifCenter.h */,
+				F989D20C13EA2F580093B1A1 /* NotifCenter.m */,
+				F989D20D13EA2F580093B1A1 /* RecommendedColleges.h */,
+				F989D20E13EA2F580093B1A1 /* RecommendedColleges.m */,
+				F989D20F13EA2F580093B1A1 /* VisitedColleges.h */,
+				F989D21013EA2F580093B1A1 /* VisitedColleges.m */,
+			);
+			name = "Code files (temp)";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -196,6 +327,7 @@
 				48B6580213E8DD8E0074CEE1 /* ToursViewController.xib in Resources */,
 				48B6580C13E8DDBD0074CEE1 /* NotificationsViewController.xib in Resources */,
 				48B6581B13E98F640074CEE1 /* CollegeTableView1.xib in Resources */,
+				F98563BE13EB271B006B888A /* Data.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -214,6 +346,28 @@
 				48B6580113E8DD8E0074CEE1 /* ToursViewController.m in Sources */,
 				48B6580B13E8DDBD0074CEE1 /* NotificationsViewController.m in Sources */,
 				48B6581A13E98F640074CEE1 /* CollegeTableView1.m in Sources */,
+				F989D21113EA2F580093B1A1 /* CollegeDatabaseView.m in Sources */,
+				F989D21213EA2F580093B1A1 /* CollegeDetail.m in Sources */,
+				F989D21313EA2F580093B1A1 /* CollegeTours.m in Sources */,
+				F989D21413EA2F580093B1A1 /* MyApplication.m in Sources */,
+				F989D21513EA2F580093B1A1 /* MyProfile.m in Sources */,
+				F989D21613EA2F580093B1A1 /* NewTourBuilder.m in Sources */,
+				F989D21713EA2F580093B1A1 /* NotifCenter.m in Sources */,
+				F989D21813EA2F580093B1A1 /* RecommendedColleges.m in Sources */,
+				F989D21913EA2F580093B1A1 /* VisitedColleges.m in Sources */,
+				F989D21C13EA307F0093B1A1 /* DBFetcher.m in Sources */,
+				F98563BB13EB21F4006B888A /* LocalStorageController.m in Sources */,
+				F98563D713EB4844006B888A /* NSObject+SBJson.m in Sources */,
+				F98563D813EB4844006B888A /* SBJsonParser.m in Sources */,
+				F98563D913EB4844006B888A /* SBJsonStreamParser.m in Sources */,
+				F98563DA13EB4844006B888A /* SBJsonStreamParserAccumulator.m in Sources */,
+				F98563DB13EB4844006B888A /* SBJsonStreamParserState.m in Sources */,
+				F98563DC13EB4844006B888A /* SBJsonStreamWriter.m in Sources */,
+				F98563DD13EB4844006B888A /* SBJsonStreamWriterAccumulator.m in Sources */,
+				F98563DE13EB4844006B888A /* SBJsonStreamWriterState.m in Sources */,
+				F98563DF13EB4844006B888A /* SBJsonTokeniser.m in Sources */,
+				F98563E013EB4844006B888A /* SBJsonUTF8Stream.m in Sources */,
+				F98563E113EB4844006B888A /* SBJsonWriter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -318,6 +472,7 @@
 				48B657EE13E8D0C80074CEE1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

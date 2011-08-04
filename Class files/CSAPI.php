@@ -22,7 +22,7 @@ function __autoload($class)
 	require_once $class . '.php';
 }
 
-$dbConnection = new relationalDbConnections('lala', "localhost:8889", "root", "root");
+$dbConnection = new relationalDbConnections('CollegeSummary', "localhost:8889", "root", "root");
 
 $query = $_GET["query"];
 $id = $_GET["id"];
