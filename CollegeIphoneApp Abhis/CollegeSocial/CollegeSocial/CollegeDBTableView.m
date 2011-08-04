@@ -1,15 +1,15 @@
 //
-//  CollegeTableView1.m
+//  CollegeDBTableView.m
 //  CollegeSocial
 //
 //  Created by Abhinav  Khanna on 8/3/11.
 //  Copyright 2011 __MyCompanyName__. All rights reserved.
 //
 
-#import "CollegeTableView1.h"
+#import "CollegeDBTableView.h"
 
 
-@implementation CollegeTableView1
+@implementation CollegeDBTableView
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
