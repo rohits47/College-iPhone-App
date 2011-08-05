@@ -1,15 +1,15 @@
 //
-//  ApplicationView.m
+//  DetailViewController.m
 //  CollegeSocial
 //
-//  Created by Abhinav  Khanna on 8/2/11.
+//  Created by Abhinav  Khanna on 8/3/11.
 //  Copyright 2011 __MyCompanyName__. All rights reserved.
 //
 
-#import "ApplicationView.h"
+#import "DetailViewController.h"
 
 
-@implementation ApplicationView
+@implementation DetailViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

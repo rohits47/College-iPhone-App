@@ -7,10 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "ProfileTableView1.h"
 
 @interface ProfileViewController : UIViewController {
-    
+    UINavigationController *navig;
+    ProfileTableView1 *profileTable;
 }
 
 @end
+
