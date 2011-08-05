@@ -31,7 +31,7 @@
     NSString *plistPath = [rootPath stringByAppendingPathComponent:@"Data.plist"];
     NSDictionary *plistDict = [NSDictionary dictionaryWithObjects:
 							   [NSArray arrayWithObjects: string, array, nil]
-														  forKeys:[NSArray arrayWithObjects: @"Name", @"Phones", nil]];
+														  forKeys:[NSArray arrayWithObjects: @"String", @"Array", nil]];
     NSData *plistData = [NSPropertyListSerialization dataFromPropertyList:plistDict
 																   format:NSPropertyListXMLFormat_v1_0
 														 errorDescription:&error];
