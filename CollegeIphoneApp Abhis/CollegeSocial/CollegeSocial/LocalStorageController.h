@@ -3,20 +3,14 @@
 //  CollegeSocial
 //
 //  Created by Rohit Sanbhadti on 8/4/11.
-//  Copyright 2011 Harker High School. All rights reserved.
+//  Copyright 2011 Student. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 
-@interface LocalStorageController : NSObject {
-	NSString *theString;
-	NSMutableArray *theArray;
-}
+@interface LocalStorageController : NSObject
 
-@property (copy, nonatomic) NSString *theString;
-@property (retain, nonatomic) NSMutableArray *theArray;
-
-- (void) writeToDatabase;
-- (void) readFromDatabase;
+- (id) readFromDatabase:(NSString*)keyToRead isArray:(BOOL)array plistName:(NSString*)nameOfPlist;
+- (void) writeToDatabase:(NSString*)key keyValues:(NSArray*)values plistName:(NSString*)nameOfPlist;
 
 @end

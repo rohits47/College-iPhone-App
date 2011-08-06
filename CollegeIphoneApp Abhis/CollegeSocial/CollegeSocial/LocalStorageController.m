@@ -3,15 +3,12 @@
 //  CollegeSocial
 //
 //  Created by Rohit Sanbhadti on 8/4/11.
-//  Copyright 2011 Harker High School. All rights reserved.
+//  Copyright 2011 Student. All rights reserved.
 //
 
 #import "LocalStorageController.h"
 
 @implementation LocalStorageController
-
-@synthesize theString;
-@synthesize theArray;
 
 - (id)init
 {
@@ -23,54 +20,56 @@
     return self;
 }
 
-- (void) readFromDatabase
+- (id) readFromDatabase:(NSString*)keyToRead isArray:(BOOL)array plistName:(NSString*)nameOfPlist
 {
-	NSString *error = nil;
+	NSString *errorDesc = nil;
 	NSPropertyListFormat format;
-	NSString *plistPath;
-	NSString *rootPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,
-															  NSUserDomainMask, YES) objectAtIndex:0];
-	plistPath = [rootPath stringByAppendingPathComponent:@"Data.plist"];
-	if (![[NSFileManager defaultManager] fileExistsAtPath:plistPath])
-		{
-		plistPath = [[NSBundle mainBundle] pathForResource:@"Data" ofType:@"plist"];
-		}
+	NSString *plistPath = [[NSBundle mainBundle] pathForResource:nameOfPlist ofType:@"plist"];
 	NSData *plistXML = [[NSFileManager defaultManager] contentsAtPath:plistPath];
-	NSDictionary *temp = (NSDictionary *)[NSPropertyListSerialization
+	NSDictionary *dict = (NSDictionary *)[NSPropertyListSerialization
 										  propertyListFromData:plistXML
 										  mutabilityOption:NSPropertyListMutableContainersAndLeaves
 										  format:&format
-										  errorDescription:&error];
-	if (!temp)
-		{
-		NSLog(@"Error reading plist: %@, format: %d", error, format);
-		}
-	self.theString = [temp objectForKey:@"String"];
-	self.theArray = [NSMutableArray arrayWithArray:[temp objectForKey:@"Array"]];
+										  errorDescription:&errorDesc];
+	if (!dict)
+	{
+		NSLog(@"Error reading plist: %@, format: %lu", errorDesc, format);
+	}
+	if (array)
+	{
+		NSArray *retVal = [dict objectForKey:keyToRead];
+		return retVal;
+	}
+	else
+	{
+		NSString *retVal = [dict objectForKey:keyToRead];
+		return retVal;
+	}
 }
 
-// this method is unfinished, and currently unsusable: this is templates code
-- (void) writeToDatabase
+// this method is unfinished, but usable
+- (void) writeToDatabase:(NSString*)key keyValues:(NSArray*)values plistName:(NSString*)nameOfPlist
 {
-	NSString *error;
-    NSString *rootPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
-    NSString *plistPath = [rootPath stringByAppendingPathComponent:@"Data.plist"];
-    NSDictionary *plistDict = [NSDictionary dictionaryWithObjects:
-							   [NSArray arrayWithObjects: theString, theArray, nil]
-														  forKeys:[NSArray arrayWithObjects: @"String", @"Array", nil]];
+	NSMutableString *filePath = [[NSMutableString alloc] initWithString:@"/Users/Rohit/Desktop/testPRoj/testPRoj/"];
+	[filePath appendString:nameOfPlist];
+	NSMutableDictionary* plistDict = [[NSMutableDictionary alloc] initWithContentsOfFile:filePath];
+	[plistDict setValue:values forKey:key];
+	[plistDict writeToFile:filePath atomically: YES];
+	/*NSString *error;
+	NSString *plistPath = [[NSBundle mainBundle] pathForResource:nameOfPlist ofType:@"plist"];
+    NSDictionary *plistDict = [NSDictionary dictionaryWithObjects:values forKeys:keys];
     NSData *plistData = [NSPropertyListSerialization dataFromPropertyList:plistDict
 																   format:NSPropertyListXMLFormat_v1_0
 														 errorDescription:&error];
-    if(plistData)
-		{
-		[plistData writeToFile:plistPath atomically:YES];
-		}
+    if (plistData)
+	{
+        [plistData writeToFile:plistPath atomically:YES];
+	}
     else
-		{
-		NSLog(error);
-		[error release];
-		}
-    //return NSTerminateNow;
+	{
+        NSLog(error);
+        [error release];
+	}*/
 }
 
 @end
