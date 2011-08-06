@@ -6,10 +6,10 @@
 //  Copyright 2011 Harker High School. All rights reserved.
 //
 
-#import "DBFetcher.h"
+#import "ServerController.h"
 #import "SBJson.h" // allows JSON parsing
 
-@implementation DBFetcher
+@implementation ServerController
 
 - (id)init
 {

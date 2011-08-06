@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface DBFetcher : NSObject
+@interface ServerController : NSObject
 
 - (NSString*) fetchCollegeData: (int) collegeID; // data used in college detail view
 

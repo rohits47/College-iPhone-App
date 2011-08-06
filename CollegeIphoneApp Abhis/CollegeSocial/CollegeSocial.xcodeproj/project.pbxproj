@@ -48,7 +48,7 @@
 		F989D21713EA2F580093B1A1 /* NotifCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = F989D20C13EA2F580093B1A1 /* NotifCenter.m */; };
 		F989D21813EA2F580093B1A1 /* RecommendedColleges.m in Sources */ = {isa = PBXBuildFile; fileRef = F989D20E13EA2F580093B1A1 /* RecommendedColleges.m */; };
 		F989D21913EA2F580093B1A1 /* VisitedColleges.m in Sources */ = {isa = PBXBuildFile; fileRef = F989D21013EA2F580093B1A1 /* VisitedColleges.m */; };
-		F989D21C13EA307F0093B1A1 /* DBFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = F989D21B13EA307F0093B1A1 /* DBFetcher.m */; };
+		F989D21C13EA307F0093B1A1 /* ServerController.m in Sources */ = {isa = PBXBuildFile; fileRef = F989D21B13EA307F0093B1A1 /* ServerController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -125,8 +125,8 @@
 		F989D20E13EA2F580093B1A1 /* RecommendedColleges.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecommendedColleges.m; sourceTree = "<group>"; };
 		F989D20F13EA2F580093B1A1 /* VisitedColleges.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VisitedColleges.h; sourceTree = "<group>"; };
 		F989D21013EA2F580093B1A1 /* VisitedColleges.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VisitedColleges.m; sourceTree = "<group>"; };
-		F989D21A13EA307F0093B1A1 /* DBFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBFetcher.h; sourceTree = "<group>"; };
-		F989D21B13EA307F0093B1A1 /* DBFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBFetcher.m; sourceTree = "<group>"; };
+		F989D21A13EA307F0093B1A1 /* ServerController.h */ = {isa = PBXFileReference; fileEncoding = 4; path = ServerController.h; sourceTree = "<group>"; };
+		F989D21B13EA307F0093B1A1 /* ServerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServerController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -251,10 +251,10 @@
 				F989D20113EA2F580093B1A1 /* CollegeDetail.h */,
 				F989D20213EA2F580093B1A1 /* CollegeDetail.m */,
 				F989D20313EA2F580093B1A1 /* CollegeTours.h */,
-				F989D21A13EA307F0093B1A1 /* DBFetcher.h */,
+				F989D21A13EA307F0093B1A1 /* ServerController.h */,
+				F989D21B13EA307F0093B1A1 /* ServerController.m */,
 				F98563B913EB21F4006B888A /* LocalStorageController.h */,
 				F98563BA13EB21F4006B888A /* LocalStorageController.m */,
-				F989D21B13EA307F0093B1A1 /* DBFetcher.m */,
 				F989D20413EA2F580093B1A1 /* CollegeTours.m */,
 				F989D20513EA2F580093B1A1 /* MyApplication.h */,
 				F989D20613EA2F580093B1A1 /* MyApplication.m */,
@@ -355,7 +355,7 @@
 				F989D21713EA2F580093B1A1 /* NotifCenter.m in Sources */,
 				F989D21813EA2F580093B1A1 /* RecommendedColleges.m in Sources */,
 				F989D21913EA2F580093B1A1 /* VisitedColleges.m in Sources */,
-				F989D21C13EA307F0093B1A1 /* DBFetcher.m in Sources */,
+				F989D21C13EA307F0093B1A1 /* ServerController.m in Sources */,
 				F98563BB13EB21F4006B888A /* LocalStorageController.m in Sources */,
 				F98563D713EB4844006B888A /* NSObject+SBJson.m in Sources */,
 				F98563D813EB4844006B888A /* SBJsonParser.m in Sources */,
