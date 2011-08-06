@@ -9,13 +9,14 @@
 #import <Foundation/Foundation.h>
 
 @interface LocalStorageController : NSObject {
-	NSString *string;
-	NSMutableArray *array;
+	NSString *theString;
+	NSMutableArray *theArray;
 }
 
-@property (copy, nonatomic) NSString *string;
-@property (retain, nonatomic) NSMutableArray *array;
+@property (copy, nonatomic) NSString *theString;
+@property (retain, nonatomic) NSMutableArray *theArray;
 
 - (void) writeToDatabase;
+- (void) readFromDatabase;
 
 @end

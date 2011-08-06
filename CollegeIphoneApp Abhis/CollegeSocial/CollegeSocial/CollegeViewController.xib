@@ -16,6 +16,7 @@
 			<string>IBUINavigationController</string>
 			<string>IBUIViewController</string>
 			<string>IBUIToolbar</string>
+			<string>IBUIBarButtonItem</string>
 			<string>IBUINavigationBar</string>
 			<string>IBUINavigationItem</string>
 			<string>IBUIView</string>
@@ -76,10 +77,17 @@
 					<bool key="EncodedWithXMLCoder">YES</bool>
 					<object class="IBUIViewController" id="774288249">
 						<string key="IBUITitle">TableView1</string>
-						<reference key="IBUIToolbarItems" ref="0"/>
+						<object class="NSArray" key="IBUIToolbarItems">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+						</object>
 						<object class="IBUINavigationItem" key="IBUINavigationItem" id="352230696">
 							<reference key="IBUINavigationBar"/>
 							<string key="IBUITitle">College List</string>
+							<object class="IBUIBarButtonItem" key="IBUIRightBarButtonItem" id="616244442">
+								<string key="IBUITitle">Add</string>
+								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+								<reference key="IBUINavigationItem" ref="352230696"/>
+							</object>
 							<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						</object>
 						<reference key="IBUIParentViewController" ref="116056960"/>
@@ -99,6 +107,7 @@
 				<int key="NSvFlags">292</int>
 				<string key="NSFrameSize">{320, 460}</string>
 				<reference key="NSSuperview"/>
+				<reference key="NSWindow"/>
 				<reference key="NSNextKeyView"/>
 				<object class="NSColor" key="IBUIBackgroundColor">
 					<int key="NSColorSpace">3</int>
@@ -180,6 +189,7 @@
 						<reference key="object" ref="352230696"/>
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
+							<reference ref="616244442"/>
 						</object>
 						<reference key="parent" ref="774288249"/>
 					</object>
@@ -192,6 +202,11 @@
 						<int key="objectID">31</int>
 						<reference key="object" ref="665589074"/>
 						<reference key="parent" ref="116056960"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">30</int>
+						<reference key="object" ref="616244442"/>
+						<reference key="parent" ref="352230696"/>
 					</object>
 				</object>
 			</object>

@@ -11,13 +11,11 @@
 
 @implementation ProfileViewController
 
-
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
-        
     }
     return self;
 }
@@ -39,13 +37,8 @@
 
 - (void)viewDidLoad
 {
-    [super viewDidLoad];    
+    [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    profileTable = [[ProfileTableView1 alloc]init];
-    profileTable.title = @"Profile View";
-    navig = [[UINavigationController alloc]initWithRootViewController:profileTable];
-    
-    [self.view addSubview:navig.view];
 }
 
 - (void)viewDidUnload
