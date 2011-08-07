@@ -7,15 +7,25 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "SBJson.h" // allows JSON parsing
 
 @interface ServerController : NSObject
 
-- (NSString*) fetchCollegeData: (int) collegeID; // data used in college detail view
+- (NSArray*) fetchProfileData: (int)studentID;
 
-- (NSString*) fetchNewNotifications; // data used in notification center
+- (NSArray*) fetchCollegeNamesList;
 
-- (NSString*) fetchNewRecommended; // should check with the notif center for new recommended colleges
+- (NSArray*) fetchMyCollegesList:(int)studentID;
 
-- (void) parseJson:(NSString*) jsonString; // used to parse json from api, prepare for further formatting
+- (NSArray*) fetchMyRecommendedColleges:(int)studentID;
 
+/*
+ - (NSString*) fetchCollegeData: (int) collegeID; // data used in college detail view
+ 
+ - (NSString*) fetchNewNotifications; // data used in notification center
+ 
+ - (NSString*) fetchNewRecommended; // should check with the notif center for new recommended colleges
+ 
+ - (void) parseJson:(NSString*) jsonString; // used to parse json from api, prepare for further formatting
+ */
 @end

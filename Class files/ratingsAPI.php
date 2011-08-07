@@ -39,7 +39,7 @@ function __autoload($class)
 }
 
 // change dbConnection parameters to reflect active MySQL setup.
-$dbConnection = new relationalDbConnections('lala', "localhost:8889", "root", "root");
+$dbConnection = new relationalDbConnections('CollegeSummary', "localhost:8889", "root", "root");
 $ratings = new ratings($dbConnection); // instance of ratings class with which to write and read to db.
 
 $query = $_GET["query"];

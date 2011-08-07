@@ -15,6 +15,12 @@
 		values> default:json, php, txt
  */
 
+/**
+ * MANUAL TEST CASES:
+ * 	- 
+ *  - 
+ */
+
 // The function __autoload is the method for loading all the classes being used in the script. Use it at the beginning of every php main
 // page.
 function __autoload($class)
@@ -27,14 +33,13 @@ $dbConnection = new relationalDbConnections('CollegeSummary', "localhost:8889", 
 $query = $_GET["query"];
 $id = $_GET["id"];
 $attribute = $_GET["attribute"];
-$format = $_GET["format"];
+//$format = $_GET["format"];
 
 $outputcontent = "";
 
-// query parameter code block
+$query = strtolower($query); // lowercases the query, makes it easier for case statements
 switch ($query)
 {
-	$query = strtolower($query); // lowercases the query, makes it easier for case statements
 	case 'summary':
 		$query = "CollegeSummary";
 		break;
@@ -113,7 +118,7 @@ else
 $outputcontent = $array;
 
 //print_r($outputcontent[0]); // testing purposes only, without formatting
-
+/*
 switch ($format)
 {
 	case 'json':
@@ -128,7 +133,8 @@ switch ($format)
 		error_log("Invalid parameter for format.");
 		return false;
 		break;
-}
+}*/
+$outputcontent = json_encode($outputcontent);
 //print_r($outputcontent);
 echo $outputcontent; // better than print_r
 
