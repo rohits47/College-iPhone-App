@@ -159,7 +159,14 @@ class dbConnections
 			return $array;
 		} else {
 			$rows = mysql_fetch_array($value);
-			return $rows;
+			$newArray = array();
+			while ($fruit_name = current($rows)) {
+			    if (!is_int(key($rows))) {
+			        $newArray[key($rows)] = $rows[key($rows)];
+			    }
+			    next($rows);
+			}
+			return $newArray;
 		}
 	}
 	

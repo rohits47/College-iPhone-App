@@ -62,6 +62,8 @@ class relationalDbConnections extends dbConnections
 	 * @param: $valueForKey: the value for the foreignKey;
 	 * @param: $primaryKey: the primaryKey of the database (the cross-table Key);
 	 * @param: $arrayOfValues: the values being updated;
+	 * 	e.g. array("field1" => "value1", "field2" => "value2")
+     * condition should be in the form of 'FieldName = some FieldValue'
 	 * Postcondition: updates the table if entry already exists;
 	 * Postcondition: creates a new entry if entry does not exist;
 	 */

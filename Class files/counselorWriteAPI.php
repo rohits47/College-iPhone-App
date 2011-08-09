@@ -6,7 +6,8 @@
  * foreignkey: 
  * foreignkeyval: 
  * primarykey: 
- * arrayofvals: 
+ * field: 
+ * contentoffield:
  * conditionkey: 
  * conditionval: 
  */
@@ -14,7 +15,8 @@
 /**
  * MANUAL TEST CASES:
 	- http://localhost:8888/counselorWriteAPI.php?tablename=StudentUsers&keytable=StudentUsers&foreignkey=StudentFirstName&foreignkeyval=Ron_Weasley&primarykey=StudentID&arrayofvals=John_Weasley&conditionkey=StudentFirstName&conditionval=Ron_Weasley
-	- http://localhost:8888/counselorWriteAPI.php?tablename=StudentUsers&keytable=StudentUsers&foreignkey=StudentFirstName&foreignkeyval=Harry&primarykey=StudentID&arrayofvals=John&conditionkey=StudentFirstName&conditionval=Harry
+	- http://localhost:8888/counselorWriteAPI.php?tablename=StudentUsers&keytable=StudentUsers&foreignkey=StudentFirstName&foreignkeyval=Harry&primarykey=StudentID&field=StudentName&contentoffield=John&conditionkey=StudentFirstName&conditionval=Harry
+	- http://localhost:8888/counselorWriteAPI.php?tablename=StudentUsers&keytable=StudentUsers&foreignkey=StudentFirstName&foreignkeyval=James&primarykey=StudentID&field=StudentFirstName&contentoffield=John&conditionkey=StudentFirstName&conditionval=James
  */
 
 // The function __autoload is the method for loading all the classes being used in the script. Use it at the beginning of every php main
@@ -31,7 +33,8 @@ $keytable = $_GET["keytable"];
 $foreignkey = $_GET["foreignkey"];
 $foreignkeyval = $_GET["foreignkeyval"];
 $primarykey = $_GET["primarykey"];
-$arrayofvals = $_GET["arrayofvals"];
+$field = $_GET["field"];
+$contentoffield = $_GET["contentoffield"];
 $conditionkey = $_GET["conditionkey"];
 $conditionval = $_GET["conditionval"];
 
@@ -66,12 +69,19 @@ else if (empty($primarykey))
 	print 'PRIMARYKEY NOT SPECIFIED';
 	return false;
 }
-else if (empty($arrayofvals))
+else if (empty($field))
 {
-	error_log("The arrayofvals has not been specified.");
+	error_log("The field has not been specified.");
 	print 'ARRAYOFVALS NOT SPECIFIED';
 	return false;
 }
+else if (empty($contentoffield))
+{
+	error_log("The contentoffield has not been specified.");
+	print 'ARRAYOFVALS NOT SPECIFIED';
+	return false;
+}
+
 else if (empty($conditionkey))
 {
 	error_log("The conditionkey has not been specified.");
@@ -85,9 +95,10 @@ else if (empty($conditionval))
 	return false;
 }
 
-$array = explode(",", $arrayofvals); // turns string of values into usable array
-//print_r($array);
 
-$dbConnection->updateTable($tablename, $keytable, $foreignkey, $foreignkeyval, $primarykey, $array, "'$conditionkey' = '$conditionval'");
+$array = array("$field" => "$contentoffield");
+print_r($array);
+
+$dbConnection->updateTable($tablename, $keytable, $foreignkey, $foreignkeyval, $primarykey, $array, "$conditionkey = '$conditionval'");
 
 ?>

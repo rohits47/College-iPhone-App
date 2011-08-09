@@ -28,7 +28,7 @@ function __autoload($class)
 	require_once $class . '.php';
 }
 
-$dbConnection = new relationalDbConnections('CollegeSummary', "localhost:8889", "root", "root");
+$dbConnection = new relationalDbConnections('lala', "localhost:8889", "root", "root");
 
 $query = $_GET["query"];
 $id = $_GET["id"];
@@ -113,6 +113,7 @@ if (!empty($attribute))
 else
 {
 	$array = $dbConnection->formatQueryResults($resourceid);
+	//print_r($array);
 }
 
 $outputcontent = $array;
